@@ -1,0 +1,35 @@
+{
+  "name": "alexcambose.github.io",
+  "version": "1.0.0",
+  "description": "My website",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=development webpack",
+    "watch": "cross-env NODE_ENV=development webpack --watch",
+    "prod": "cross-env NODE_ENV=production webpack --watch",
+    "hot": "cross-env webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexcambose/alexcambose.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexcambose/alexcambose.github.io/issues"
+  },
+  "homepage": "https://github.com/alexcambose/alexcambose.github.io#readme",
+  "devDependencies": {
+    "cross-env": "^5.1.5",
+    "css-loader": "^0.28.11",
+    "handlebars": "^4.0.11",
+    "handlebars-loader": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
