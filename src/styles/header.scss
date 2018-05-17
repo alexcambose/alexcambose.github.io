@@ -1,0 +1,72 @@
+.header {
+  @include flexCenter;
+  background-color: $bgcolor;
+  height: 100vh;
+  .box {
+    position: relative;
+    border: $border-width solid black;
+    padding: $header-title-padding;
+    text-align: center;
+    white-space: nowrap;
+    &:after {
+      content: " ";
+      position: absolute;
+      height: $border-width;
+      top: -$border-width;
+      left: $header-title-padding;
+      right:$header-title-padding;
+      background-color: $bgcolor;
+    }
+    &:before {
+      content: " ";
+      position: absolute;
+      height: $border-width;
+      bottom: -$border-width;
+      left: $header-title-padding;
+      right: $header-title-padding;
+      background-color: $bgcolor;
+    }
+    .title {
+      @include flexCenter;
+      font-size: 2em;
+      width: 300px;
+      height: 100px;
+      animation: header-reveal 2s;
+      position: relative;
+      &:after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        right: -($header-title-padding + $border-width);
+        width: $border-width;
+        background-color: $bgcolor;
+      }
+      &:before {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: -($header-title-padding + $border-width);
+        width: $border-width;
+        background-color: $bgcolor;
+      }
+    }
+  }
+}
+
+@keyframes header-reveal {
+  0% {
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+  60% {
+    color: transparent;
+    width: 300px;
+  }
+  100% {
+    color: #000;
+    height: 100px;
+  }
+}

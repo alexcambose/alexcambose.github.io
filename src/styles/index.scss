@@ -1,0 +1,12 @@
+@import "variables";
+@import "helpers/mixins";
+@import "header";
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
