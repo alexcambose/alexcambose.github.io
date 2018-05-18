@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700');
+
 @import "variables";
 @import "helpers/mixins";
 @import "header";
+@import "loading";
 
 * {
   box-sizing: border-box;
@@ -9,4 +12,5 @@
 body, html {
   padding: 0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }

@@ -1,72 +1,165 @@
 .header {
   @include flexCenter;
   background-color: $bgcolor;
+  //background: url(https://i.imgur.com/Nbi7bYI.jpg);
   height: 100vh;
+  position: relative;
   .box {
     position: relative;
-    border: $border-width solid black;
-    padding: $header-title-padding;
     text-align: center;
     white-space: nowrap;
-    &:after {
-      content: " ";
+    .box-border {
       position: absolute;
-      height: $border-width;
-      top: -$border-width;
-      left: $header-title-padding;
-      right:$header-title-padding;
-      background-color: $bgcolor;
-    }
-    &:before {
-      content: " ";
-      position: absolute;
-      height: $border-width;
-      bottom: -$border-width;
-      left: $header-title-padding;
-      right: $header-title-padding;
-      background-color: $bgcolor;
+      width: $header-title-frame-length;
+      height: $header-title-frame-length;
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+        border-top: $border-width solid black;
+        border-left: $border-width solid black;
+      }
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+        border-top: $border-width solid black;
+        border-right: $border-width solid black;
+      }
+      &:nth-child(3) {
+        bottom: 0;
+        right: 0;
+        border-bottom: $border-width solid black;
+        border-right: $border-width solid black;
+      }
+      &:nth-child(4) {
+        bottom: 0;
+        left: 0;
+        border-bottom: $border-width solid black;
+        border-left: $border-width solid black;
+      }
     }
     .title {
       @include flexCenter;
-      font-size: 2em;
-      width: 300px;
-      height: 100px;
-      animation: header-reveal 2s;
+      font-size: 3em;
+      width: $header-title-width;
+      height: $header-title-height;
+      animation: reveal-header 1s;
       position: relative;
-      &:after {
-        content: " ";
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        right: -($header-title-padding + $border-width);
-        width: $border-width;
-        background-color: $bgcolor;
-      }
+    }
+  }
+  [class^=line-] {
+    width: $header-line-decoration-width;
+    height: 1px;
+    background-color: $header-line-decoration-bg;
+    position: absolute;
+    top: 50%;
+    &.line-left {
+      animation: reveal-line-left 1s;
+      left: calc(25% - #{$header-line-decoration-width});
+    }
+    &.line-right {
+      animation: reveal-line-right 1s;
+      left: calc(75% + #{$header-line-decoration-width});
+    }
+    &.line-godown {
+      animation: reveal-line-godown 3s;
+      left: 50%;
+      height: 0;
+      top: calc(100% - #{$header-line-decoration-width/2});
+      position: absolute;
       &:before {
         content: " ";
         position: absolute;
-        bottom: 0;
-        top: 0;
-        left: -($header-title-padding + $border-width);
-        width: $border-width;
-        background-color: $bgcolor;
+        width: $header-line-decoration-width/2 - 10px;
+        left: 0;
+        transform-origin: bottom right;
+        animation: reveal-line-godown-left 1s ease-in-out 1s;
+        animation-fill-mode: forwards;
+        height: 1px;
+        background-color: $header-line-decoration-bg;
+      }
+      &:after {
+        content: " ";
+        position: absolute;
+        width: $header-line-decoration-width/2 - 10px;
+        left: $header-line-decoration-width/2 - 10px;
+        transform-origin: bottom left;
+        animation: reveal-line-godown-right 1s ease-in-out 1s;
+        animation-fill-mode: forwards;
+        height: 1px;
+        background-color: $header-line-decoration-bg;
       }
     }
+    transform: translate(-50%, -50%);
+  }
+  .some-line {
+    stroke: aqua;
+    fill: none;
   }
 }
 
-@keyframes header-reveal {
+@keyframes reveal-header {
   0% {
     width: 0;
-    height: 0;
+    height: $header-title-frame-length*2;
     color: transparent;
   }
   60% {
     color: transparent;
-    width: 300px;
+    height: $header-title-frame-length*2;
+    width: $header-title-width;
   }
   100% {
     color: #000;
-    height: 100px;
+    height: $header-title-height;
+  }
+}
+@keyframes reveal-line-left {
+  from {
+    left: 50%;
+    width: 0;
+  }
+  to {
+    width: $header-line-decoration-width;
+    left: calc(25% - #{$header-line-decoration-width});
+  }
+}
+@keyframes reveal-line-right {
+  from {
+    left: 50%;
+    width: 0;
+  }
+  to {
+    width: $header-line-decoration-width;
+    left: calc(75% + #{$header-line-decoration-width});
+  }
+}
+@keyframes reveal-line-godown {
+  from {
+    top: 100%;
+  }
+  to {
+    top: calc(100% - #{$header-line-decoration-width/2});
+  }
+}
+@keyframes reveal-line-godown-left {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(60deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes reveal-line-godown-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-60deg);
+  }
+  100% {
+    transform: rotate(-45deg);
   }
 }
