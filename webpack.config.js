@@ -13,7 +13,11 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.handlebars$/, loader: "handlebars-loader" },
+            {
+                test: /\.handlebars$/,
+                loader: "handlebars-loader",
+                query: { inlineRequires: '\/images\/' }
+            },
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
@@ -21,6 +25,17 @@ module.exports = {
                     "style-loader",
                     "css-loader",
                     "sass-loader"
+                ]
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
                 ]
             }
         ],

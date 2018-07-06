@@ -1,0 +1,58 @@
+<svg class="mouse-icon" id="mouse-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 72">
+    <style>
+        .arrow-line{
+            fill:none;
+            stroke:#000;
+            stroke-linecap:round;
+            stroke-miterlimit:10;
+        }
+        .arrow:nth-of-type(1) {
+            animation: toggle 1s infinite;
+        }
+        .arrow:nth-of-type(2) {
+            animation: toggle 1s infinite .33s;
+        }
+        .arrow:nth-of-type(3) {
+            animation: toggle 1s infinite .66s;
+        }
+        @keyframes toggle {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        #mouse-icon {
+            cursor: pointer;
+        }
+        #mouse-icon:hover #XMLID_6_ {
+            animation: float 1s infinite;
+        }
+        @keyframes float {
+            0%{transform: translateY(0px);}
+            25%{transform: translateY(4px);}
+        }
+    </style>
+    <path id="XMLID_1_"
+          d="M21 69.7C10.2 69.7 1.5 61 1.5 50.2V20.5C1.5 9.7 10.3 1 21 1c10.8 0 19.5 8.7 19.5 19.5v29.7c0 10.7-8.7 19.5-19.5 19.5z"
+          fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path id="XMLID_2_"
+          d="M21 29c-2.1 0-3.8-1.7-3.8-3.8v-8c0-2.1 1.7-3.8 3.8-3.8 2.1 0 3.8 1.7 3.8 3.8v8c.1 2.1-1.7 3.8-3.8 3.8z"
+          fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10"/>
+    <g class="arrow">
+        <path id="XMLID_3_" class="arrow-line" d="M21.1 42.4l-4.1-4"/>
+        <path id="XMLID_4_" class="arrow-line" d="M21.1 42.4l3.9-3.9"/>
+    </g>
+    <g class="arrow">
+        <path id="XMLID_9_" class="arrow-line" d="M21.1 46.5L17 42.4"/>
+        <path id="XMLID_8_" class="arrow-line" d="M21.1 46.5l3.9-4"/>
+    </g>
+    <g class="arrow">
+        <path id="XMLID_12_" class="arrow-line" d="M21.1 50.5l-4.1-4"/>
+        <path id="XMLID_11_" class="arrow-line" d="M21.1 50.5l3.9-3.9"/>
+    </g>
+    <g id="XMLID_6_">
+        <path id="XMLID_22_" d="M21 20.6c-.3 0-.6.3-.6.6s.3.6.6.6.6-.3.6-.6c0-.4-.2-.6-.6-.6z"/>
+    </g>
+</svg>

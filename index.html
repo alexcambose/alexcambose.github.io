@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="header-background"></div>
+<div style="position: absolute; border: 1px solid black; width: 200px;height: 200px;top:calc(50% - 100px);left: calc(50% - 100px)"></div>
+<script>
+    const backgroundContainer = document.getElementById('header-background');
+    const wh = window.innerHeight;
+    const ww = window.innerWidth;
+    const itemsSize = 30; // n x n size
+    const randomFromInterval = (min,max) => Math.floor(Math.random()*(max-min+1)+min);
+    const colors = ['red', 'rgb(212, 101, 0)', 'rgb(0, 204, 102)', 'rgb(51, 153, 255)', 'rgb(153, 102, 255)', 'rgb(255, 153, 51)', 'rgb(0, 51, 0)', 'black', 'gray', 'blue'];
+    const strokeWidth = '3px';
+    const objectsCount = 10;
+    const types = [
+        {
+            type: 'polygon',
+            points: '5,95 50,5 95,95',
+            style: 'fill:transparent;stroke-width:3px;stroke:red',
+            fill: 'transparent',
+            'stroke-width': strokeWidth,
+        },
+        {
+            type: 'polygon',
+            points: '5,5 5,95 95,95 95,5',
+            style: 'fill:transparent;stroke-width: 3;stroke:red',
+            fill: 'transparent',
+            'stroke-width': strokeWidth,
+        },
+        {
+            type: 'circle',
+            cx: 50,
+            cy: 50,
+            r: 46,
+            style: 'fill:transparent;stroke-width: 3;stroke:red',
+            fill: 'transparent',
+            'stroke-width': strokeWidth,
+        },
+        {
+            type: 'path',
+            d: 'M 5 50 Q 25 75 50 50 Q 75 25 95 50',
+            style: 'fill:transparent;stroke-width:3;stroke:red',
+            fill: 'transparent',
+            'stroke-width': strokeWidth,
+        }
+    ];
+
+    let elements = [];
+    for(let i = 1;i <= objectsCount; i++) {
+        const elementType = types[randomFromInterval(0, types.length-1)];
+        let posX = randomFromInterval(10, ww);
+        let posY = randomFromInterval(10, wh);
+        while((posX > ww/2 - 200 && posY > wh/2 - 200) && (posX < ww/2 + 200 && posY < wh/2 + 200)) posX = randomFromInterval(10, ww - 100);
+
+
+        const rotation = randomFromInterval(0, 360);
+
+        const svgContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svgContainer.setAttribute('viewBox', `0 0 100 100`);
+        svgContainer.setAttribute('height', itemsSize);
+        svgContainer.setAttribute('width', itemsSize);
+        svgContainer.style.transform = `rotate(${rotation}deg)`; // set random rotation
+        svgContainer.style.position = 'absolute';
+        svgContainer.style.top = posY;
+        svgContainer.style.left = posX;
+        const svgElement = document.createElementNS('http://www.w3.org/2000/svg', elementType.type);
+        Object.keys(elementType).filter(e => e !== 'type').forEach(e => svgElement.setAttribute(e, elementType[e]));
+        svgElement.style.stroke = colors[randomFromInterval(0, colors.length-1)];
+        if(elementType.type !== 'path') {
+            svgContainer.addEventListener('mouseover', () => svgElement.style.fill = svgElement.style.stroke);
+            svgContainer.addEventListener('mouseleave', () => svgElement.style.fill = 'transparent');
+        }
+        svgContainer.appendChild(svgElement);
+        backgroundContainer.appendChild(svgContainer);
+
+        elements.push({
+            element: svgContainer,
+            rotation,
+            posX,
+            posY,
+            decreaser: randomFromInterval(9,10),
+        });
+    }
+
+    console.log(elements);
+    calc = e => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        for(let i=0;i<elements.length;i++) {
+            const { element, multiplier, rotation } = elements[i];
+            element.style.transform = `rotate(${rotation}deg) translate(${(mouseX - ww/2)/multiplier}px, ${(mouseY - wh/2)/multiplier}px)`;
+        }
+    };
+    document.addEventListener('mousemove', calc);
+</script>
+</body>
+</html>
