@@ -1,28 +1,46 @@
 .about {
   height: 100vh;
   position: relative;
+  transition: all .3s;
   .image-container {
     position: relative;
     #me {
       position: absolute;
-      height: 404px;
+      height: 392px;
       width: 320px;
-      top: 0;
-      transform: scale(1.02);
-      left: 0;
-      animation: fade-out 3s forwards;
+      top: 50%;
+      transform: scale(1.03) translate(-50%, -50%);
+      left: 50%;
+      //animation: fade-out 3s forwards;
+      @include md {
+        display: none;
+      }
     }
     #me-image{
       position: absolute;
       opacity: 0;
       height: 400px;
       width: 326px;
-      top: 0;
-      left: 0;
+      top: 50%;
+      transform: scale(1.02) translate(-50%, -50%);
+      left: 50%;
+      border-radius: 2px;
       animation: fade-in 2s forwards;
+      @include md {
+        position: relative;
+      }
     }
   }
+  .description-container{
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+  }
+}
 
+.about.inverse {
+  background-color: #282828;
+  color: #fff;
 }
 @keyframes fade-in {
   from {
@@ -38,11 +56,5 @@
   }
   to {
     opacity: 0;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  body {
-    background-color: lightblue;
   }
 }

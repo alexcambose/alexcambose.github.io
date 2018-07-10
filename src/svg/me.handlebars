@@ -10,10 +10,17 @@
                            stroke-width: 1px;
                            stroke-dasharray: 1570;
                            stroke-dashoffset: 1575;
+                       }
+                       #me.animate path{
                            animation: me-dash 2s linear forwards;
                        }
                        @keyframes me-dash {
+                            from {
+                                opacity: 1;
+                            }
+
                            to {
+                               opacity: 0;
                                stroke-dashoffset: 0;
                            }
                        }

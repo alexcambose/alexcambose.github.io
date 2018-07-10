@@ -101,7 +101,7 @@ export default () => {
     let isDarkened = false;
     const check = () => {
         const header = document.querySelector('.header');
-        if(window.scrollY > window.innerHeight/2 - 300 ) {
+        if(window.scrollY > window.innerHeight/2) {
             if(!isDarkened) {
                 header.classList.add('inverse');
                 elements.forEach(({element}) => {

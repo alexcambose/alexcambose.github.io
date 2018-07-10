@@ -1,7 +1,5 @@
 .header {
   @include flexCenter;
-  //background-color: $bgcolor;
-  //background: url(https://i.imgur.com/Nbi7bYI.jpg);
   overflow: hidden;
   height: 100vh;
   position: relative;
@@ -59,6 +57,7 @@
 
 .header.inverse {
   background-color: #444;
+  &::after { opacity: 1};
   .title * {
     color: white;
   }
