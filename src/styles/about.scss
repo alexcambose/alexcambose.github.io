@@ -1,5 +1,4 @@
 .about {
-  height: 100vh;
   position: relative;
   transition: all .3s;
   .image-container {
@@ -39,7 +38,7 @@
 }
 
 .about.inverse {
-  background-color: #282828;
+  background-color: $aboutBg;
   color: #fff;
 }
 @keyframes fade-in {

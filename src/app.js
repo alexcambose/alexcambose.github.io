@@ -15,11 +15,13 @@ export default () => {
                 sections[i].classList.remove('inverse');
             }
         }
+        //navmenu
         if(window.scrollY > window.innerHeight) {
             navMenu.style.top = window.scrollY + 'px';
         } else {
             navMenu.style.top = '100vh';
         }
+
     };
     document.addEventListener('scroll', scrollHandler);
     scrollHandler();

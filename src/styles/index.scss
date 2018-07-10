@@ -39,7 +39,20 @@ section:not(:first-of-type) {
         background-color: #616161;
         color: #e4e4e4;
       }
+      &:nth-of-type(1) {
+        background-color: #282828;
+      }&:nth-of-type(2) {
+        background-color: $navmenu2hoverBg;
+      }&:nth-of-type(3) {
+        background-color: $navmenu3hoverBg;
+      }&:nth-of-type(4) {
+        background-color: $navmenu4hoverBg;
+      }&:nth-of-type(5) {
+        background-color: $navmenu5hoverBg;
+      }
       .image svg * {fill:white;}
+      .image.inverse svg * {fill:transparent;}
+      .image.change-stroke svg * {stroke:white;}
       .label{
         &:after {
           background-color: $primary;
@@ -86,6 +99,8 @@ section:not(:first-of-type) {
           * { fill: black; }
         }
       }
+      .image.inverse svg * {fill:transparent;}
+      .image.change-stroke svg * {stroke:black;}
       .label {
         position: relative;
         margin-top: 10px;
@@ -109,6 +124,7 @@ section:not(:first-of-type) {
   }
 }
 section {
+  height: 100vh;
   @include flexCenter;
 }
 .section-container {

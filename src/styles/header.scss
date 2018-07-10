@@ -1,7 +1,6 @@
 .header {
   @include flexCenter;
   overflow: hidden;
-  height: 100vh;
   position: relative;
   transition: background-color .3s;
   &::after {
