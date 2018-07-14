@@ -1,0 +1,126 @@
+.navmenu {
+  position: absolute;
+  right: 0;
+  top: 100vh;
+  width: $navmenuWidth;
+  bottom: 0;
+  transition: border-left-color .3s;
+  border-left: 1px solid #eeeeee;
+  &.inverse {
+    border-left: 1px solid #3b3b3b;
+    &:hover {border-left-color: #424242;}
+    li {
+      transition: all .3s;
+      background-color: transparent;
+      color: #d7d7d7;
+      &:hover {
+        background-color: #616161;
+        color: #e4e4e4;
+      }
+      &:nth-of-type(1) { background-color: $aboutBg; }
+      &:nth-of-type(2) { background-color: $skillsBg; }
+      &:nth-of-type(3) { background-color: $projectsBg; }
+      &:nth-of-type(4) { background-color: $lifeBg; }
+      &:nth-of-type(5) { background-color: $contactBg; }
+
+      .image svg * {fill:white;}
+      .image.inverse svg * {fill:transparent;}
+      .image.change-stroke svg * {stroke:white;}
+      .label{
+        &:after {
+          background-color: $navmenuItemHoverUnderline1;
+        }
+        &:before {
+          background-color: $navmenuItemHoverUnderline2;
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li {
+      cursor: pointer;
+      background-color: transparent;
+      color: #1d1d1d;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      height: #{100/$numSections}vh;
+      min-height: 100px;
+      @include flexCenter;
+      &:hover {
+        background-color: #d1d1d1;
+        color: #616161;
+        .label {
+          &:after, &:before {
+            left: 0;
+            width: 100%;
+          }
+        }
+        .image {
+          //transform: scale(1.03);
+        }
+        transform: scale(1.1);
+
+      }
+      .image {
+        transition: all .1s;
+        svg {
+          width: 40px;
+          height: 40px;
+          * { fill: black; }
+        }
+      }
+      .image.inverse svg * {fill:transparent;}
+      .image.change-stroke svg * {stroke:black;}
+      .label {
+        position: relative;
+        margin-top: 10px;
+        &:after, &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: auto;
+          width: 0;
+          height: 2px;
+          background-color: #a3007d;
+          transition: all 180ms ease-in-out;
+        }
+        &:before {
+          background-color: #ff00dc;
+          transition: all 180ms ease-in-out 100ms;
+        }
+      }
+    }
+  }
+  .scroll-area {
+    position: absolute;
+    left: -$navmenuScrollWidth;
+    top: 0;
+    bottom: 0;
+    width: $navmenuScrollWidth;
+    background-color: red;
+    .scrollbar {
+      position: absolute;
+      width: $navmenuScrollWidth;
+      height: 10vh;
+      //top: 10px;
+      background-color: #fff;
+    }
+  }
+  @include md{
+    width: #{$navmenuWidth - 20};
+    .image svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  @include sm{
+    width: #{$navmenuWidth - 30};
+    .label {display: none;}
+  }
+}

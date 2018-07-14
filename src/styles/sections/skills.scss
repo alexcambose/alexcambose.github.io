@@ -1,0 +1,11 @@
+.skills {
+  .container{ flex-direction: column; }
+  .skills-container {
+    width: 100%;
+    padding: 20px;
+    background-color: darken($skillsBg, 2);
+  }
+}
+.skills.inverse {
+  background-color: $skillsBg;
+}

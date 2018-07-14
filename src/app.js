@@ -3,6 +3,7 @@ import about from './scripts/about';
 export default () => {
     const sections = document.getElementsByTagName('section');
     const navMenu = document.getElementsByClassName('navmenu')[0];
+    const navScrollbar = document.getElementsByClassName('scrollbar')[0];
     const scrollHandler = () => {
         if(window.scrollY > window.innerHeight/2) {
             navMenu.classList.add('inverse');
@@ -21,7 +22,8 @@ export default () => {
         } else {
             navMenu.style.top = '100vh';
         }
-
+        navScrollbar.style.height = window.innerHeight/(sections.length -1 ) + 'px';
+        navScrollbar.style.top = (window.scrollY-window.innerHeight)/(sections.length-1) + 'px';
     };
     document.addEventListener('scroll', scrollHandler);
     scrollHandler();

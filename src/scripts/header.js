@@ -67,7 +67,6 @@ export default () => {
         }
         svgContainer.appendChild(svgElement); // add svg shape to <svg/> container
         backgroundContainer.appendChild(svgContainer); // add <svg/> to the container div
-
         elements.push({
             elementContainer: svgContainer,
             element: svgElement,
@@ -81,9 +80,15 @@ export default () => {
     const calcShapesPosition = e => {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
+        // console.log('mx', mouseX, 'my', mouseY, elements[0].posX, elements[0].posY);
+
         for (let i = 0; i < elements.length; i++) {
-            const {elementContainer, divider, rotation} = elements[i];
+            const {elementContainer, divider, rotation, posX, posY} = elements[i];
+
             elementContainer.style.transform = `rotate(${rotation}deg) translate(${(mouseX - ww / 2) / divider}px, ${(mouseY - wh / 2) / divider}px)`;
+            const distance = Math.sqrt(parseInt(elementContainer.getBoundingClientRect().x + headerConfig.shapeSize/2 -mouseX)**2 + (elementContainer.getBoundingClientRect().y + headerConfig.shapeSize/2-mouseY)**2);
+            // if(distance > 200)
+                elementContainer.style.transform += `scale(${1-distance*.0005})`;
         }
     };
     document.addEventListener('mousemove', calcShapesPosition);
@@ -101,20 +106,22 @@ export default () => {
     let isDarkened = false;
     const check = () => {
         const header = document.querySelector('.header');
+        console.log(isDarkened)
+
         if(window.scrollY > window.innerHeight/2) {
-            if(!isDarkened) {
+            if (!isDarkened) {
                 header.classList.add('inverse');
                 elements.forEach(({element}) => {
                     element.style.stroke = headerConfig.shapesColorDark[randomFromInterval(0, headerConfig.shapesColorDark.length - 1)]
                 });
                 isDarkened = true;
             }
-        } else {
-            isDarkened = false;
-            elements.forEach(({element}) => {
-                element.style.stroke = headerConfig.shapesColorLight[randomFromInterval(0, headerConfig.shapesColorLight.length - 1)]
-            });
-            header.classList.remove('inverse');
+        } else if(isDarkened) {
+                isDarkened = false;
+                elements.forEach(({element}) => {
+                    element.style.stroke = headerConfig.shapesColorLight[randomFromInterval(0, headerConfig.shapesColorLight.length - 1)]
+                });
+                header.classList.remove('inverse');
         }
     };
     check();

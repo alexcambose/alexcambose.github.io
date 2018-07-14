@@ -1,13 +1,17 @@
 $numSections: 5;
 
 /* colors */
-$primary: #5CDB95;
+$primary: #0aad46;
+$primaryInverted: invert($primary);
 $secondary: #FFED65;
 $bg: #05386B;
 $white: #EDF5E1;
 
 $aboutBg: #282828;
-$skillsBg: #003c9c;
+$skillsBg: #083D77;
+$projectsBg: #6600c0;
+$lifeBg: #BB0A21;
+$contactBg: #004036;
 
 $sizeSm: 480px;
 $sizeMd: 768px;
@@ -16,8 +20,6 @@ $sizeXl: 1200px;
 
 
 $navmenuWidth: 100px;
-$navmenu1hoverBg: #A40E4C;
-$navmenu2hoverBg: #003c9c;
-$navmenu3hoverBg: #6043ff;
-$navmenu4hoverBg: #955000;
-$navmenu5hoverBg: #00c654;
+$navmenuScrollWidth: 20px;
+$navmenuItemHoverUnderline1: #FFED65;
+$navmenuItemHoverUnderline2: #0094ff;
