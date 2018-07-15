@@ -106,7 +106,6 @@ export default () => {
     let isDarkened = false;
     const check = () => {
         const header = document.querySelector('.header');
-        console.log(isDarkened)
 
         if(window.scrollY > window.innerHeight/2) {
             if (!isDarkened) {

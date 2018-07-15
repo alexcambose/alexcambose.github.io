@@ -1,9 +1,44 @@
 .skills {
   .container{ flex-direction: column; }
+
   .skills-container {
+    margin: 0 10px;
     width: 100%;
-    padding: 20px;
-    background-color: darken($skillsBg, 2);
+    padding: 30px 60px;
+    .skillset {
+      padding: 12px;
+      display: flex;
+      height: 250px;
+      flex-direction: column;
+      background-color: darken($skillsBg, 2);
+      transition: background-color .3s;
+      &:hover {
+        background-color: darken($skillsBg, 3);
+      }
+    }
+    .skills-title {
+      position: relative;
+      font-size: 1.1em;
+      font-weight: 600;
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 30px;
+        height: 1px;
+        background-color: $primary;
+      }
+    }
+    ul {
+      margin: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      list-style-image: url('../images/arrow.svg');
+    }
   }
 }
 .skills.inverse {

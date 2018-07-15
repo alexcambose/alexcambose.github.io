@@ -7,46 +7,47 @@
 <div class="section-container">
     {{> header}}
     {{> about}}
+    <div class="section-separator"></div>
     {{> skills}}
+    <div class="section-separator"></div>
     {{> projects}}
+    <div class="section-separator"></div>
     {{> life}}
+    <div class="section-separator"></div>
     {{> contact}}
     <div class="navmenu">
         <ul>
-            <li>
+            <li class="about active">
                 <div class="image">
                     {{> svg/about}}
                 </div>
                 <div class="label">About</div>
             </li>
-            <li>
+            <li class="skills">
                 <div class="image inverse change-stroke">
                     {{> svg/skills}}
                 </div>
                 <div class="label">Skills</div>
             </li>
-            <li>
+            <li class="projects">
                 <div class="image">
                     {{> svg/projects}}
                 </div>
                 <div class="label">Projects</div>
             </li>
-            <li>
+            <li class="life">
                 <div class="image">
                     {{> svg/life}}
                 </div>
                 <div class="label">Life</div>
             </li>
-            <li>
+            <li class="contact">
                 <div class="image">
                     {{> svg/contact}}
                 </div>
                 <div class="label">Contact</div>
             </li>
         </ul>
-        <div class="scroll-area">
-            <div class="scrollbar"></div>
-        </div>
     </div>
 </div>
 

@@ -1,4 +1,5 @@
 .navmenu {
+  z-index: 10;
   position: absolute;
   right: 0;
   top: 100vh;
@@ -17,11 +18,11 @@
         background-color: #616161;
         color: #e4e4e4;
       }
-      &:nth-of-type(1) { background-color: $aboutBg; }
-      &:nth-of-type(2) { background-color: $skillsBg; }
-      &:nth-of-type(3) { background-color: $projectsBg; }
-      &:nth-of-type(4) { background-color: $lifeBg; }
-      &:nth-of-type(5) { background-color: $contactBg; }
+      &.about { background-color: $aboutBg; }
+      &.skills { background-color: $skillsBg; }
+      &.projects { background-color: $projectsBg; }
+      &.life { background-color: $lifeBg; }
+      &.contact { background-color: $contactBg; }
 
       .image svg * {fill:white;}
       .image.inverse svg * {fill:transparent;}
@@ -60,11 +61,10 @@
             width: 100%;
           }
         }
-        .image {
-          //transform: scale(1.03);
-        }
         transform: scale(1.1);
-
+      }
+      &.active {
+        background-color: red !important;
       }
       .image {
         transition: all .1s;
@@ -95,21 +95,6 @@
           transition: all 180ms ease-in-out 100ms;
         }
       }
-    }
-  }
-  .scroll-area {
-    position: absolute;
-    left: -$navmenuScrollWidth;
-    top: 0;
-    bottom: 0;
-    width: $navmenuScrollWidth;
-    background-color: red;
-    .scrollbar {
-      position: absolute;
-      width: $navmenuScrollWidth;
-      height: 10vh;
-      //top: 10px;
-      background-color: #fff;
     }
   }
   @include md{

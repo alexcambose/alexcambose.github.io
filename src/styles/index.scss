@@ -23,7 +23,7 @@ body, html {
   overflow-x: hidden;
 }
 section:not(:first-of-type) {
-  padding: 50px $navmenuWidth 50px 0;
+  padding: 50px #{$navmenuWidth+$navmenuScrollWidth} 50px 0;
 }
 a {
   color: #93e0ff;
@@ -103,4 +103,21 @@ section {
 //}
 ::-webkit-scrollbar {
   display: none;
+}
+small {
+  font-size: 80%;
+}
+.section-separator {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  z-index: 1;
+  background-color: #9a9a9a;
+}
+.vertical-line {
+  position: absolute;
+  height: 600px;
+  width: 1px;
+  top: 100px;
+  background-color: #292929;
 }
