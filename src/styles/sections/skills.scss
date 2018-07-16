@@ -1,4 +1,4 @@
-.skills {
+section.skills {
   .container{ flex-direction: column; }
 
   .skills-container {
@@ -41,6 +41,6 @@
     }
   }
 }
-.skills.inverse {
-  background-color: $skillsBg;
+section.skills.inverse {
+  background: linear-gradient(141deg, $skillsBg 0, lighten($skillsBg, 5) 71%, lighten($skillsBg, 10) 100%)
 }

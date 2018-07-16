@@ -3,6 +3,7 @@
 @import "variables";
 @import "helpers/mixins";
 @import "components/navmenu";
+@import "components/scrollbar";
 @import "sections/header";
 @import "sections/about";
 @import "sections/loading";
@@ -70,6 +71,9 @@ section {
     left: 50%;
     transform: translateX(-50%);
   }
+  &.no-line:after{
+    display: none;
+  }
 }
 .inverse .section-title::after {background-color: $primary !important;}
 .text-center {
@@ -88,31 +92,19 @@ section {
 .flex-center {
   @include flexCenter;
 }
-//::-webkit-scrollbar {
-//  width: 2px;
-//}
-//::-webkit-scrollbar-track {
-//  background-color: transparent;
-//}
-//::-webkit-scrollbar-thumb {
-//  background: #494949;
-//  border-radius: 10px;
-//}
-//::-webkit-scrollbar-thumb:hover {
-//  background: #959595;
-//}
-::-webkit-scrollbar {
-  display: none;
-}
+
 small {
   font-size: 80%;
 }
 .section-separator {
   position: absolute;
-  width: 100%;
+  width: calc(100% - #{$navmenuWidth});
   height: 1px;
-  z-index: 1;
+  z-index: 12;
   background-color: #9a9a9a;
+  &.full {
+    width: 100%;
+  }
 }
 .vertical-line {
   position: absolute;
@@ -121,3 +113,13 @@ small {
   top: 100px;
   background-color: #292929;
 }
+.standalone-line-center {
+    position: absolute;
+    bottom: -2px;
+    height: 2px;
+    width: 40px;
+    background-color: $primaryInverted;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.inverse .standalone-line-center {background-color: $primary;}

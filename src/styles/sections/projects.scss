@@ -1,6 +1,7 @@
-.projects {
+section.projects {
+  z-index: 11;
   height: auto;
 }
-.projects.inverse {
+section.projects.inverse {
   background-color: $projectsBg;
 }

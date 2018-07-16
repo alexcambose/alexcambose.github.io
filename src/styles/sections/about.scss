@@ -1,6 +1,18 @@
-.about {
+section.about {
   position: relative;
   transition: all .3s;
+  &:after {
+    transition: all .3s;
+    z-index: -1;
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../images/about_bg.png");
+    opacity: 0;
+  }
   .image-container {
     position: relative;
     #me {
@@ -37,8 +49,11 @@
   }
 }
 
-.about.inverse {
-  background-color: $aboutBg;
+section.about.inverse {
+  //background: linear-gradient(-45deg, $aboutBg, lighten($aboutBg, 10));
+  &:after {
+    opacity: 1;
+  }
 }
 @keyframes fade-in {
   from {

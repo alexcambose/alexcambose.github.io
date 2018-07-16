@@ -18,11 +18,14 @@
         background-color: #616161;
         color: #e4e4e4;
       }
-      &.about { background-color: $aboutBg; }
-      &.skills { background-color: $skillsBg; }
-      &.projects { background-color: $projectsBg; }
-      &.life { background-color: $lifeBg; }
-      &.contact { background-color: $contactBg; }
+      &:after {
+        background-color: #fff;
+      }
+      &.about { background-color: lighten($aboutBg, 10); }
+      &.skills { background-color: lighten($skillsBg, 10); }
+      &.projects { background-color: lighten($projectsBg, 10); }
+      &.life { background-color: lighten($lifeBg, 10); }
+      &.contact { background-color: lighten($contactBg, 10); }
 
       .image svg * {fill:white;}
       .image.inverse svg * {fill:transparent;}
@@ -63,8 +66,23 @@
         }
         transform: scale(1.1);
       }
+      position: relative;
+      &:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        width: 1px;
+        height: 0;
+        background-color: #000;
+        left: 0;
+        transition: all .3s;
+      }
       &.active {
-        background-color: red !important;
+        &:after {
+          transform: translateY(-50%);
+          height: 30px;
+          opacity: 1;
+        }
       }
       .image {
         transition: all .1s;
