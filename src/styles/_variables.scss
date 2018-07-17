@@ -2,7 +2,7 @@ $numSections: 5;
 
 /* colors */
 $primary: #0aad46;
-$primaryInverted: invert($primary);
+$primaryInverted: #ad470e;
 $secondary: #FFED65;
 $bg: #05386B;
 $white: #EDF5E1;
@@ -23,3 +23,7 @@ $navmenuWidth: 100px;
 $navmenuScrollWidth: 20px;
 $navmenuItemHoverUnderline1: #FFED65;
 $navmenuItemHoverUnderline2: #0094ff;
+
+
+$projectsImageBorderWidth: 1px;
+$projectsImageBorderHoverColor: gray;

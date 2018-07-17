@@ -4,6 +4,7 @@
 @import "helpers/mixins";
 @import "components/navmenu";
 @import "components/scrollbar";
+@import "components/button";
 @import "sections/header";
 @import "sections/about";
 @import "sections/loading";
@@ -23,7 +24,7 @@ body, html {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
-section:not(:first-of-type) {
+section:not(:first-of-type):not(.projects) {
   padding: 50px #{$navmenuWidth+$navmenuScrollWidth} 50px 0;
 }
 a {
@@ -58,6 +59,9 @@ section {
   font-size: 3em;
   position: relative;
   margin-bottom: 10px;
+  &.center {
+    text-align: center;
+  }
   &:after {
     content: " ";
     position: absolute;
@@ -76,6 +80,9 @@ section {
   }
 }
 .inverse .section-title::after {background-color: $primary !important;}
+.section-subtitle {
+  text-align: center;
+}
 .text-center {
   text-align: center;
 }

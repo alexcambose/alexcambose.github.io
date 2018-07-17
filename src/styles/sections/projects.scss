@@ -1,6 +1,116 @@
 section.projects {
   z-index: 11;
   height: auto;
+  min-height: 100vh;
+  transition: all .3s;
+  //background-color: #efefef;
+  background-color: #0e0e0e;
+  color: #d9d9d9;
+  justify-content: flex-start;
+  padding-top: 100px;
+  .projects-container {
+    top: 0;
+    bottom: 0;
+    .project {
+      margin-top: 10px;
+      .project-info {
+        transform: translateX(-100px);
+        transition: all .3s;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-right: 10px;
+        .project-title {
+          font-size: 3em;
+        }
+      }
+
+      .project-image {
+        position: relative;
+        transform: translateX(100px) scale(.9);
+        transition: all .3s;
+        opacity: 0;
+        perspective: 1000px;
+        .project-image-container {
+          border: $projectsImageBorderWidth solid black;
+          position: relative;
+          box-shadow: 0 28px 84px -55px #777;
+          height: 400px;
+          width: 600px;
+          background-size: cover;
+          background-position: center;
+          transition: border .3s;
+          .project-image-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            transform: scale(.2);
+            color: #fff;
+            background-color: rgba(0, 0, 0, .1);
+            opacity: 0;
+            overflow: hidden;
+            transition: all .3s;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+          }
+          &:after, &:before {
+            content: " ";
+            z-index: -1;
+            position: absolute;
+            transition: all .3s;
+            top: -1px;
+            right: -1px;
+            left: -1px;
+            bottom:-1px;
+          }
+          &:after {
+            top: 100%;
+            right: 100%;
+            border-bottom: $projectsImageBorderWidth solid $projectsImageBorderHoverColor;
+            border-left: $projectsImageBorderWidth solid $projectsImageBorderHoverColor;
+          }
+          &:before {
+            left: 100%;
+            bottom: 100%;
+            border-top: $projectsImageBorderWidth solid $projectsImageBorderHoverColor;
+            border-right: $projectsImageBorderWidth solid $projectsImageBorderHoverColor;
+          }
+          &:hover{
+            border-color: white;
+            .project-image-overlay {
+              opacity: 1;
+              transform: scale(1);
+              background-color: rgba(0, 0, 0, .5);
+
+            }
+            &:after {
+              right: -1px;
+              top: -1px;
+            }
+            &:before {
+              left: -1px;
+              bottom: -1px;
+            }
+          }
+        }
+      }
+
+      &.active {
+        .project-info {
+          transform: translateX(0px);
+          opacity: 1;
+        }
+        .project-image {
+          transform: translateX(0px) scale(1);
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 section.projects.inverse {
   background-color: $projectsBg;
