@@ -56,6 +56,7 @@ section.projects {
             display: flex;
             justify-content: center;
             align-content: center;
+            border: 1px solid transparent;
           }
           &:after, &:before {
             content: " ";
@@ -85,7 +86,7 @@ section.projects {
               opacity: 1;
               transform: scale(1);
               background-color: rgba(0, 0, 0, .5);
-
+              border: 1px solid gray;
             }
             &:after {
               right: -1px;

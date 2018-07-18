@@ -1,0 +1,15 @@
+ul.technologies {
+  list-style-type: none;
+  padding: 0;
+  li{
+    height: 50px;
+    width: 50px;
+    background-size: cover !important;
+    &.javascript {
+      background: url("../images/technologies/javascript.png");
+    }
+    &.typescript {
+      background: url("../images/technologies/typescript.png");
+    }
+  }
+}

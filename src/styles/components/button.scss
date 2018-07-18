@@ -4,6 +4,43 @@
   padding: 10px 12px;
   border: 2px solid white;
   color: white;
+  position: relative;
   background-color: transparent;
   cursor: pointer;
+  text-decoration: none;
+  transition: all .3s;
+  &:after {
+    content: " ";
+    z-index: -1;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background: white;
+    height: 100%;
+    width: 0;
+    transition: all .3s;
+  }
+  &:hover {
+    &:after {
+      width: 100%;
+      right: auto;
+      left: 0;
+    }
+    color: #444;
+  }
+  &.button-github {
+    &:hover {
+      svg * {
+        fill: #000;
+      }
+    }
+    svg {
+      height: 32px;
+      width: 32px;
+      * {
+        transition: all .3s;
+        fill: white;
+      }
+    }
+  }
 }
