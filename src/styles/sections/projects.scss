@@ -12,7 +12,8 @@ section.projects {
     top: 0;
     bottom: 0;
     .project {
-      margin-top: 10px;
+      margin-top: 25vh;
+      margin-bottom: 25vh;
       .project-info {
         transform: translateX(-100px);
         transition: all .3s;
@@ -33,14 +34,32 @@ section.projects {
         opacity: 0;
         perspective: 1000px;
         .project-image-container {
+          background-position: center;
+          background-size: cover;
           border: $projectsImageBorderWidth solid black;
           position: relative;
           box-shadow: 0 28px 84px -55px #777;
           height: 400px;
-          width: 600px;
-          background-size: cover;
-          background-position: center;
+          width: 700px;
           transition: border .3s;
+          overflow: hidden;
+
+          .project-image-item {
+            transition: all .5s;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-size: cover !important;
+            background-position: center !important;
+            transform: scale(.9);
+            opacity: 0;
+            &.active {
+              transform: scale(1);
+              opacity: 1
+            }
+          }
           .project-image-overlay {
             position: absolute;
             top: 0;

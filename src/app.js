@@ -1,8 +1,8 @@
-import {percentFrom, sliceFromPercent} from "./scripts/utils";
 
 import header from './scripts/header';
 import about from './scripts/about';
 import projects from './scripts/projects';
+import {switchTimer} from "./config";
 
 export default () => {
     const sections = document.getElementsByTagName('section');
@@ -44,11 +44,30 @@ export default () => {
             if(j === i-2) menuElements[j].classList.add('active');
             else menuElements[j].classList.remove('active');
         }
-        // menuElements[i].classList.add('active')
-        // console.log(sections[i-1].classList[0])
-        // navScrollbar.style.top = sliceFromPercent(percentFrom(sections[1].offsetTop, window.scrollY), window.innerHeight/(sections.length-1)) + 'px';
+
     };
     document.addEventListener('scroll', scrollHandler);
+
+
+    //SWITCHER
+    const switches = document.getElementsByClassName('switcher');
+    for(let i = 0; i<switches.length;i++) {
+        const children = switches[i].children;
+        if(children.length > 1) {
+            setInterval(() => {
+                const activeElementIndex = [...children].findIndex(e => e.classList && e.classList.value.indexOf('active') !== -1);
+                if(activeElementIndex === -1) children[0].classList.add('active');
+                else if(activeElementIndex === children.length-1) {
+                    children[0].classList.add('active');
+                    children[children.length-1].classList.remove('active');
+                } else {
+                    children[activeElementIndex].classList.remove('active');
+                    children[activeElementIndex+1].classList.add('active');
+                }
+            }, switchTimer);
+        }
+
+    }
     scrollHandler();
     header();
     about();

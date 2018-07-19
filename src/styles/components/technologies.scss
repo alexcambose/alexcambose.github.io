@@ -1,15 +1,20 @@
 ul.technologies {
   list-style-type: none;
   padding: 0;
+  display: flex;
   li{
-    height: 50px;
-    width: 50px;
-    background-size: cover !important;
-    &.javascript {
-      background: url("../images/technologies/javascript.png");
-    }
-    &.typescript {
-      background: url("../images/technologies/typescript.png");
+    display: flex;
+    flex: 1;
+    height: 80px;
+    width: 80px;
+    @each $technology in $technologies {
+      &.#{$technology} {
+        background: url("../images/technologies/#{$technology}.png");
+        background-size: contain;
+        background-position: center;
+        display: inline-block;
+        background-repeat: no-repeat;
+      }
     }
   }
 }

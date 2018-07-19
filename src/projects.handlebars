@@ -2,31 +2,45 @@
     <div class="section-title center no-line">Projects <div class="standalone-line-center"></div></div>
     <p>Some of my work</p>
     <div class="projects-container">
+        {{#projects}}
         <div class="row project active">
             <div class="col-md-6 project-info align-center">
-                <div class="project-title">Motus</div>
+                <div class="project-title">{{title}}</div>
                 <div class="project-description">
-                    Animation library that mimics CSS keyframes when scrolling.
+                    {{description}}
                 </div>
                 <div class="project-technologies">
-                    <ul class="technologies">
-                        <li class="typescript"></li>
-                        <li class="HTML"></li>
-                        <li class="JS"></li>
-                        <li class="CSS"></li>
-                        <li class="SASS"></li>
-                    </ul>
+                    {{#technologies}}
+                        <ul class="technologies frontend">
+                            {{#frontend}}
+                                <li class="{{this}}" title="{{this}}"></li>
+                            {{/frontend}}
+                        </ul>
+
+                        <ul class="technologies backend">
+                            {{#backend}}
+                                <li class="{{this}}" title="{{this}}"></li>
+                            {{/backend}}
+                        </ul>
+                    {{/technologies}}
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="project-image align-center">
-                    <div class="project-image-container" style="background: url('https://i.imgur.com/e2ZZ8Wa.png');">
+                    <div class="project-image-container">
+                        <div class="switcher">
+                            {{#images}}
+                                <div class="project-image-item" style="background: url('{{this}}');"></div>
+                            {{/images}}
+                        </div>
+
                         <div class="project-image-overlay">
-                            <a href="github.com" target="_blank" class="button button-github">{{>svg/github}}</a>
+                            <a href="https://github.com/alexcambose/{{repoName}}" target="_blank" class="button button-github">{{>svg/github}}</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{/projects}}
     </div>
 </section>

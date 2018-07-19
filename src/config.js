@@ -6,4 +6,40 @@ export const header = {
     shapeStrokeWidth: 3, // px
     shapesCount: 20,
 };
-
+export const switchTimer = 1000;
+export const projects = [
+    {
+        title: 'motus',
+        repoName: 'motus',
+        description: 'descriereeeee lorem   aa',
+        images: ['https://i.imgur.com/e2ZZ8Wa.png', 'https://i.imgur.com/E2WfSVv.png'],
+        technologies: {
+            frontend: ['typescript', 'parcel'],
+            backend: []
+        }
+    },
+    {
+        title: 'Rapoarte Drumuri',
+        repoName: 'Rapoarte-Drumuri',
+        description: 'descriereeeee lorem   aa',
+        images: ['https://i.imgur.com/E2WfSVv.png'],
+        technologies: {
+            frontend: ['javascript', 'react', 'react-native'],
+            backend: ['nodejs', 'mongodb', 'express'],
+        }
+    },
+    {
+        title: 'Studeo',
+        repoName: 'studeo',
+        description: 'descriereeeee lorem   aa',
+        images: ['https://i.imgur.com/e2ZZ8Wa.png'],
+        technologies: {
+            frontend: ['javascript', 'vuejs', 'sass','bulma'],
+            backend: ['php', 'laravel','mysql'],
+        },
+        contributors: ['ovidiumihaibelciug']
+    },
+    // {
+    //     name: '40-lines-of-sass'
+    // } portfolio, rapoarte drumuri, studeo, extension, motus
+];
