@@ -6,13 +6,23 @@ export const header = {
     shapeStrokeWidth: 3, // px
     shapesCount: 20,
 };
-export const switchTimer = 1000;
+export const switchTimer = 3500;
 export const projects = [
+    {
+        title: 'Portfolio',
+        repoName: 'alexcambose.github.io',
+        description: 'Animation library that mimics CSS keyframes when scrolling',
+        images: ['https://i.imgur.com/GjcS3Mo.png'],
+        technologies: {
+            frontend: ['html', 'sass', 'javascript', 'webpack', 'handlebars'],
+            backend: []
+        }
+    },
     {
         title: 'motus',
         repoName: 'motus',
-        description: 'descriereeeee lorem   aa',
-        images: ['https://i.imgur.com/e2ZZ8Wa.png', 'https://i.imgur.com/E2WfSVv.png'],
+        description: 'Animation library that mimics CSS keyframes when scrolling',
+        images: ['https://i.imgur.com/urs3fwK.png', 'https://i.imgur.com/GjcS3Mo.png'],
         technologies: {
             frontend: ['typescript', 'parcel'],
             backend: []
@@ -21,23 +31,44 @@ export const projects = [
     {
         title: 'Rapoarte Drumuri',
         repoName: 'Rapoarte-Drumuri',
-        description: 'descriereeeee lorem   aa',
-        images: ['https://i.imgur.com/E2WfSVv.png'],
+        description: '\n' +
+        'Rapoarte Drumuri (Roads Reports) is meant to help drivers who are tired of unexpected events on Romanian roads. With this app anyone can report a closed, broken, in repair or dangerous road so that other drivers are aware of the problem. ',
+        images: ['https://i.imgur.com/enOqOI3.png', 'https://i.imgur.com/gvgRCPR.png'],
         technologies: {
             frontend: ['javascript', 'react', 'react-native'],
-            backend: ['nodejs', 'mongodb', 'express'],
+            backend: ['nodejs', 'jwt', 'mongodb'],
         }
     },
     {
         title: 'Studeo',
         repoName: 'studeo',
-        description: 'descriereeeee lorem   aa',
-        images: ['https://i.imgur.com/e2ZZ8Wa.png'],
+        description: 'An e-learning platform to help students learn faster and easier for exams.',
+        images: [
+            'https://i.imgur.com/nP1zd4q.jpg',
+            'https://i.imgur.com/xUEtPNj.png',
+            'https://i.imgur.com/8sER8ot.png',
+            'https://i.imgur.com/ZZpPEVV.png',
+            'https://i.imgur.com/8pTQq5n.png',
+            'https://i.imgur.com/hXhG0co.png',
+            'https://i.imgur.com/i9TDvuP.jpg',
+            'https://i.imgur.com/wbQ5SFL.png',
+            'https://i.imgur.com/WB1CWb0.png',
+            'https://i.imgur.com/d1wcZf3.png',
+            'https://i.imgur.com/YQ7yUrF.png',
+            'https://i.imgur.com/yZbpPdj.png',
+            'https://i.imgur.com/mIXAOfN.png',
+            'https://i.imgur.com/U6QbWeo.png',
+            'https://i.imgur.com/9Kief4u.jpg',
+            'https://i.imgur.com/DzgiMgK.jpg',
+            'https://i.imgur.com/rfQF843.png',
+            'https://i.imgur.com/PsGAMYf.png',
+            'https://i.imgur.com/1XzCLvZ.png',
+        ],
         technologies: {
-            frontend: ['javascript', 'vuejs', 'sass','bulma'],
+            frontend: ['html', 'sass', 'javascript', 'vuejs','bulma'],
             backend: ['php', 'laravel','mysql'],
         },
-        contributors: ['ovidiumihaibelciug']
+        contributors: [['Belciug Ovidiu-Mihai', 'ovidiumihaibelciug']],
     },
     // {
     //     name: '40-lines-of-sass'

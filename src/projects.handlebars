@@ -1,7 +1,8 @@
 <section class="projects">
     <div class="section-title center no-line">Projects <div class="standalone-line-center"></div></div>
     <p>Some of my work</p>
-    <div class="projects-container">
+    <div id="number">1/4</div>
+    <div class="container projects-container">
         {{#projects}}
         <div class="row project active">
             <div class="col-md-6 project-info align-center">
@@ -9,6 +10,15 @@
                 <div class="project-description">
                     {{description}}
                 </div>
+                {{#if contributors}}
+                <div class="contributors">
+                    Contributors:
+                    {{#each contributors as |item|}}
+                        {{item.[0]}}&nbsp;
+                    {{/each}}
+                </div>
+
+                {{/if}}
                 <div class="project-technologies">
                     {{#technologies}}
                         <ul class="technologies frontend">
@@ -43,4 +53,5 @@
         </div>
         {{/projects}}
     </div>
+    <small>And many other top secret projects!</small>
 </section>

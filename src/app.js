@@ -3,6 +3,7 @@ import header from './scripts/header';
 import about from './scripts/about';
 import projects from './scripts/projects';
 import {switchTimer} from "./config";
+import {inViewport, randomFromInterval} from "./scripts/utils";
 
 export default () => {
     const sections = document.getElementsByTagName('section');
@@ -54,19 +55,21 @@ export default () => {
     for(let i = 0; i<switches.length;i++) {
         const children = switches[i].children;
         if(children.length > 1) {
+            children[0].classList.add('active');
             setInterval(() => {
-                const activeElementIndex = [...children].findIndex(e => e.classList && e.classList.value.indexOf('active') !== -1);
-                if(activeElementIndex === -1) children[0].classList.add('active');
-                else if(activeElementIndex === children.length-1) {
-                    children[0].classList.add('active');
-                    children[children.length-1].classList.remove('active');
-                } else {
-                    children[activeElementIndex].classList.remove('active');
-                    children[activeElementIndex+1].classList.add('active');
+                if(inViewport(children[0])) {
+                    const activeElementIndex = [...children].findIndex(e => e.classList && e.classList.value.indexOf('active') !== -1);
+                    if(activeElementIndex === -1) children[0].classList.add('active');
+                    else if(activeElementIndex === children.length-1) {
+                        children[0].classList.add('active');
+                        children[children.length-1].classList.remove('active');
+                    } else {
+                        children[activeElementIndex].classList.remove('active');
+                        children[activeElementIndex+1].classList.add('active');
+                    }
                 }
-            }, switchTimer);
+            }, switchTimer + randomFromInterval(0, 500));
         }
-
     }
     scrollHandler();
     header();

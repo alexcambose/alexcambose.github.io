@@ -1,19 +1,40 @@
 section.projects {
+
   z-index: 11;
   height: auto;
   min-height: 100vh;
   transition: all .3s;
-  //background-color: #efefef;
   background-color: #0e0e0e;
   color: #d9d9d9;
   justify-content: flex-start;
-  padding-top: 100px;
+  padding: 100px 0;
+  #number {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 20px;
+  }
   .projects-container {
-    top: 0;
-    bottom: 0;
+    width: 1300px;
     .project {
       margin-top: 25vh;
       margin-bottom: 25vh;
+      .project-info {
+        margin: 0 20px 0 0;
+      }
+      .project-title {
+        font-weight: 200;
+      }
+      .project-description, .contributors {
+        font-weight: 200;
+        letter-spacing: 1px;
+      }
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+        .project-info {
+          margin: 0 0 0 20px;
+        }
+      }
       .project-info {
         transform: translateX(-100px);
         transition: all .3s;
@@ -39,13 +60,12 @@ section.projects {
           border: $projectsImageBorderWidth solid black;
           position: relative;
           box-shadow: 0 28px 84px -55px #777;
-          height: 400px;
-          width: 700px;
-          transition: border .3s;
+          height: 470px;
+          width: 800px;
           overflow: hidden;
 
           .project-image-item {
-            transition: all .5s;
+            transition: .5s;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -53,10 +73,8 @@ section.projects {
             left: 0;
             background-size: cover !important;
             background-position: center !important;
-            transform: scale(.9);
             opacity: 0;
             &.active {
-              transform: scale(1);
               opacity: 1
             }
           }
