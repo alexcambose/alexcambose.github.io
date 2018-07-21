@@ -2,6 +2,7 @@
 import header from './scripts/header';
 import about from './scripts/about';
 import projects from './scripts/projects';
+import life from './scripts/life';
 import {switchTimer} from "./config";
 import {inViewport, randomFromInterval} from "./scripts/utils";
 
@@ -75,4 +76,5 @@ export default () => {
     header();
     about();
     projects();
+    life();
 }

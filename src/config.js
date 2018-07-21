@@ -11,8 +11,8 @@ export const projects = [
     {
         title: 'Portfolio',
         repoName: 'alexcambose.github.io',
-        description: 'Animation library that mimics CSS keyframes when scrolling',
-        images: ['https://i.imgur.com/GjcS3Mo.png'],
+        description: 'My website',
+        images: ['https://i.imgur.com/muEHJg1.png'],
         technologies: {
             frontend: ['html', 'sass', 'javascript', 'webpack', 'handlebars'],
             backend: []
