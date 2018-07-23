@@ -1,0 +1,50 @@
+body {margin: 0;}
+.timeline {
+  width: 100%;
+  position: relative;
+  height: 100px;
+}
+.year-separator {
+  position: absolute;
+  top: 0;
+  height: 80%;
+  background-color: rgba(0,0,0,.5);
+  width: 1px;
+}
+.year-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 20%;
+  width: 10px;
+  transform: rotate(-90deg) translateX(-10px);
+  font-size: 70%;
+}
+.event {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+}
+.event-animation {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  animation: glower 5s infinite;
+}
+
+@keyframes glower {
+  0% {
+    opacity: .5;
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
