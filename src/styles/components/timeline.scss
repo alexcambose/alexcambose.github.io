@@ -4,16 +4,21 @@
   width: 100%;
   margin-bottom: 50px;
   transition: .3s;
-  height: 100px;
+  height: 150px;
   &:hover {
     height: 200px;
-    margin-top: -100px;
+    margin-top: -50px;
+  }
+  a {
+    text-decoration: none;
+    color: #0a75df;
   }
 }
 
 .year-container {
   display: flex;
   flex: 1;
+  flex-wrap: wrap;
   transition: .3s;
   position: relative;
   justify-content: center;
@@ -23,6 +28,7 @@
   }
 
   &:hover {
+    flex-wrap: nowrap;
     flex: 2;
     flex-direction: column;
     .event:not(:nth-of-type(2)){border-top-width: 0 !important;}
@@ -30,6 +36,7 @@
       flex: 1;
       height: 100%;
       width: 100%;
+      min-height: fit-content;
       border-radius: 0;
       border-width: 1px;
       padding: 4px;
@@ -54,7 +61,7 @@
   }
 }
 .event-info {
-  transition: .3s;
+  transition: .3s, font-size .05s;
   opacity: 0;
   overflow: hidden;
   font-size: 1px;
@@ -62,10 +69,12 @@
   text-align: center;
 }
 .event {
+  z-index: 1;
   transition: .3s;
   display: flex;
-  width: 30px;
-  height: 30px;
+  flex-basis: 50%;
+  height: 2.2vw;
+  min-height: fit-content;
   border-radius: 100%;
   border: 2px solid #ffffff;
   cursor: pointer;
@@ -80,7 +89,6 @@
   background-color: black;
   animation: glower 5s infinite;
 }
-
 @keyframes glower {
   0% {
     opacity: .5;

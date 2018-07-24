@@ -1,5 +1,14 @@
 .life {
-
+  .section-title {
+    margin-bottom: 90px;
+  }
+  .alive, .percent {
+    text-align: center;
+    font-size: 1.8em;
+  }
+  .alive-days, .alive-percent {
+    transition: 1s;
+  }
 }
 .life.inverse {
   background-color: $lifeBg;
