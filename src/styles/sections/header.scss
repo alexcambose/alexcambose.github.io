@@ -40,11 +40,31 @@
       animation: letter-spacing 1s forwards;
     }
   }
+  .mouse-scroll-container {
+    position: absolute;
+    bottom: 100px;
+    &:after {
+      content: "Good things might come to those who scroll";
+      position: absolute;
+      font-weight: 200;
+      font-size: .8em;
+      width: 280px;
+      left: -110px;
+      top: -27px;
+      transition: .3s;
+      opacity: 0;
+      transform: translateY(20px);
+      display: inline-block;
+    }
+    &:hover:after {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
   .mouse-icon {
     position: absolute;
     height: 60px;
     width: 60px;
-    bottom: 10px;
     transition: all .1s, stroke .3s;
     cursor: pointer;
 

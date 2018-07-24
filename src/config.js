@@ -35,7 +35,7 @@ export const projects = [
         'Rapoarte Drumuri (Roads Reports) is meant to help drivers who are tired of unexpected events on Romanian roads. With this app anyone can report a closed, broken, in repair or dangerous road so that other drivers are aware of the problem. ',
         images: ['https://i.imgur.com/enOqOI3.png', 'https://i.imgur.com/gvgRCPR.png'],
         technologies: {
-            frontend: ['javascript', 'react', 'react-native'],
+            frontend: ['javascript', 'react', 'react-native', 'flux'],
             backend: ['nodejs', 'jwt', 'mongodb'],
         }
     },

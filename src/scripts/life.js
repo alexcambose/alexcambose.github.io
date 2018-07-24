@@ -12,48 +12,76 @@ export default () => {
     //TIMELINE
     const timeline = document.getElementsByClassName('timeline')[0];
     const startYear = 2000;
-    const endYear = 2018;
+    const endYear = 2019;
 
     const events = [
         {
+            color: 'transparent',
+            date: new Date(2000, 3, 27),
+            description: "I was born",
+            icon: "hands",
+        },
+        {
+            color: '#4D6608',
+            date: new Date(2013, 0, 0),
+            description: "My first website",
+            icon: "window-maximize",
+        },
+        {
+            color: '#3F2A63',
+            date: new Date(2014, 4, 0),
+            description: "Graduated \"Vasile Alecsandri\" Middle school",
+            icon: 'graduation-cap',
+        },
+        {
+            color: '#3F2A63',
+            date: new Date(2018, 4, 0),
+            description: "Graduated \"Garabet Ibraileanu\" High school",
+            icon: 'graduation-cap',
+        },
+        {
             color: 'red',
-            date: new Date(2004, 12, 1),
+            date: new Date(2018, 7, 1),
+            description: "Started Faculty of Computer Science",
+            icon: 'user-graduate',
         },
-        {
-            color: 'green',
-            date: new Date(2014, 12, 1),
-        },
-        {
-            color: 'blue',
-            date: new Date(2003, 12, 1),
-        }
     ].sort((a, b) => a.date > b.date);
 
-    for(let i=0;i<=(endYear - startYear);i++) {
-        const separator = document.createElement('div');
-        separator.classList.add('year-separator');
-        separator.style.left = 100/(endYear - startYear+2) * (i+1)+ '%';
-
-        const yearIndicator = document.createElement('div');
-        yearIndicator.classList.add('year-indicator');
-        yearIndicator.style.left = separator.style.left;
-        yearIndicator.innerHTML = startYear + i;
-
-        timeline.append(separator);
-        timeline.append(yearIndicator);
+    for(let i=startYear;i<=endYear;i++) {
+        const yearContainer = document.createElement('div');
+        yearContainer.classList.add('year-container');
+        const yearLabel = document.createElement('div');
+        yearLabel.classList.add('year-label');
+        yearLabel.innerHTML = i;
+        yearContainer.append(yearLabel);
+        timeline.append(yearContainer);
     }
-    for(let [index, { date, color }] of events.entries()) {
-        const eventElement = document.createElement('div');
-        eventElement.classList.add('event');
-        const year = date.getFullYear();
-        eventElement.style.left = 100/(endYear - startYear+2)*(year-startYear+1) + '%';
-        eventElement.style.width = timeline.querySelectorAll('.year-separator')[1].offsetLeft - timeline.querySelectorAll('.year-separator')[0].offsetLeft +1+ 'px';
-        eventElement.style.backgroundColor = color;
 
-        const eventElementAnimation = document.createElement('div');
-        eventElementAnimation.classList.add('event-animation');
-        eventElementAnimation.style.animationDelay = index/2 + 's';
-        eventElement.append(eventElementAnimation);
-        timeline.append(eventElement);
+
+
+    for(let { date, color, description, icon } of events) {
+        const event = document.createElement('div');
+        event.classList.add('event');
+        event.style.backgroundColor = color;
+        const iconContainer = document.createElement('div');
+        iconContainer.classList.add('event-icon');
+        const iconElement = document.createElement('i');
+        iconElement.className = 'fa fa-'+icon;
+
+        iconContainer.append(iconElement);
+        const info = document.createElement('div');
+        info.classList.add('event-info');
+        info.innerHTML = description;
+        const year = date.getFullYear();
+        const currentNode = year-startYear+3;
+
+        // event.style.marginLeft = -15 + month*3 + 'px';
+
+
+        event.append(info);
+        event.append(iconContainer);
+        timeline.childNodes[currentNode].append(event);
+
+        // event.style.marginLeft = 30 * (timeline.childNodes[currentNode].getElementsByClassName('event').length - 1) + 'px';
     }
 }
