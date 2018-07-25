@@ -3,7 +3,7 @@
   flex-direction: row;
   width: 100%;
   margin-bottom: 50px;
-  transition: .3s;
+  transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   height: 150px;
   &:hover {
     height: 200px;

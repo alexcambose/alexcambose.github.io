@@ -11,7 +11,7 @@ $aboutBg: #282828;
 $skillsBg: #084281;
 $projectsBg: #364141;
 $lifeBg: #9E2222;
-$contactBg: #004036;
+$contactBg: #00402b;
 
 $sizeSm: 480px;
 $sizeMd: 768px;
@@ -28,4 +28,8 @@ $navmenuItemHoverUnderline2: #0094ff;
 $projectsImageBorderWidth: 1px;
 $projectsImageBorderHoverColor: gray;
 
-$technologies: ('html','javascript','laravel','mongodb','mysql','nodejs','parcel','php','react','react-native', 'react-router','redux','sass','typescript','vuejs','webpack', 'jwt', 'handlebars', 'bulma','flux')
+$technologies: ('html','javascript','laravel','mongodb','mysql','nodejs','parcel','php','react','react-native', 'react-router','redux','sass','typescript','vuejs','webpack', 'jwt', 'handlebars', 'bulma','flux');
+
+$formInputOverlayColor: #e8e8e8;
+$formBorderColor: #b6b6b6;
+$formLabelColor: #585858;

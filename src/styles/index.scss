@@ -7,6 +7,8 @@
 @import "components/technologies";
 @import "components/timeline";
 @import "components/button";
+@import "components/box-animation";
+@import "components/form-controls";
 @import "sections/header";
 @import "sections/about";
 @import "sections/loading";
@@ -86,6 +88,10 @@ section {
 .inverse .section-title::after {background-color: $primary !important;}
 .section-subtitle {
   text-align: center;
+  &.bigger {
+    font-size: 140%;
+    font-weight: 300;
+  }
 }
 .text-center {
   text-align: center;
@@ -134,3 +140,12 @@ small {
     transform: translateX(-50%);
 }
 .inverse .standalone-line-center {background-color: $primary;}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

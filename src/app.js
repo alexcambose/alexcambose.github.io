@@ -3,6 +3,7 @@ import header from './scripts/header';
 import about from './scripts/about';
 import projects from './scripts/projects';
 import life from './scripts/life';
+import contact from './scripts/contact';
 import {switchTimer} from "./config";
 import {inViewport, randomFromInterval} from "./scripts/utils";
 
@@ -72,9 +73,16 @@ export default () => {
             }, switchTimer + randomFromInterval(0, 500));
         }
     }
+
+    //FORM ADD CLASS FILLED
+    [...document.querySelectorAll('input')].forEach(element => element.addEventListener('change', e => {
+        if(e.target.value.trim() !== '') e.target.classList.add('filled');
+        else e.target.classList.remove('filled');
+    }));
     scrollHandler();
     header();
     about();
     projects();
     life();
+    contact();
 }

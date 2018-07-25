@@ -94,12 +94,12 @@ export default () => {
             description: "Graduated \"Garabet Ibraileanu\" High school",
             icon: 'graduation-cap',
         },
-        {
-            color: '#895bd6',
-            date: new Date(2018, 0, 1),
-            description: "Started Faculty of Computer Science",
-            icon: 'user-graduate',
-        },
+        // {   Ar fi trebuit...
+        //     color: '#895bd6',
+        //     date: new Date(2018, 0, 1),
+        //     description: "Started Faculty of Computer Science",
+        //     icon: 'user-graduate',
+        // },
         {
             color: '#003f30',
             date: new Date(2018, 0, 1),

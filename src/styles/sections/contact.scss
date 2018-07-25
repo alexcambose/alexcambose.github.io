@@ -1,5 +1,6 @@
 .contact {
-
+  z-index: 1;
+  overflow: hidden;
 }
 .contact.inverse {
   background-color: $contactBg;
