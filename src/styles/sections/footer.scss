@@ -1,27 +1,75 @@
 .footer {
   @include flexCenter;
+  justify-content: space-evenly;
   position: fixed;
   height: $footerHeight;
+  padding: 20px 0 20px 0 !important;
+  border-top: 1px solid #494949;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 0;
   background: url("../images/about_bg.png");
+  .go-up {
+    display: flex;
+    margin-bottom: auto;
+    transition: .3s;
+    cursor: pointer;
+    img {
+      width: 18px;
+      height: 18px;
+    }
+    &:hover {
+      transform: rotate(360deg) scale(1.1);
+    }
+  }
   .emails {
     list-style-type: none;
     padding: 0;
     margin: 0;
     margin-bottom: 10px;
+    font-size: .8em;
+    li{
+      position: relative;
+      padding: 2px 4px;
+      text-align: center;
+      &:after {
+        content: " ";
+        position: absolute;
+        top: auto;
+        z-index: -1;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 0;
+        background-color: #646464;
+        transition: .3s;
+      }
+      &:hover{
+        a {
+          color: #000;
+        }
+        &:after {
+          top: 0;
+          height: 100%;
+        }
+      }
+    }
   }
   .social-links {
     list-style-type: none;
     padding: 0;
     li {
       float: left;
+      margin: 0 10px;
+      img {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
   .handcrafted {
-    margin-top: 10px;
+    margin-top: auto;
     font-size: .9em;
     img {
       height: 16px;

@@ -51,6 +51,7 @@
       padding: 10px;
       height: #{100/$numSections}vh;
       min-height: 100px;
+      width: 100%;
       @include flexCenter;
       &:hover {
         background-color: #d1d1d1;
@@ -61,7 +62,9 @@
             width: 100%;
           }
         }
-        transform: scale(1.1);
+        width: 110%;
+        transform: translateX(-10px);
+        //transform: scale(1.1);
       }
       position: relative;
       &:after {

@@ -1,6 +1,6 @@
 export default () => {
     const contactSection = document.querySelector('section.contact');
-    const animationHoverElement = document.querySelector('.contact form [type="submit"]');
+    const animationHoverElement = document.querySelector('.contact form');
     let isFormSubmitted = false;
     const randomFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
     const colors = ['#000d09', '#001e14', '#002f20',      '#00402b'   , '#005136', '#006242', '#00734d', '#008459', '#009564', '#00a66f'];
@@ -51,6 +51,7 @@ export default () => {
         form.append('lastName', lastName);
         form.append('email', email);
         form.append('message', message);
+        e.target.classList.add('loading');
         fetch('https://formspree.io/alexcambose1@gmail.com', {
             method: 'POST',
             headers: {
@@ -60,6 +61,7 @@ export default () => {
         }).then(res => res.json())
             .then(res => {
                 e.target.classList.add('submitted');
+                e.target.classList.remove('loading');
                 isFormSubmitted = true;
             })
             .catch(err => {

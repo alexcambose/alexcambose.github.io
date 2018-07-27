@@ -15,7 +15,7 @@ form {
   }
   .input-group {
     position: relative;
-    &:not(:first-of-type) {
+    &:not(:first-of-type):not(:last-of-type) {
       border-top: 1px solid $formBorderColor;
     }
     label {
@@ -73,7 +73,7 @@ form {
           opacity: 1;
         }
         &:hover {
-          i {
+          i.fa-check {
             opacity: 1;
           }
           .content {
@@ -86,15 +86,33 @@ form {
       margin-bottom: 7px;
     }
   }
-  &.submitted [type="submit"] {
+  .success-message {
+    display: none;
+    text-align: center;
+    color: #acffa9;
+    font-size: 2em;
+  }
+  &.submitted {
+    .success-message {
+      display: block;
+    }
+    [type="submit"] {
+      display: none !important;
+    }
+  }
+  &.loading [type="submit"] {
     color: green !important;
-    border: 1px solid green;
+    display: flex !important;
     .content {
       opacity: 0 !important;
+      height: 0 !important;
     }
-    i  {
+    i.fa-check {
+      opacity: 0 !important;
+    }
+    i.fa-spin  {
       opacity: 1 !important;
+      height: 100% !important;
     }
-
   }
 }

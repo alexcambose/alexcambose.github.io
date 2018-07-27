@@ -35,6 +35,7 @@ section:not(:first-of-type):not(.projects) {
   padding: 50px #{$navmenuWidth+$navmenuScrollWidth} 50px 0;
 }
 a {
+  transition: .3s;
   color: #93e0ff;
   text-decoration: none;
 }
@@ -49,6 +50,7 @@ section {
 }
 .section-vertical-left {
   position: absolute;
+  z-index: 2;
   left: 0;
   font-weight: 200;
   font-size: .9em;
@@ -144,11 +146,3 @@ small {
 }
 .inverse .standalone-line-center {background-color: $primary;}
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
