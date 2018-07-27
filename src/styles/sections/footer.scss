@@ -1,0 +1,31 @@
+.footer {
+  @include flexCenter;
+  position: fixed;
+  height: $footerHeight;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background: url("../images/about_bg.png");
+  .emails {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .social-links {
+    list-style-type: none;
+    padding: 0;
+    li {
+      float: left;
+    }
+  }
+  .handcrafted {
+    margin-top: 10px;
+    font-size: .9em;
+    img {
+      height: 16px;
+      width: 16px;
+    }
+  }
+}

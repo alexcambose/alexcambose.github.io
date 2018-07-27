@@ -1,6 +1,7 @@
 .contact {
   z-index: 1;
   overflow: hidden;
+  margin-bottom: $footerHeight;
 }
 .contact.inverse {
   background-color: $contactBg;

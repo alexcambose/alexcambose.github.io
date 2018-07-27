@@ -17,6 +17,7 @@
 @import "sections/life";
 @import "sections/contact";
 @import "sections/projects";
+@import "sections/footer";
 
 * {
   box-sizing: border-box;
@@ -42,6 +43,8 @@ section {
   position: relative;
   @include flexCenter;
   flex-direction: column;
+  z-index: 1;
+  background-color: #fff;
   &.inverse {color: #fff;}
 }
 .section-vertical-left {

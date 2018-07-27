@@ -45,6 +45,7 @@ form {
       font-size: 1.2em;
       outline: 0;
       border: 0;
+      resize: vertical;
       &:focus + label, &.filled + label {
         background-color: #fff;
         .content {
@@ -85,27 +86,15 @@ form {
       margin-bottom: 7px;
     }
   }
-  .success {
-    position: absolute;
-    @include flexCenter;
-    font-size: 2em;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #0aad46;
-    color: #fff;
-    z-index: 1;
-  }
-  &.submitted .success {
-    animation: fade-out 1s 3s forwards;
-  }
-}
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
+  &.submitted [type="submit"] {
+    color: green !important;
+    border: 1px solid green;
+    .content {
+      opacity: 0 !important;
+    }
+    i  {
+      opacity: 1 !important;
+    }
+
   }
 }

@@ -26,10 +26,16 @@ export default () => {
         if(window.scrollY > window.innerHeight) {
             // for the projects section
             const projectsSection = [...sections].find(e => e.classList.contains('projects'));
-            if(window.scrollY + window.innerHeight > projectsSection.offsetTop && window.scrollY + window.innerHeight < projectsSection.offsetTop + projectsSection.offsetHeight) {
+            const contactSection = [...sections].find(e => e.classList.contains('contact'));
+            if(window.scrollY + window.innerHeight > projectsSection.offsetTop && window.scrollY + window.innerHeight < projectsSection.offsetTop + projectsSection.offsetHeight) { // for the header
                 navMenu.style.position = 'absolute';
                 navMenu.style.top = window.scrollY - (window.scrollY + window.innerHeight - projectsSection.offsetTop) / 2 + 'px';
-            } else {
+            }
+            if(window.scrollY + window.innerHeight > contactSection.offsetHeight + contactSection.offsetTop) {
+                navMenu.style.position = 'fixed';
+                navMenu.style.top = '-' + (window.scrollY + window.innerHeight - (contactSection.offsetHeight + contactSection.offsetTop)) + 'px';
+            }
+            else {
                 navMenu.style.top = '0px';
                 navMenu.style.position = 'fixed';
             }
@@ -84,5 +90,5 @@ export default () => {
     about();
     projects();
     life();
-    contact();
+    // contact();
 }

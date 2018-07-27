@@ -1,6 +1,7 @@
 export default () => {
     const contactSection = document.querySelector('section.contact');
-    const animationHoverElement = document.querySelector('.contact .section-title');
+    const animationHoverElement = document.querySelector('.contact form [type="submit"]');
+    let isFormSubmitted = false;
     const randomFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
     const colors = ['#000d09', '#001e14', '#002f20',      '#00402b'   , '#005136', '#006242', '#00734d', '#008459', '#009564', '#00a66f'];
     const container = document.getElementsByClassName('box-animation')[0];
@@ -26,6 +27,8 @@ export default () => {
         for(let i =0;i<countW*countH;i++) {
             const interval = setInterval(() => {
                 divs[i].style.backgroundColor = colors[randomFromInterval(0, colors.length-1)];
+                if(isFormSubmitted)
+                    divs[i].style.transform = `translate(${randomFromInterval(-100, 100)}px,${randomFromInterval(-100, 100)}px)`;
             }, randomFromInterval(1000, 1400));
             intervals.push(interval);
         }
@@ -44,10 +47,10 @@ export default () => {
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
         const form = new FormData();
-        form.append('firstName', firstName)
-        form.append('lastName', lastName)
-        form.append('email', email)
-        form.append('message', message)
+        form.append('firstName', firstName);
+        form.append('lastName', lastName);
+        form.append('email', email);
+        form.append('message', message);
         fetch('https://formspree.io/alexcambose1@gmail.com', {
             method: 'POST',
             headers: {
@@ -57,6 +60,7 @@ export default () => {
         }).then(res => res.json())
             .then(res => {
                 e.target.classList.add('submitted');
+                isFormSubmitted = true;
             })
             .catch(err => {
                 alert('Oh f#%k, the was an error!');

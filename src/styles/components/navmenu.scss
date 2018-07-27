@@ -5,10 +5,7 @@
   top: 100vh;
   width: $navmenuWidth;
   bottom: 0;
-  transition: border-left-color .3s;
-  border-left: 1px solid #eeeeee;
   &.inverse {
-    border-left: 1px solid #3b3b3b;
     &:hover {border-left-color: #424242;}
     li {
       transition: all .3s;
