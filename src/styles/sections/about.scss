@@ -15,6 +15,7 @@ section.about {
   }
   .image-container {
     position: relative;
+    @include flexCenter;
     #me {
       position: absolute;
       height: 392px;
@@ -22,19 +23,19 @@ section.about {
       top: 50%;
       transform: scale(1.03) translate(-50%, -50%);
       left: 50%;
-      //animation: fade-out 3s forwards;
+      animation: fade-out 3s forwards;
       @include md {
         display: none;
       }
     }
     #me-image{
-      position: absolute;
+      //position: absolute;
       opacity: 0;
       height: 400px;
       width: 326px;
-      top: 50%;
-      transform: scale(1.02) translate(-50%, -50%);
-      left: 50%;
+      //top: 50%;
+      //transform: scale(1.02) translate(-50%, -50%);
+      //left: 50%;
       border-radius: 2px;
       animation: fade-in 2s forwards;
       @include md {

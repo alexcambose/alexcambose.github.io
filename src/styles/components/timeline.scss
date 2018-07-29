@@ -1,63 +1,85 @@
-.timeline{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-bottom: 50px;
+.timeline-container {
+  overflow: visible;
+
+  overflow-y: hidden;
+  width: 98%;
+  height: 280px;
   transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  height: 150px;
+  @include md{
+    height: 300px;
+  }
   &:hover {
-    height: 200px;
-    margin-top: -50px;
+    @include md{
+      height: 320px;
+      margin-top: -40px;
+    }
+    height: 300px;
+    margin-top: -20px;
   }
-  a {
-    text-decoration: none;
-    color: #0a75df;
-  }
-}
+  .timeline {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    height: calc(100% - 40px);
+    min-width: 1200px;
 
-.year-container {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  transition: .3s;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  &:not(:first-of-type) {
-    border-left: 1px solid rgba(255,255,255,0.05);
-  }
-
-  &:hover {
-    flex-wrap: nowrap;
-    flex: 2;
-    flex-direction: column;
-    .event:not(:nth-of-type(2)){border-top-width: 0 !important;}
-    .event {
-      flex: 1;
-      height: 100%;
-      width: 100%;
-      min-height: fit-content;
-      border-radius: 0;
-      border-width: 1px;
-      padding: 4px;
-      .event-info {
-        font-size: 12px;
-        opacity: 1;
-        width: auto;
-      }
-      .event-icon {
-        display: none;
-      }
+    a {
+      text-decoration: none;
+      color: #0a75df;
     }
   }
-  .year-label {
-    position: absolute;
-    bottom: 0;
-    padding: 20px;
-    transform: rotate(45deg) translate(13px, 58px);
-  }
-  .event-icon {
-    transform: scale(.8);
+
+  .year-container {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    transition: .3s;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    &:not(:first-of-type) {
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    &:hover {
+      flex-wrap: nowrap;
+      flex: 2;
+      flex-direction: column;
+      .event:not(:nth-of-type(2)) {
+        border-top-width: 0 !important;
+      }
+      .event {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        min-height: fit-content;
+        border-radius: 0;
+        border-width: 1px;
+        padding: 4px;
+        .event-info {
+          font-size: 12px;
+          opacity: 1;
+          width: auto;
+          @include md {
+            font-size: 11px;
+          }
+        }
+        .event-icon {
+          display: none;
+        }
+      }
+    }
+    .year-label {
+      position: absolute;
+      bottom: 0;
+      padding: 20px;
+      transform: rotate(45deg) translate(13px, 58px);
+    }
+    .event-icon {
+      transform: scale(.8);
+    }
   }
 }
 .event-info {

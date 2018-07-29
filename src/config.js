@@ -74,3 +74,6 @@ export const projects = [
     //     name: '40-lines-of-sass'
     // } portfolio, rapoarte drumuri, studeo, extension, motus
 ];
+export const otherProjects = [
+    '40-lines-of-Sass','JWT-user-auth-API-bolilerplate','virtual-dom','inttorowords',
+];

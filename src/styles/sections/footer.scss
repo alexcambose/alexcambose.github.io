@@ -47,7 +47,7 @@
       }
       &:hover{
         a {
-          color: #000;
+          color: #ffffff;
         }
         &:after {
           top: 0;
@@ -74,6 +74,20 @@
     img {
       height: 16px;
       width: 16px;
+    }
+    img.fist {
+      height: 12px;
+      width: 12px;
+      margin: 4px 2px 0;
+      display: none;
+    }
+    .image-container:hover {
+      img.rock {
+        display: none;
+      }
+      img.fist {
+        display: inline-block;
+      }
     }
   }
 }

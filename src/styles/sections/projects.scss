@@ -14,13 +14,9 @@ section.projects {
     left: 20px;
   }
   .projects-container {
-    width: 1300px;
     .project {
       margin-top: 25vh;
       margin-bottom: 25vh;
-      .project-info {
-        margin: 0 20px 0 0;
-      }
       .project-title {
         font-weight: 200;
       }
@@ -30,9 +26,6 @@ section.projects {
       }
       &:nth-child(odd) {
         flex-direction: row-reverse;
-        .project-info {
-          margin: 0 0 0 20px;
-        }
       }
       .project-info {
         transform: translateX(-100px);
@@ -41,7 +34,7 @@ section.projects {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        padding-right: 10px;
+        padding: 20px;
         .project-title {
           font-size: 3em;
         }
@@ -60,7 +53,7 @@ section.projects {
           position: relative;
           box-shadow: 0 28px 84px -55px #777;
           height: 470px;
-          width: 800px;
+          //width: 800px;
           overflow: hidden;
 
           .project-image-item {
@@ -145,6 +138,51 @@ section.projects {
           transform: translateX(0px) scale(1);
           opacity: 1;
         }
+      }
+    }
+  }
+  #other-projects {
+    margin-bottom: 100px;
+    .title {
+      text-align: center;
+      font-size: 2em;
+    }
+    .project-box {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #484848;
+      padding: 10px;
+      height: 100%;
+      border-radius: 4px;
+      background-color: transparent;
+      transition: .2s;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+      &:hover {
+        background-color: #151515;
+      }
+    }
+    .project-title {
+      font-size: 1.2em;
+      margin: 4px 0 8px;
+    }
+    .project-description {
+      font-size: .9em;
+      margin-bottom: 4px;
+    }
+    .project-footer {
+      margin-top: auto;
+      display: flex;
+      color: #fff;
+      .project-forks {
+        margin-left: 14px;
+      }
+      .project-watchers {
+        margin-left: 14px;
+      }
+      .project-link {
+        margin-left: auto;
       }
     }
   }

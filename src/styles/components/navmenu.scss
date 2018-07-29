@@ -8,7 +8,7 @@
   &.inverse {
     &:hover {border-left-color: #424242;}
     li {
-      transition: all .3s;
+      transition: .3s;
       background-color: transparent;
       color: #d7d7d7;
       &:hover {
@@ -43,10 +43,10 @@
     padding: 0;
     margin: 0;
     li {
+      transition: .3s;
       cursor: pointer;
       background-color: transparent;
       color: #1d1d1d;
-      display: flex;
       flex-direction: column;
       padding: 10px;
       height: #{100/$numSections}vh;
@@ -118,12 +118,16 @@
   @include md{
     width: #{$navmenuWidth - 20};
     .image svg {
-      width: 30px;
-      height: 30px;
+      width: 30px !important;
+      height: 30px !important;
     }
   }
   @include sm{
     width: #{$navmenuWidth - 30};
     .label {display: none;}
+    .image svg {
+      width: 30px !important;
+      height: 30px !important;
+    }
   }
 }

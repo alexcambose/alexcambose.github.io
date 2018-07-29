@@ -13,14 +13,9 @@ $projectsBg: #364141;
 $lifeBg: #9E2222;
 $contactBg: #00402b;
 
-$sizeSm: 480px;
-$sizeMd: 768px;
-$sizeLg: 992px;
-$sizeXl: 1200px;
-
-
 $navmenuWidth: 100px;
-$navmenuScrollWidth: 20px;
+$navmenuWidthMd: $navmenuWidth - 20;
+$navmenuWidthSm: $navmenuWidth - 30;
 $navmenuItemHoverUnderline1: #FFED65;
 $navmenuItemHoverUnderline2: #0094ff;
 
@@ -35,3 +30,8 @@ $formBorderColor: #b6b6b6;
 $formLabelColor: #585858;
 
 $footerHeight: 300px;
+
+$sizeSm: 480px + $navmenuWidth;
+$sizeMd: 768px + $navmenuWidth;
+$sizeLg: 992px + $navmenuWidth;
+$sizeXl: 1200px + $navmenuWidth;

@@ -1,5 +1,6 @@
 import Motus from 'motus';
 import {inViewport} from "./utils";
+import {otherProjects} from "../config";
 Motus = new Motus();
 export default () => {
     const projectsSection = document.querySelector('section.projects');
@@ -58,4 +59,45 @@ export default () => {
     // const document.querySelector('.projects-repeating');
     window.addEventListener('scroll', scrollHandler);
     scrollHandler();
+
+    //OTHER PROJECTS
+    const otherProjectsContainer = document.getElementById('other-projects');
+    const getRepoInfo = async repoName => {
+        let res = await fetch(`https://api.github.com/repos/alexcambose/${repoName}`);
+        res = await res.json();
+        return res;
+    };
+    for(let project of otherProjects) {
+        getRepoInfo(project).then(info => {
+            const html = `
+                <div class="w-md-${12/otherProjects.length}">
+                <div class="project-box">
+                <div class="project-title">${info.name}</div>
+                    <div class="project-description">${info.description}</div>
+                    <div class="project-footer">
+                        <span class="project-stars">
+                        <a target="_blank" href="https://github.com/alexcambose/${project}/stargazers">
+     <i class="fa fa-star"></i> ${info.stargazers_count}                   
+</a>
+</span>
+                        <span class="project-forks">
+                        <a target="_blank" href="https://github.com/alexcambose/${project}/network">
+     <i class="fa fa-code-branch"></i> ${info.forks_count}                   
+</a>
+</span>
+                        <span class="project-watchers">
+                        <a target="_blank" href="https://github.com/alexcambose/${project}/watchers">
+     <i class="fa fa-eye"></i> ${info.watchers_count}                   
+</a>
+</span>
+                        <div class="project-link">
+<a target="_blank" href="${info.html_url}"><i class="fab fa-github"></i></a></div>
+                    </div>
+</div>
+                    
+                </div>
+            `;
+            otherProjectsContainer.innerHTML += html;
+        });
+    }
 }

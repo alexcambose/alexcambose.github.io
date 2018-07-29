@@ -5,7 +5,7 @@
     <div class="container projects-container">
         {{#projects}}
         <div class="row project active">
-            <div class="col-md-6 project-info align-center">
+            <div class="w-md-5 project-info align-center">
                 <div class="project-title">{{title}}</div>
                 <div class="project-description">
                     {{description}}
@@ -35,7 +35,7 @@
                     {{/technologies}}
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="w-md-7">
                 <div class="project-image align-center">
                     <div class="project-image-container">
                         <div class="switcher">
@@ -52,6 +52,9 @@
             </div>
         </div>
         {{/projects}}
+        <h1>Other projects</h1>
+        <div class="row" id="other-projects">
+        </div>
     </div>
     <small>And many other top secret projects!</small>
 </section>

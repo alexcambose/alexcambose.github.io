@@ -32,7 +32,13 @@ body, html {
   overflow-x: hidden;
 }
 section:not(:first-of-type):not(.projects) {
-  padding: 50px #{$navmenuWidth+$navmenuScrollWidth} 50px 0;
+  padding: 50px #{$navmenuWidth} 50px 0;
+  @include md {
+    padding-right: $navmenuWidthMd;
+  }
+  @include sm {
+    padding-right: $navmenuWidthSm;
+  }
 }
 a {
   transition: .3s;
@@ -41,6 +47,7 @@ a {
 }
 section {
   height: 100vh;
+  min-height: fit-content;
   position: relative;
   @include flexCenter;
   flex-direction: column;
@@ -126,6 +133,12 @@ small {
   background-color: #9a9a9a;
   &.full {
     width: 100%;
+  }
+  @include md {
+    width: calc(100% - #{$navmenuWidthMd});
+  }
+  @include sm {
+    width: calc(100% - #{$navmenuWidthSm});
   }
 }
 .vertical-line {

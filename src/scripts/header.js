@@ -50,9 +50,8 @@ export default () => {
         svgContainer.setAttribute('width', headerConfig.shapeSize);
         svgContainer.style.transform = `rotate(${rotation}deg)`; // set random rotation from the beginning
         svgContainer.style.position = 'absolute';
-        svgContainer.style.top = posY;
-        svgContainer.style.left = posX;
-
+        svgContainer.style.top = posY + 'px';
+        svgContainer.style.left = posX + 'px';
         const svgElement = document.createElementNS('http://www.w3.org/2000/svg', elementType.type); // create the shape
         Object.keys(elementType)
             .filter(e => e !== 'type')

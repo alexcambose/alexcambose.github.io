@@ -1,25 +1,5 @@
 <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792">
-	<style>
-		path{stroke:#000;stroke-width:1;stroke-miterlimit:10}
-		.st1{fill:#050303}
-		.st2{fill:#002e44}
-		.st4{font-family:&apos;SansSerifFLF-Italic&apos;}
-		.st5{font-size:18.658px}
-		.st6{letter-spacing:2}
-		@keyframes dash {
-		from {
-		stroke-dashoffset: 2000;
-		}
-			to {
-			stroke-dashoffset: 0;
-			}
-		}
-		path, text {
-		fill: none !important;
-		stroke-dasharray: 1100;
-		animation: dash 10s linear;
-		}
-	</style>
+
 	<g id="XMLID_3_">
 		<path id="XMLID_4_" class="st0" d="M109.5 491.8c0-.2.2-.4.4-.4 3-.1 3.5-1.9 3.5-3.5 0-1.3-.2-2.7-.4-4-.2-1.3-.4-2.6-.4-4 0-4.4 2.8-5.2 6.9-5.2h1v2.6h-.9c-2.8 0-3.7 1.5-3.7 4.1 0 1.1.1 2.2.3 3.4.2 1.2.3 2.3.3 3.6 0 3.1-1.3 3.6-3.4 4.1v.1c2.1.5 3.5 3.2 3.4 6.2 0 1.3-.1 2.5-.3 3.6-.2 1.2-.3 2.3-.3 3.5 0 2.3 1.8 4.1 4.1 4.1h.5v2.6h-1c-3.9 0-6.9-2.7-6.9-7.5 0-1.3.2-2.6.4-3.9.2-1.3.4-2.6.4-3.9 0-1.4-.4-3.4-3.5-3.5-.2 0-.4-.2-.4-.4v-1.6z"/>
 	</g>

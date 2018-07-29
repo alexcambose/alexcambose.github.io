@@ -11,6 +11,7 @@ import {inViewport, randomFromInterval} from "./scripts/utils";
 export default () => {
     const sections = document.getElementsByTagName('section');
     const navMenu = document.getElementsByClassName('navmenu')[0];
+    const menuElements = document.querySelectorAll('.navmenu li');
     const scrollHandler = () => {
         if(window.scrollY > window.innerHeight/2) {
             navMenu.classList.add('inverse');
@@ -46,18 +47,25 @@ export default () => {
             navMenu.style.top = '100vh';
         }
 
-        const menuElements = document.querySelectorAll('.navmenu li');
         let i;
-        for (i=2;i<=sections.length-1 && sections[i].offsetTop < window.scrollY + window.innerHeight/2;i++);
+        for (let i=2;i<=sections.length-1 && sections[i].offsetTop < window.scrollY + window.innerHeight/2;i++);
         for(let j = 0;j<menuElements.length;j++) {
 
             if(j === i-2) menuElements[j].classList.add('active');
             else menuElements[j].classList.remove('active');
         }
-
     };
-    document.addEventListener('scroll', scrollHandler);
 
+    document.addEventListener('scroll', scrollHandler);
+    for(let i = 0;i<menuElements.length;i++) {
+        menuElements[i].addEventListener('click', e => {
+            window.scrollTo({
+                "behavior": "smooth",
+                "top": document.getElementsByTagName('section')[i+1].offsetTop
+            });
+            console.log(document.getElementsByTagName('section')[i+1].offsetTop);
+        });
+    }
 
     //SWITCHER
     const switches = document.getElementsByClassName('switcher');
@@ -78,6 +86,8 @@ export default () => {
                     }
                 }
             }, switchTimer + randomFromInterval(0, 500));
+        } else {
+            children[0].classList.add('active');
         }
     }
 

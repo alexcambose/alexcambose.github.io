@@ -5,10 +5,18 @@
   .alive, .percent {
     text-align: center;
     font-size: 1.8em;
+    @include md {
+      font-size: 1.4em;
+    }
+    @include sm {
+      font-size: 1.2em;
+    }
+
   }
   .alive-days, .alive-percent {
     transition: 1s;
   }
+
 }
 .life.inverse {
   background-color: $lifeBg;

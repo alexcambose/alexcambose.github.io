@@ -7,7 +7,7 @@
     content: "";
     background: url("../images/dust_scratches.png");
 
-    opacity: 0.5;
+    opacity: 0.8;
     top: 0;
     left: 0;
     bottom: 0;
@@ -76,7 +76,7 @@
 
 .header.inverse {
   background-color: #444;
-  &::after { opacity: 1};
+  &::after { opacity: 0};
   .title * {
     color: white;
   }

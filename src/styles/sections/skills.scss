@@ -5,15 +5,24 @@ section.skills {
     margin: 0 10px;
     width: 100%;
     padding: 30px 60px;
+    .row {
+      @include flexCenter;
+      flex-wrap: wrap;
+    }
     .skillset {
       padding: 12px;
       display: flex;
       height: 250px;
+      min-width: 300px;
       flex-direction: column;
       background-color: darken($skillsBg, 2);
       transition: background-color .3s;
       &:hover {
         background-color: darken($skillsBg, 3);
+      }
+      @include lg {
+        font-size: 90%;
+        min-width: 280px;
       }
     }
     .skills-title {
