@@ -18,6 +18,7 @@
   .title {
     text-align: center;
     transition: all .3s;
+    z-index: 2;
     .hello {
       font-size: 1.4em;
       opacity: .9;
@@ -35,6 +36,9 @@
       -webkit-background-clip: text;
       animation: title-shine .6s linear 2.8s forwards;
       color: #000;
+      @include sm {
+        font-size: 3em;
+      }
     }
     .short-info {
       animation: letter-spacing 1s forwards;
@@ -42,7 +46,7 @@
   }
   .mouse-scroll-container {
     position: absolute;
-    bottom: 100px;
+    bottom: 7vh;
     &:after {
       content: "Good things might come to those who scroll";
       position: absolute;
@@ -62,7 +66,6 @@
     }
   }
   .mouse-icon {
-    position: absolute;
     height: 60px;
     width: 60px;
     transition: all .1s, stroke .3s;

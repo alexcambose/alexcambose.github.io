@@ -12,7 +12,6 @@
       background-color: transparent;
       color: #d7d7d7;
       &:hover {
-        background-color: #616161;
         color: #e4e4e4;
       }
       &:after {
@@ -54,7 +53,6 @@
       width: 100%;
       @include flexCenter;
       &:hover {
-        background-color: #d1d1d1;
         color: #616161;
         .label {
           &:after, &:before {
@@ -80,11 +78,13 @@
       &.active {
         &:after {
           transform: translateY(-50%);
-          height: 30px;
+          height: #{100/$numSections/4}vh;
           opacity: 1;
+          z-index: 2;
         }
       }
       .image {
+        z-index: 2;
         transition: all .1s;
         svg {
           width: 40px;
@@ -95,6 +95,7 @@
       .image.inverse svg * {fill:transparent;}
       .image.change-stroke svg * {stroke:black;}
       .label {
+        z-index: 2;
         position: relative;
         margin-top: 10px;
         &:after, &:before {
@@ -115,6 +116,33 @@
       }
     }
   }
+  //.overlay {
+  //  position: absolute;
+  //  cursor: pointer;
+  //  top: 0;
+  //  height: 20vh;
+  //  background-color: #000;
+  //  opacity: .1;
+  //  left: 0;
+  //  right: 0;
+  //  transition: .3s;
+  //  z-index: 1;
+  //  &:hover {
+  //    width: 110%;
+  //    transform: translateX(-10px);
+  //    ul > li.active {
+  //      color: #e4e4e4;
+  //      .label {
+  //        &:after, &:before {
+  //          left: 0;
+  //          width: 100%;
+  //        }
+  //      }
+  //      width: 110%;
+  //      transform: translateX(-10px);
+  //    }
+  //  }
+  //}
   @include md{
     width: #{$navmenuWidth - 20};
     .image svg {

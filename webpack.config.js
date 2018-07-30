@@ -33,7 +33,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192
+                            limit: 3600000
                         }
                     }
                 ]
@@ -45,7 +45,13 @@ module.exports = {
         port: 8080
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            title: 'Alexandru Cambose',
+            template: './src/_index.template.html',
+            mobile: true,
+            googleAnalyticsId: 'UA-123086279-1',
+            favicon: './favicon.ico'
+        })
     ],
     profile: true,
 };

@@ -59,6 +59,7 @@ export default () => {
         svgElement.style.stroke = headerConfig.shapesColorLight[randomFromInterval(0, headerConfig.shapesColorLight.length - 1)];
         svgElement.style.strokeWidth = headerConfig.shapeStrokeWidth;
         svgElement.style.fill = 'transparent';
+        svgElement.style.transition = 'fill .1s';
 
         if (elementType.type !== 'path') {
             svgContainer.addEventListener('mouseover', () => svgElement.style.fill = svgElement.style.stroke);

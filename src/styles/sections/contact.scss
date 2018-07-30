@@ -1,8 +1,8 @@
-.contact {
+section.contact {
   z-index: 1;
   overflow: hidden;
   margin-bottom: $footerHeight;
 }
-.contact.inverse {
+section.contact.inverse {
   background-color: $contactBg;
 }

@@ -20,8 +20,6 @@ $navmenuItemHoverUnderline1: #FFED65;
 $navmenuItemHoverUnderline2: #0094ff;
 
 
-$projectsImageBorderWidth: 1px;
-$projectsImageBorderHoverColor: gray;
 
 $technologies: ('html','javascript','laravel','mongodb','mysql','nodejs','parcel','php','react','react-native', 'react-router','redux','sass','typescript','vuejs','webpack', 'jwt', 'handlebars', 'bulma','flux');
 
@@ -29,7 +27,7 @@ $formInputOverlayColor: #e8e8e8;
 $formBorderColor: #b6b6b6;
 $formLabelColor: #585858;
 
-$footerHeight: 300px;
+$footerHeight: 270px;
 
 $sizeSm: 480px + $navmenuWidth;
 $sizeMd: 768px + $navmenuWidth;

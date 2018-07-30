@@ -12,6 +12,7 @@ export default () => {
     const sections = document.getElementsByTagName('section');
     const navMenu = document.getElementsByClassName('navmenu')[0];
     const menuElements = document.querySelectorAll('.navmenu li');
+
     const scrollHandler = () => {
         if(window.scrollY > window.innerHeight/2) {
             navMenu.classList.add('inverse');
@@ -48,10 +49,13 @@ export default () => {
         }
 
         let i;
-        for (let i=2;i<=sections.length-1 && sections[i].offsetTop < window.scrollY + window.innerHeight/2;i++);
+        for (i=2;i<=sections.length-1 && sections[i].offsetTop < window.scrollY + window.innerHeight/2;i++);
         for(let j = 0;j<menuElements.length;j++) {
-
-            if(j === i-2) menuElements[j].classList.add('active');
+            console.log();
+            if(j === i-2) {
+                menuElements[j].classList.add('active');
+                document.querySelector('.navmenu .overlay').style.top = menuElements[j].offsetTop + 'px';
+            }
             else menuElements[j].classList.remove('active');
         }
     };

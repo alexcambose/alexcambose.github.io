@@ -6,7 +6,7 @@ section.projects {
   background-color: #0e0e0e;
   color: #d9d9d9;
   justify-content: flex-start;
-  padding: 100px 0;
+  padding: 50px 0;
   #number {
     display: none;
     position: fixed;
@@ -49,11 +49,10 @@ section.projects {
         .project-image-container {
           background-position: center;
           background-size: cover;
-          border: $projectsImageBorderWidth solid black;
           position: relative;
           box-shadow: 0 28px 84px -55px #777;
           height: 470px;
-          //width: 800px;
+          transition: border .3s;
           overflow: hidden;
 
           .project-image-item {
@@ -81,49 +80,25 @@ section.projects {
             background-color: rgba(0, 0, 0, .1);
             opacity: 0;
             overflow: hidden;
-            transition: all .3s;
+            transition: .3s ease-in-out;
             display: flex;
             justify-content: center;
             align-content: center;
             border: 1px solid transparent;
-          }
-          &:after, &:before {
-            content: " ";
-            z-index: -1;
-            position: absolute;
-            transition: all .3s;
-            top: -1px;
-            right: -1px;
-            left: -1px;
-            bottom:-1px;
-          }
-          &:after {
-            top: 100%;
-            right: 100%;
-            border-bottom: $projectsImageBorderWidth solid $projectsImageBorderHoverColor;
-            border-left: $projectsImageBorderWidth solid $projectsImageBorderHoverColor;
-          }
-          &:before {
-            left: 100%;
-            bottom: 100%;
-            border-top: $projectsImageBorderWidth solid $projectsImageBorderHoverColor;
-            border-right: $projectsImageBorderWidth solid $projectsImageBorderHoverColor;
+            .button {
+              transform: scale(3);
+              transition: .3s ease-in-out;
+            }
           }
           &:hover{
-            border-color: white;
             .project-image-overlay {
               opacity: 1;
               transform: scale(1);
               background-color: rgba(0, 0, 0, .5);
-              border: 1px solid gray;
-            }
-            &:after {
-              right: -1px;
-              top: -1px;
-            }
-            &:before {
-              left: -1px;
-              bottom: -1px;
+              border: 1px solid #f2f2f2;
+              .button {
+                transform: scale(1);
+              }
             }
           }
         }
@@ -142,7 +117,7 @@ section.projects {
     }
   }
   #other-projects {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     .title {
       text-align: center;
       font-size: 2em;
