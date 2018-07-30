@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=development webpack",
     "watch": "cross-env NODE_ENV=development webpack --watch",
-    "prod": "cross-env NODE_ENV=production webpack --watch",
+    "prod": "cross-env NODE_ENV=production webpack",
     "hot": "cross-env webpack-dev-server --open"
   },
   "repository": {

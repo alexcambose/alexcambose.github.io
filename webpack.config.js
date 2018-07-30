@@ -8,7 +8,7 @@ module.exports = {
     mode: process.env.NODE_ENV || 'production',
     devtool: "eval",
     output: {
-        path: path.resolve(__dirname, './dist/'),
+        path: path.resolve(__dirname, './'), //should be dist but github user pages must be built from the master branch.
         filename: `[name].bundle.js`,
     },
     module: {
@@ -47,6 +47,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Alexandru Cambose',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                conservativeCollapse: true
+            },
             template: './src/_index.template.html',
             mobile: true,
             googleAnalyticsId: 'UA-123086279-1',
