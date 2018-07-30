@@ -55,7 +55,10 @@ module.exports = {
             template: './src/_index.template.html',
             mobile: true,
             googleAnalyticsId: 'UA-123086279-1',
-            favicon: './favicon.ico'
+            favicon: './favicon.png',
+            meta: {
+                description: 'Alexandru Cambose is a passionate Web Developer and Designer based in Iași, Romania. His specialty is full website design and development from start to finish. Fluent in Html, CSS, Javascript, Php, Nodejs and Laravel.',
+            }
         })
     ],
     profile: true,
