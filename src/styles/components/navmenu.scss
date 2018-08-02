@@ -47,9 +47,8 @@
       background-color: transparent;
       color: #1d1d1d;
       flex-direction: column;
-      padding: 10px;
+      padding: 2px;
       height: #{100/$numSections}vh;
-      min-height: 100px;
       width: 100%;
       @include flexCenter;
       &:hover {
@@ -114,35 +113,19 @@
           transition: all 180ms ease-in-out 100ms;
         }
       }
+      @include smallHeight {
+        .label {
+          margin-top: 2px;
+          font-size: 80%;
+        }
+        .image svg { // wired but it works :))
+          width: 5vh;
+          height: 5vh;
+        }
+      }
     }
   }
-  //.overlay {
-  //  position: absolute;
-  //  cursor: pointer;
-  //  top: 0;
-  //  height: 20vh;
-  //  background-color: #000;
-  //  opacity: .1;
-  //  left: 0;
-  //  right: 0;
-  //  transition: .3s;
-  //  z-index: 1;
-  //  &:hover {
-  //    width: 110%;
-  //    transform: translateX(-10px);
-  //    ul > li.active {
-  //      color: #e4e4e4;
-  //      .label {
-  //        &:after, &:before {
-  //          left: 0;
-  //          width: 100%;
-  //        }
-  //      }
-  //      width: 110%;
-  //      transform: translateX(-10px);
-  //    }
-  //  }
-  //}
+
   @include md{
     width: #{$navmenuWidth - 20};
     .image svg {

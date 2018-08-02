@@ -9,12 +9,12 @@
     height: 300px;
   }
   &:hover {
-    @include md{
-      height: 320px;
-      margin-top: -40px;
-    }
-    height: 300px;
-    margin-top: -20px;
+    //@include md{
+    //  height: 360px;
+    //  margin-top: -40px;
+    //}
+    height: 410px;
+    margin-top: -110px;
   }
   .timeline {
     display: flex;
