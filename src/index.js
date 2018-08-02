@@ -10,6 +10,3 @@ divElement.innerHTML = indexTemplate({
 document.body.appendChild(divElement);
 
 app();
-
-// fancy console log
-console.log('%c Alex' + '%candru' + '%c Cambose', 'background: #222; color: #bada55', 'color: red', 'color: black');

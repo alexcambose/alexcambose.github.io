@@ -100,6 +100,29 @@ export default () => {
         if(e.target.value.trim() !== '') e.target.classList.add('filled');
         else e.target.classList.remove('filled');
     }));
+
+    //console fun
+    console.log('%c %c Hi, I see that you are interested in how things work around here... I\'m not going to tell you so you\'ll just have to figure it out by yourself. Meanwhile...\n Type: %crq()%c for a random quote', 'background-color: #A5A5A5; padding: 67px 192px; background-position: center;background-repeat: no-repeat; background-size: 384px 135px; background-image: url(\'https://i.imgur.com/bpiXX2M.png\')', 'padding: 10px 4px; background-color: #A5A5A5; color: #222', 'padding: 10px 0; background-color: #A5A5A5; color: #222; font-weight: bold', 'padding: 10px 10px 10px 4px; background-color: #A5A5A5; color: #222');
+    const quotes = [
+        ['Stay Hungry. Stay Foolish.', 'Steve Jobs'],
+        ['Good Artists Copy, Great Artists Steal.', 'Pablo Picasso'],
+        ['Argue with idiots, and you become an idiot.', 'Paul Graham'],
+        ['Be yourself; everyone else is already taken.', 'Oscar Wilde'],
+        ['Simplicity is the ultimate sophistication.', 'Leonardo Da Vinci'],
+        ['Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.', 'Albert Einstein'],
+        ['If you tell the truth, you don\'t have to remember anything.', 'Mark Twain'],
+        ['Live as if you were to die tomorrow. Learn as if you were to live forever.', 'Mahatma Gandhi'],
+        ['It is better to be hated for what you are than to be loved for what you are not.', 'André Gide'],
+        ['There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.', 'Albert Einstein'],
+        ['I have not failed. I\'ve just found 10,000 ways that won\'t work.', 'Thomas A. Edison'],
+        ['That which does not kill us makes us stronger.', 'Friedrich Nietzsche'],
+        ['For every minute you are angry you lose sixty seconds of happiness.', 'Ralph Waldo Emerson'],
+    ];
+    window.rq = () => {
+
+        const randomq = quotes[randomFromInterval(0, quotes.length - 1)];
+        console.log('%c '+randomq[0] + '%c ' + randomq[1], 'font-size: 16px; padding: 10px; background-color: #727272; color: #fff;text-shadow: 5px 5px 5px rgba(0,0,0,.3);', 'font-size: 12px; padding: 14px 12px 11px 4px; background-color: gray; color: #fff');
+    };
     scrollHandler();
     header();
     about();
