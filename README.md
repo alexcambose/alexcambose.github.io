@@ -10,7 +10,7 @@ My website
 
 `npm run build` - builds the project in develoment mode
 
-`npm run watch` - watches for file changes and builds the project in develoment mode
+`npm run watch` - watches && builds the project in develoment mode
 
 `npm run prod` - builds the project in production mode
 
