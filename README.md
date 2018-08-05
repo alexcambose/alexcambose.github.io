@@ -16,4 +16,4 @@ My website
 
 ---
 
-#### :small_blue_diamond::small_blue_diamond::small_blue_diamond: Tell me anything :small_blue_diamond::small_blue_diamond::small_blue_diamond::small_blue_diamond:
+#### :small_blue_diamond: :small_blue_diamond: :small_blue_diamond: Tell me anything :small_blue_diamond: :small_blue_diamond: :small_blue_diamond:
