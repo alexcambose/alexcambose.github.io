@@ -87,7 +87,7 @@ export default () => {
 </span>
                         <span class="project-watchers">
                         <a target="_blank" href="https://github.com/alexcambose/${project}/watchers">
-     <i class="fa fa-eye"></i> ${info.watchers_count}                   
+     <i class="fa fa-eye"></i> ${info.subscribers_count}                   
 </a>
 </span>
                         <div class="project-link">
