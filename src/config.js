@@ -31,12 +31,21 @@ export const projects = [
     {
         title: 'Rapoarte Drumuri',
         repoName: 'Rapoarte-Drumuri',
-        description: '\n' +
-        'Rapoarte Drumuri (Roads Reports) is meant to help drivers who are tired of unexpected events on Romanian roads. With this app anyone can report a closed, broken, in repair or dangerous road so that other drivers are aware of the problem. ',
+        description: 'Rapoarte Drumuri (Roads Reports) is meant to help drivers who are tired of unexpected events on Romanian roads. With this app anyone can report a closed, broken, in repair or dangerous road so that other drivers are aware of the problem. ',
         images: ['https://i.imgur.com/enOqOI3.png', 'https://i.imgur.com/gvgRCPR.png'],
         technologies: {
             frontend: ['javascript', 'react', 'react-native', 'flux'],
             backend: ['nodejs', 'jwt', 'mongodb'],
+        }
+    },
+    {
+        title: 'Zound',
+        repoName: 'zound',
+        description: 'Listen to your choice! An app that lets the guests of a party choose wich music to play.',
+        images: ['https://i.imgur.com/hFkVCzY.png', 'https://i.imgur.com/OdQZ5o3.png', 'https://i.imgur.com/lNn5eFM.png'],
+        technologies: {
+            frontend: ['html', 'meteor', 'react', 'react-router', 'sass', 'material-ui'],
+            backend: ['meteor', 'mongodb'],
         }
     },
     {
@@ -70,9 +79,7 @@ export const projects = [
         },
         contributors: [['Belciug Ovidiu-Mihai', 'ovidiumihaibelciug']],
     },
-    // {
-    //     name: '40-lines-of-sass'
-    // } portfolio, rapoarte drumuri, studeo, extension, motus
+
 ];
 export const otherProjects = [
     '40-lines-of-Sass','JWT-user-auth-API-bolilerplate','virtual-dom','inttorowords',

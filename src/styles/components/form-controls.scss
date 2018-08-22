@@ -2,6 +2,12 @@ form {
   position: relative;
   margin-top: 100px;
   width: 600px;
+  @include md{
+    width: 90%;
+  }
+  @include sm{
+    width: 95%;
+  }
   .inline-groups {
     display: flex;
     .input-group {
