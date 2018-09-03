@@ -65,6 +65,12 @@ section {
   font-weight: 200;
   font-size: .9em;
   transform: rotate(-90deg);
+  @include xl{
+    display: none;
+  }
+  @include lg{
+    display: none;
+  }
   @include md{
     display: none;
   }

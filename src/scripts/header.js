@@ -5,6 +5,8 @@ export default () => {
     const backgroundContainer = document.querySelector(headerConfig.shapesContainer);
     const title = document.querySelector('.header .title');
 
+    let elements = []; // contains an object with the shapes
+
     const wh = window.innerHeight;
     const ww = window.innerWidth;
 
@@ -29,18 +31,21 @@ export default () => {
         }
     ];
 
-    let elements = [];
-    for (let i = 1; i <= headerConfig.shapesCount; i++) {
+    const createShape = (x = null, y = null, avoidTitle = true) => {
         const elementType = types[randomFromInterval(0, types.length - 1)];
-        let posX = randomFromInterval(10, ww);
-        let posY = randomFromInterval(10, wh);
 
-        const titleRect = title.getBoundingClientRect();
-        while (posX > titleRect.x - 100 && posX < titleRect.x + titleRect.width + 100
+        let posX = (!x ? randomFromInterval(10, ww) : x);
+        let posY = (!y ? randomFromInterval(10, wh) : y);
+
+        if(avoidTitle) {
+            const titleRect = title.getBoundingClientRect();
+            while (posX > titleRect.x - 100 && posX < titleRect.x + titleRect.width + 100
             && posY > titleRect.y - 100 && posY < titleRect.y + titleRect.height + 100) {
-            posX = randomFromInterval(10, ww - 100);
-            posY = randomFromInterval(10, wh - 100);
+                posX = randomFromInterval(10, ww - 100);
+                posY = randomFromInterval(10, wh - 100);
+            }
         }
+
 
         const rotation = randomFromInterval(0, 360);
 
@@ -75,16 +80,20 @@ export default () => {
             posY,
             divider: randomFromInterval(9, 10),
         });
+    };
+
+    for (let i = 1; i <= headerConfig.shapesCount; i++) {
+        createShape();
     }
-
+    let mouseX = null;
+    let mouseY = null;
     const calcShapesPosition = e => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
+        if(e.clientX) mouseX = e.clientX;
+        if(e.clientY) mouseY = e.clientY;
         // console.log('mx', mouseX, 'my', mouseY, elements[0].posX, elements[0].posY);
-
         for (let i = 0; i < elements.length; i++) {
-            const {elementContainer, divider, rotation, posX, posY} = elements[i];
-
+            let {elementContainer, divider, rotation, posX, posY} = elements[i];
+            rotation += (rotation % 2 === 0 ? -window.scrollY : window.scrollY) / 4;
             elementContainer.style.transform = `rotate(${rotation}deg) translate(${(mouseX - ww / 2) / divider}px, ${(mouseY - wh / 2) / divider}px)`;
             const distance = Math.sqrt(parseInt(elementContainer.getBoundingClientRect().x + headerConfig.shapeSize/2 -mouseX)**2 + (elementContainer.getBoundingClientRect().y + headerConfig.shapeSize/2-mouseY)**2);
             // if(distance > 200)
@@ -92,8 +101,14 @@ export default () => {
         }
     };
     document.addEventListener('mousemove', calcShapesPosition);
+    document.addEventListener('scroll', calcShapesPosition);
+    document.addEventListener('click', e => {
+        createShape(event.clientX, event.clientY+window.scrollY, false);
+        calcShapesPosition(e);
+        check();
+    });
 
-    //Click event for mouse icon
+    // Click event for mouse icon
     const mouseIcon = document.getElementById('mouse-icon');
     mouseIcon.addEventListener('click', () => {
         window.scrollTo({
@@ -106,7 +121,6 @@ export default () => {
     let isDarkened = false;
     const check = () => {
         const header = document.querySelector('.header');
-
         if(window.scrollY > window.innerHeight/2) {
             if (!isDarkened) {
                 header.classList.add('inverse');
@@ -116,11 +130,11 @@ export default () => {
                 isDarkened = true;
             }
         } else if(isDarkened) {
-                isDarkened = false;
-                elements.forEach(({element}) => {
-                    element.style.stroke = headerConfig.shapesColorLight[randomFromInterval(0, headerConfig.shapesColorLight.length - 1)]
-                });
-                header.classList.remove('inverse');
+            isDarkened = false;
+            elements.forEach(({element}) => {
+                element.style.stroke = headerConfig.shapesColorLight[randomFromInterval(0, headerConfig.shapesColorLight.length - 1)]
+            });
+            header.classList.remove('inverse');
         }
     };
     check();

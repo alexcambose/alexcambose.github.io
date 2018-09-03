@@ -126,15 +126,15 @@
     }
   }
 
-  @include md{
+  @include lg{
     width: #{$navmenuWidth - 20};
     .image svg {
       width: 30px !important;
       height: 30px !important;
     }
   }
-  @include sm{
-    width: #{$navmenuWidth - 30};
+  @include md{
+    width: #{$navmenuWidth - 50};
     .label {display: none;}
     .image svg {
       width: 30px !important;
