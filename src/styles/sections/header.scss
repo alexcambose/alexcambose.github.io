@@ -15,6 +15,17 @@
     position: absolute;
     z-index: -1;
   }
+  .instructions {
+    position: absolute;
+    top: 10px;
+    font-weight: 100;
+    font-size: .6em;
+    transition: .1s;
+    cursor: default;
+    &:hover {
+      font-size: .7em;
+    }
+  }
   .title {
     text-align: center;
     transition: all .3s;
