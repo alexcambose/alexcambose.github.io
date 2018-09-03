@@ -38,5 +38,21 @@ $padding: 6px 4px
         flex-basis: $i / $grid-rows * 100%
       .row > .#{$prefix}-offset-#{$sizeLabel}-#{$i}
         margin-left: $i / $grid-rows * 100%
-    .container
-      width: if(index($sizes,$sizeLabel $value) > 2, $value, 99%)
+
+
+
+
+
+@media only screen and (min-width: 0px)
+  .container
+    width: 99%
+
+
+@media only screen and (min-width: $sizeMd+$navmenuWidth+10px)
+  .container
+    width: $sizeMd
+
+
+@media only screen and (min-width: $sizeXl+$navmenuWidth)
+  .container
+    width: $sizeXl + 10px
