@@ -127,7 +127,7 @@ export default () => {
     header();
     about();
     projects();
-    life();
+    // life();
     contact();
     footer();
 }
