@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteURL: 'https://alexcambose.com',
+    siteUrl: 'https://alexcambose.com',
     title: 'Alexandru Cambose',
     description: `I'm a passionate Full Stack Web Developer based in Iași, Romania. My specialty is web development from start to finish. I'm Fluent in HTML, CSS, Javascript, React and Node.js`,
     author: '@alexcambose',
