@@ -11,38 +11,45 @@ export default css`
   @font-face {
     font-family: 'TT Norms';
     src: url(${TTNormsRegular}) format('opentype');
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'TT Norms';
     font-weight: 900;
     src: url(${TTNormsBlack}) format('opentype');
+    font-display: swap;
   }
   @font-face {
     font-family: 'TT Norms';
     font-weight: 900;
     font-style: italic;
     src: url(${TTNormsBlackItalic}) format('opentype');
+    font-display: swap;
   }
   @font-face {
     font-family: 'TT Norms';
     font-weight: bold;
     src: url(${TTNormsBold}) format('opentype');
+    font-display: swap;
   }
   @font-face {
     font-family: 'TT Norms';
     font-weight: bold;
     font-style: italic;
     src: url(${TTNormsBoldItalic}) format('opentype');
+    font-display: swap;
   }
   @font-face {
     font-family: 'TT Norms';
     font-style: italic;
     src: url(${TTNormsItalic}) format('opentype');
+    font-display: swap;
   }
   @font-face {
     font-family: 'TT Norms';
     font-weight: 300;
     src: url(${TTNormsLight}) format('opentype');
+    font-display: swap;
   }
 `;
