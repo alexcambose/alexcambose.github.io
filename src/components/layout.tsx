@@ -8,6 +8,9 @@ const GlobalStyle = createGlobalStyle`
   body {
       font-family: "TT Norms", georgia, serif;
   }
+  html {
+    font-size: clamp(.7rem, 0.5vw + 2vh ,1rem);
+  }
 `;
 
 interface ILayoutProps {
