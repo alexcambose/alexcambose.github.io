@@ -11,17 +11,21 @@ const HiddenHeader = styled.h1`
   top: -9999px;
   left: -9999px;
 `;
-
+const CustomSection = styled.section`
+  position: relative;
+  min-height: 100vh;
+  z-index: -1;
+`;
 const Section: React.FunctionComponent<ISectionProps> = ({
   children,
   title,
   ...props
 }) => {
   return (
-    <section {...props}>
+    <CustomSection {...props}>
       {title && <HiddenHeader> {title} </HiddenHeader>}
       {children}
-    </section>
+    </CustomSection>
   );
 };
 

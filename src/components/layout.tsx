@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
   ${fontFaces}
   body {
       font-family: "TT Norms", georgia, serif;
+  background-color: ${({ theme }) => theme.palette.background};
+
   }
   html {
     font-size: clamp(.7rem, 0.5vw + 2vh ,1rem);

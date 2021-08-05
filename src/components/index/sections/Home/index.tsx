@@ -9,12 +9,10 @@ import ScrollDown from './components/scrollDown/ScrollDown';
 import Title from './components/title/Title';
 
 const HomeSection = styled(Section)`
-  position: relative;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.palette.background};
+  overflow: visible;
 `;
 const HomeContainer = styled(Container)`
   flex: 1;
