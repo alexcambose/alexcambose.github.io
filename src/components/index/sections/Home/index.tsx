@@ -2,6 +2,7 @@ import Container from '@/components/ui/layout/Container';
 import Section from '@/components/ui/layout/Section';
 import * as React from 'react';
 import styled from 'styled-components';
+import HomeShade from './components/HomeShade';
 import Navbar from './components/navbar/Navbar';
 import PersonalImage from './components/personalImage/PersonalImage';
 import ScrollDown from './components/scrollDown/ScrollDown';
@@ -27,6 +28,7 @@ const HomeScrollDown = styled(ScrollDown)`
 `;
 const Home: React.FunctionComponent = () => (
   <HomeSection title="Home">
+    <HomeShade />
     <Navbar />
     <HomeContainer>
       <Title />

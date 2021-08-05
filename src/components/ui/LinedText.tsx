@@ -10,7 +10,7 @@ const line = css`
   transform: translateY(-50%);
 `;
 
-export default styled.div`
+export default styled.span`
   position: relative;
   padding-left: 50px;
   padding-right: 50px;

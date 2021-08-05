@@ -19,9 +19,11 @@ export const TitleLastName = styled.span`
   color: ${({ theme }) => theme.palette.white};
 `;
 export const TitleContainer = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 `;
 
 export const TitleAttribute = styled(LinedText)`

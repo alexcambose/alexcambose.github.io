@@ -6,6 +6,7 @@ export const NavbarContainer = styled(Container)`
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 export const NavbarLogo = styled.span``;
 export const NavbarList = styled.ul`
