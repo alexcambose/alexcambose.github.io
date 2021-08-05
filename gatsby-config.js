@@ -36,5 +36,18 @@ module.exports = {
       },
       __key: 'images',
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          options: {
+            props: {
+              width: '1em',
+              height: '1em',
+            },
+          },
+        },
+      },
+    },
   ],
 };

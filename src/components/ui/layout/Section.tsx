@@ -14,7 +14,6 @@ const HiddenHeader = styled.h1`
 const CustomSection = styled.section`
   position: relative;
   min-height: 100vh;
-  z-index: -1;
 `;
 const Section: React.FunctionComponent<ISectionProps> = ({
   children,

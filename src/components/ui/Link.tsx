@@ -4,6 +4,7 @@ import { Link as GatsbyLink } from 'gatsby';
 interface ILinkProps {
   to: string;
   children: string;
+  [key: string]: any;
 }
 
 const StyledLink = styled(GatsbyLink)`
@@ -12,8 +13,16 @@ const StyledLink = styled(GatsbyLink)`
   text-decoration: none;
 `;
 
-const Link: React.FunctionComponent<ILinkProps> = ({ to, children }) => {
-  return <StyledLink to={to}>{children}</StyledLink>;
+const Link: React.FunctionComponent<ILinkProps> = ({
+  to,
+  children,
+  ...props
+}) => {
+  return (
+    <StyledLink to={to} {...props}>
+      {children}
+    </StyledLink>
+  );
 };
 
 export default Link;

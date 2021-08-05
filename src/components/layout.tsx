@@ -5,10 +5,12 @@ import { Normalize } from 'styled-normalize';
 import theme from '@/theme';
 const GlobalStyle = createGlobalStyle`
   ${fontFaces}
+  * {
+    box-sizing: border-box;
+  }
   body {
       font-family: "TT Norms", georgia, serif;
-  background-color: ${({ theme }) => theme.palette.background};
-
+      background-color: ${({ theme }) => theme.palette.background};
   }
   html {
     font-size: clamp(.7rem, 0.5vw + 2vh ,1rem);

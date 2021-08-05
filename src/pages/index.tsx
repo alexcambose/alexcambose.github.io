@@ -7,7 +7,7 @@ import Contact from '@/components/index/sections/Contact/index';
 import Work from '@/components/index/sections/Work/index';
 import Blog from '../components/index/sections/Blog/index';
 import useSiteMetadata from '@/hooks/useSiteMetadata';
-import HamburgerMenu from '@/components/ui/HamburgerMenu';
+import Menu from '@/components/ui/menu/Menu';
 
 const IndexPage: React.FC = () => {
   const data = useSiteMetadata();
@@ -18,7 +18,7 @@ const IndexPage: React.FC = () => {
         <title>{data.title}</title>
         <meta name="description" content={data.description}></meta>
       </Helmet>
-      <HamburgerMenu />
+      <Menu />
       <Home />
       <About />
       <Work />

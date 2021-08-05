@@ -1,7 +1,8 @@
 import LinedText from '@/components/ui/LinedText';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const TitleHello = styled.span`
+export const TitleHello = styled(motion.span)`
   opacity: 45%;
   font-weight: 300;
   font-size: 3rem;
