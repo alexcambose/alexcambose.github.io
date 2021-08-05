@@ -3,6 +3,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import fontFaces from '../fonts/fontFaces';
 import { Normalize } from 'styled-normalize';
 import theme from '@/theme';
+
 const GlobalStyle = createGlobalStyle`
   ${fontFaces}
   * {

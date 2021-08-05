@@ -8,6 +8,7 @@ import Work from '@/components/index/sections/Work/index';
 import Blog from '../components/index/sections/Blog/index';
 import useSiteMetadata from '@/hooks/useSiteMetadata';
 import Menu from '@/components/ui/menu/Menu';
+import { Sticky, StickyContainer } from 'react-sticky';
 
 const IndexPage: React.FC = () => {
   const data = useSiteMetadata();
@@ -18,13 +19,15 @@ const IndexPage: React.FC = () => {
         <title>{data.title}</title>
         <meta name="description" content={data.description}></meta>
       </Helmet>
-      <Menu />
       <Home />
-      <About />
-      <Work />
+      <StickyContainer>
+        <Menu />
+        <About />
+        <Work />
 
-      <Blog />
-      <Contact />
+        <Blog />
+        <Contact />
+      </StickyContainer>
     </Layout>
   );
 };
