@@ -73,7 +73,6 @@ export const MenuPageItem = styled.div`
   position: relative;
   display: flex;
   align-items: flex-end;
-  width: fit-content;
   transition: 0.3s;
 `;
 export const MenuPageNumber = styled.span`

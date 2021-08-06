@@ -17,7 +17,6 @@ const SectionTitleContainer = styled.div`
 `;
 const SectionTitleContent = styled.div`
   font-size: 14rem;
-  color: ${({ theme }) => theme.palette.white};
 `;
 const SectionTitleNumberContainer = styled.div`
   /* position: absolute; */

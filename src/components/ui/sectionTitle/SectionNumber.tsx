@@ -7,7 +7,6 @@ interface ISectionNumberProps {
 const SectionNumberContainer = styled.div`
   opacity: 0.1;
   font-size: 6rem;
-  color: ${({ theme }) => theme.palette.white};
   font-weight: bold;
 `;
 const SectionNumber: React.FunctionComponent<ISectionNumberProps> = ({

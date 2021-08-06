@@ -12,6 +12,8 @@ const GlobalStyle = createGlobalStyle`
   body {
       font-family: "TT Norms", georgia, serif;
       background-color: ${({ theme }) => theme.palette.background};
+      color: ${({ theme }) => theme.palette.white};
+      overflow-x: hidden;
   }
   html {
     font-size: clamp(.7rem, 0.5vw + 2vh ,1rem);
