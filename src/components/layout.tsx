@@ -3,6 +3,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import fontFaces from '../fonts/fontFaces';
 import { Normalize } from 'styled-normalize';
 import theme from '@/theme';
+import 'react-slideshow-image/dist/styles.css';
 
 const GlobalStyle = createGlobalStyle`
   ${fontFaces}
@@ -17,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
   }
   html {
     font-size: clamp(.7rem, 0.5vw + 2vh ,1rem);
+  }
+  .indicators {
+    align-items: center;
+    height: 3rem;
   }
 `;
 

@@ -41,6 +41,7 @@ module.exports = {
       options: {
         rule: {
           options: {
+            classIdPrefix: true,
             props: {
               width: '1em',
               height: '1em',

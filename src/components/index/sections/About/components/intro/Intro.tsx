@@ -12,7 +12,7 @@ const IntroContainer = styled.div`
 const LeftText = styled.div`
   position: sticky;
   font-weight: bold;
-  top: 13rem;
+  top: 14rem;
   font-size: 3rem;
   padding: 2rem;
 `;
@@ -36,7 +36,6 @@ const AnimatedTextRow = styled.div`
   font-weight: bold;
   font-size: 3rem;
   line-height: 6rem;
-  transition: 0.01s;
 `;
 const Intro: React.FunctionComponent<IIntroProps> = (props) => {
   const animatedTextContainerRef = useRef(null);
@@ -73,7 +72,7 @@ const Intro: React.FunctionComponent<IIntroProps> = (props) => {
     }
     items[minItem].style.opacity = 1;
     items[minItem].style.color = minItem % 2 == 0 ? '#4EFFEF' : '#fff';
-    items[minItem].style.textShadow = '0 0 10px rgba(0, 166, 255, 0.3)';
+    items[minItem].style.textShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
   };
   useEffect(() => {
     document.addEventListener('scroll', scrollHandler);
