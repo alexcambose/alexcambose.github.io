@@ -2,6 +2,8 @@ import Container from '@/components/ui/layout/Container';
 import styled from 'styled-components';
 
 export const SkillsContainer = styled.div`
+  position: sticky;
+  top: 0;
   min-height: 100vh;
   margin-top: 4rem;
   background-color: #00000021;

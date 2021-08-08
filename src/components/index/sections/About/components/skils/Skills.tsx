@@ -48,6 +48,7 @@ import {
   SkillsContent,
   Indicator,
 } from './Skills.styled';
+import { useInView } from 'react-intersection-observer';
 
 interface ISkillsProps {
   onTabChange: (tabIndex: number) => void;
@@ -149,6 +150,7 @@ const label = ['Frontend', 'Backend', 'Other'];
 const Skills: React.FunctionComponent<ISkillsProps> = ({ onTabChange }) => {
   const [isLampVisible, setIsLampVisible] = useState(true);
   const [currentPosition, setCurrentPosition] = useState(0);
+  const [ref, inView] = useInView();
   return (
     <SkillsContainer
       style={{
@@ -158,40 +160,43 @@ const Skills: React.FunctionComponent<ISkillsProps> = ({ onTabChange }) => {
           theme.skills.otherBg,
         ][currentPosition],
       }}
+      ref={ref}
     >
-      <SkillsContent>
-        <SkillsTitleContainer>
-          <SkillsTitle>Skills</SkillsTitle>
-        </SkillsTitleContainer>
-        <SkillsCanvas>
-          {isLampVisible && <Lamp color={currentPosition}></Lamp>}
-          <Slide
-            onChange={(_, next) => {
-              if (next === currentPosition) return;
-              setIsLampVisible(false);
-              setCurrentPosition(next);
-              onTabChange(next);
-              setIsLampVisible(true);
-            }}
-            indicators={(i) => <Indicator>{label[i]}</Indicator>}
-            autoplay={false}
-            prevArrow={<div />}
-            nextArrow={<div />}
-            style={{ flex: 4 }}
-            easing="ease"
-          >
-            <CarouselSlide>
-              <SkillsSlide skills={frontend} />
-            </CarouselSlide>
-            <CarouselSlide>
-              <SkillsSlide skills={backend} />
-            </CarouselSlide>
-            <CarouselSlide>
-              <SkillsSlide skills={other} />
-            </CarouselSlide>
-          </Slide>
-        </SkillsCanvas>
-      </SkillsContent>
+      {inView && (
+        <SkillsContent>
+          <SkillsTitleContainer>
+            <SkillsTitle>Skills</SkillsTitle>
+          </SkillsTitleContainer>
+          <SkillsCanvas>
+            {isLampVisible && <Lamp color={currentPosition}></Lamp>}
+            <Slide
+              onChange={(_, next) => {
+                if (next === currentPosition) return;
+                setIsLampVisible(false);
+                setCurrentPosition(next);
+                onTabChange(next);
+                setIsLampVisible(true);
+              }}
+              indicators={(i) => <Indicator>{label[i]}</Indicator>}
+              autoplay={false}
+              prevArrow={<div />}
+              nextArrow={<div />}
+              style={{ flex: 4 }}
+              easing="ease"
+            >
+              <CarouselSlide>
+                <SkillsSlide skills={frontend} />
+              </CarouselSlide>
+              <CarouselSlide>
+                <SkillsSlide skills={backend} />
+              </CarouselSlide>
+              <CarouselSlide>
+                <SkillsSlide skills={other} />
+              </CarouselSlide>
+            </Slide>
+          </SkillsCanvas>
+        </SkillsContent>
+      )}
     </SkillsContainer>
   );
 };

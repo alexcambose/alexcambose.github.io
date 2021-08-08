@@ -12,7 +12,7 @@ const AboutSection = styled(Section)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3rem 0;
+  padding: 3rem 0 0;
 `;
 const AboutText = styled.p`
   font-size: 2rem;
