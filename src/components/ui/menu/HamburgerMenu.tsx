@@ -18,13 +18,13 @@ const HamburgerMenu: React.FunctionComponent<IHamburgerMenuProps> = ({
   useEffect(() => {
     setIsPrevOpened(!isOpened);
   }, [isOpened]);
-  const mouseMove = () => {};
-  useEffect(() => {
-    document.addEventListener('mousemove', mouseMove);
-    return () => {
-      document.removeEventListener('mousemove', mouseMove);
-    };
-  }, []);
+  // const mouseMove = () => {};
+  // useEffect(() => {
+  //   document.addEventListener('mousemove', mouseMove);
+  //   return () => {
+  //     document.removeEventListener('mousemove', mouseMove);
+  //   };
+  // }, []);
   return (
     <Sticky>
       {({ style, isSticky }) => (

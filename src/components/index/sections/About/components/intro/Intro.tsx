@@ -3,7 +3,6 @@ import * as React from 'react';
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-interface IIntroProps {}
 const IntroContainer = styled.div`
   position: relative;
   margin-top: 4rem;
@@ -37,7 +36,7 @@ const AnimatedTextRow = styled.div`
   font-size: 3rem;
   line-height: 6rem;
 `;
-const Intro: React.FunctionComponent<IIntroProps> = (props) => {
+const Intro: React.FunctionComponent = () => {
   const animatedTextContainerRef = useRef(null);
   const indicatorTextRef = useRef(null);
   const scrollHandler = () => {
@@ -46,9 +45,7 @@ const Intro: React.FunctionComponent<IIntroProps> = (props) => {
     if (!$animatedTextContainer || !$indicatorText) return;
     const $firstText = $animatedTextContainer.firstChild;
     const $lastText = $animatedTextContainer.lastChild;
-    // @ts-ignore
     const { top } = $firstText.getBoundingClientRect();
-    // @ts-ignore
     const { top: bottom } = $lastText.getBoundingClientRect();
     // let newValue = Math.floor((window.innerHeight / 1.5 - top) / 2.9);
     let newValue = Math.floor(window.innerHeight / 2 - top);
