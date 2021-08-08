@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useTransform, useViewportScroll, motion } from 'framer-motion';
 import { useState, useLayoutEffect, useRef } from 'react';
+import { isBrowser } from './misc';
 
 interface IParallaxProps {
   children: React.ReactNode;
@@ -15,11 +16,14 @@ const Parallax: React.FunctionComponent<IParallaxProps> = ({
   const [elementHeight, setElementHeight] = useState(0);
   const ref = useRef(null);
   const { scrollY } = useViewportScroll();
-  const y = useTransform(
-    scrollY,
-    [elementTop - window.innerHeight, elementTop + amount + elementHeight],
-    [0, amount]
-  );
+  let y;
+  if (isBrowser()) {
+    y = useTransform(
+      scrollY,
+      [elementTop - window.innerHeight, elementTop + amount + elementHeight],
+      [0, amount]
+    );
+  }
   useLayoutEffect(() => {
     const element = ref.current;
     setElementTop(
