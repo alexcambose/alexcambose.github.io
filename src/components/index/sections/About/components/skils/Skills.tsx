@@ -20,15 +20,37 @@ import BootstrapSVG from '@/images/svg/bootstrap.svg';
 import GatsbySVG from '@/images/svg/gatsby.svg';
 import JquerySVG from '@/images/svg/jquery.svg';
 import NodeSVG from '@/images/svg/node.svg';
+import ExpressSVG from '@/images/svg/express.svg';
+import MongoSVG from '@/images/svg/mongo.svg';
+import GraphqlSVG from '@/images/svg/graphql.svg';
+import PostgresSVG from '@/images/svg/postgres.svg';
+import EthereumSVG from '@/images/svg/ethereum.svg';
+import SoliditySVG from '@/images/svg/solidity.svg';
+import TruffleSVG from '@/images/svg/truffle.svg';
+import PhpSVG from '@/images/svg/php.svg';
+import LaravelSVG from '@/images/svg/laravel.svg';
+import PythonSVG from '@/images/svg/python.svg';
+import ApacheSVG from '@/images/svg/apache.svg';
+import NgnixSVG from '@/images/svg/nginx.svg';
+import DockerSVG from '@/images/svg/docker.svg';
+import Pm2SVG from '@/images/svg/pm2.svg';
+import AdobexdSVG from '@/images/svg/adobexd.svg';
+import AdobepsSVG from '@/images/svg/adobeps.svg';
+import AdobeiSVG from '@/images/svg/adobei.svg';
+import LinuxSVG from '@/images/svg/linux.svg';
+import GithubSVG from '@/images/svg/github.svg';
 import { useState } from 'react';
-import { useEffect } from 'react';
+import theme from '@/theme';
 
-interface ISkillsProps {}
+interface ISkillsProps {
+  onTabChange: (tabIndex: number) => void;
+}
 
 const SkillsContainer = styled.div`
   min-height: 100vh;
   margin-top: 4rem;
   background-color: #00000021;
+  transition: 3s;
 `;
 const SkillsTitle = styled.span`
   font-size: 4rem;
@@ -45,7 +67,7 @@ const SkillsTitleContainer = styled.div`
   flex: 1;
 `;
 const SkillsCanvas = styled.div`
-  flex: 5;
+  flex: 6;
   width: inherit;
   height: 100vh;
   position: relative;
@@ -128,24 +150,39 @@ const frontend = [
   },
 ];
 
-// const backend = [
-//   {
-//     name: 'Node',
-//     icon: NodeSVG,
-//   },
-// ];
-const other = [
+const backend = [
   {
-    name: 'Html',
-    icon: HtmlSVG,
+    name: 'Node',
+    icon: NodeSVG,
   },
+  { name: 'Expres', icon: ExpressSVG },
+  { name: 'Mongo', icon: MongoSVG },
+  { name: 'Graphql', icon: GraphqlSVG },
+  { name: 'Postgres', icon: PostgresSVG },
+  { name: 'Ethereum', icon: EthereumSVG },
+  { name: 'Solidity', icon: SoliditySVG },
+  { name: 'Truffle', icon: TruffleSVG },
+  { name: 'Php', icon: PhpSVG },
+  { name: 'Laravel', icon: LaravelSVG },
+  { name: 'Python', icon: PythonSVG },
+  { name: 'Apache', icon: ApacheSVG },
+  { name: 'Ngnix', icon: NgnixSVG },
+  { name: 'Docker', icon: DockerSVG },
+  { name: 'Pm2', icon: Pm2SVG },
+];
+const other = [
+  { name: 'Adobe XD', icon: AdobexdSVG },
+  { name: 'Photoshop', icon: AdobepsSVG },
+  { name: 'Illustrator', icon: AdobeiSVG },
+  { name: 'Linux', icon: LinuxSVG },
+  { name: 'Github', icon: GithubSVG },
 ];
 const Indicator = styled.div`
   cursor: pointer;
   width: 3rem;
   height: 0.8rem;
   margin-left: 1rem;
-  transition: 0.3s;
+  transition: all 0.2s, box-shadow 1s, width 0.4s;
   /* font-size: 0rem; */
   color: transparent;
   display: flex;
@@ -161,57 +198,58 @@ const Indicator = styled.div`
     /* transform: scale(1.1); */
   }
   &:nth-of-type(1) {
-    background-color: #f9c22e;
+    background-color: ${({ theme }) => theme.skills.frontend};
   }
   &:nth-of-type(2) {
-    background-color: #53b3cb;
+    background-color: ${({ theme }) => theme.skills.backend};
   }
   &:nth-of-type(3) {
-    background-color: #f92c2c;
+    background-color: ${({ theme }) => theme.skills.other};
   }
   &.active {
     height: 1rem;
     &:nth-of-type(1) {
-      box-shadow: 0 0 24px 2px #f9c22e;
+      box-shadow: 0 0 24px 2px ${({ theme }) => theme.skills.frontend};
       width: 3.3rem;
     }
     &:nth-of-type(2) {
-      box-shadow: 0 0 24px 2px #53b3cb;
+      box-shadow: 0 0 24px 2px ${({ theme }) => theme.skills.backend};
       width: 3.3rem;
     }
     &:nth-of-type(3) {
-      box-shadow: 0 0 24px 2px #f92c2c;
+      box-shadow: 0 0 24px 2px ${({ theme }) => theme.skills.other};
       width: 3.3rem;
     }
   }
 `;
 const label = ['Frontend', 'Backend', 'Other'];
-const Skills: React.FunctionComponent<ISkillsProps> = (props) => {
+
+const Skills: React.FunctionComponent<ISkillsProps> = ({ onTabChange }) => {
   const [isLampVisible, setIsLampVisible] = useState();
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     if (window.a) {
-  //       setIsLampVisible(true);
-  //     } else {
-  //       setIsLampVisible(false);
-  //     }
-  //   }, 1000);
-  // }, []);
+  const [currentPosition, setCurrentPosition] = useState(0);
   return (
-    <SkillsContainer>
+    <SkillsContainer
+      style={{
+        backgroundColor: [
+          theme.skills.frontendBg,
+          theme.skills.backendBg,
+          theme.skills.otherBg,
+        ][currentPosition],
+      }}
+    >
       <SkillsContent>
         <SkillsTitleContainer>
           <SkillsTitle>Skills</SkillsTitle>
         </SkillsTitleContainer>
         <SkillsCanvas>
-          {isLampVisible && <Lamp></Lamp>}
+          {isLampVisible && <Lamp color={currentPosition}></Lamp>}
           <Slide
-            onChange={(previous, next) => {
-              console.log(previous, next);
+            onChange={(_, next) => {
+              if (next === currentPosition) return;
               setIsLampVisible(false);
-              setTimeout(() => {
-                setIsLampVisible(true);
-              }, 500);
+              setCurrentPosition(next);
+              onTabChange(next);
+              setIsLampVisible(true);
             }}
             indicators={(i) => <Indicator>{label[i]}</Indicator>}
             autoplay={false}
@@ -224,10 +262,10 @@ const Skills: React.FunctionComponent<ISkillsProps> = (props) => {
               <SkillsSlide skills={frontend} />
             </CarouselSlide>
             <CarouselSlide>
-              <SkillsSlide skills={frontend} />
+              <SkillsSlide skills={backend} />
             </CarouselSlide>
             <CarouselSlide>
-              <SkillsSlide skills={frontend} />
+              <SkillsSlide skills={other} />
             </CarouselSlide>
           </Slide>
         </SkillsCanvas>

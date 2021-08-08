@@ -1,9 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import throttle from 'lodash/throttle';
-import HalfCircle from '@/images/light.png';
+import HalfCircle0 from '@/images/light0.png';
+import HalfCircle1 from '@/images/light1.png';
+import HalfCircle2 from '@/images/light2.png';
 interface ILampProps {
   color?: 0 | 1 | 2;
+  onLampMove: (x: number, y: number) => void;
 }
 
 const LampContainer = styled.div`
@@ -30,12 +33,12 @@ import {
   Bodies,
 } from 'matter-js';
 
-const Lamp: React.FunctionComponent<ILampProps> = ({ color = 0 }) => {
+const Lamp: React.FunctionComponent<ILampProps> = ({
+  color = 0,
+  onLampMove,
+}) => {
   const scene = useRef();
   const sceneContainer = useRef();
-  const isPressed = useRef(false);
-  const engine = useRef(Engine.create());
-
   useEffect(() => {
     // create engine
     const engine = Engine.create(),
@@ -54,7 +57,7 @@ const Lamp: React.FunctionComponent<ILampProps> = ({ color = 0 }) => {
         enableSleeping: true,
         height: 800,
         width: canvasWidth,
-        showIds: true,
+        // showIds: true,
       },
     });
 
@@ -80,7 +83,7 @@ const Lamp: React.FunctionComponent<ILampProps> = ({ color = 0 }) => {
         return Bodies.rectangle(x, y, 10, 5, {
           collisionFilter: { group: group },
           chamfer: 0,
-          density: 15,
+          density: 40,
           render: {
             strokeStyle: 'transparent',
             fillStyle: '#C0C0C0',
@@ -90,15 +93,15 @@ const Lamp: React.FunctionComponent<ILampProps> = ({ color = 0 }) => {
     );
     Composite.add(
       ropeC,
-      Bodies.rectangle(canvasWidth / 2, 0, 60, 50, {
+      Bodies.rectangle(canvasWidth / 2, -10, 60, 50, {
         collisionFilter: { group: group },
-        chamfer: 0,
+        chamfer: 4,
         density: 10,
         angle: 1.5708 * 3,
-        frinctionAir: 60,
+        frinctionAir: 0,
         render: {
           sprite: {
-            texture: HalfCircle,
+            texture: [HalfCircle0, HalfCircle1, HalfCircle2][color],
             xScale: 0.6,
             yScale: 0.6,
           },
@@ -176,8 +179,9 @@ const Lamp: React.FunctionComponent<ILampProps> = ({ color = 0 }) => {
     // const callback = throttle(() => {
     //   const allBodies = Composite.allBodies(engine.world);
     //   const lastBody = allBodies[allBodies.length - 1];
-
-    // }, 1000);
+    //   const { x, y } = lastBody.position;
+    //   onLampMove(Math.floor(x), Math.floor(y));
+    // }, 100);
     // Events.on(engine, 'afterUpdate', callback);
 
     return () => {
