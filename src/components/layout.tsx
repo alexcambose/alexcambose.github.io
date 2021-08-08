@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
   html {
     font-size: clamp(.7rem, 0.5vw + 2vh ,1rem);
+    scroll-behavior: smooth;
   }
   .indicators {
     align-items: center;

@@ -20,6 +20,8 @@ import BootstrapSVG from '@/images/svg/bootstrap.svg';
 import GatsbySVG from '@/images/svg/gatsby.svg';
 import JquerySVG from '@/images/svg/jquery.svg';
 import NodeSVG from '@/images/svg/node.svg';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 interface ISkillsProps {}
 
@@ -43,11 +45,17 @@ const SkillsTitleContainer = styled.div`
   flex: 1;
 `;
 const SkillsCanvas = styled.div`
-  flex: 4;
+  flex: 5;
   width: inherit;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  & > [aria-roledescription='carousel'] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 20vh;
+  }
 `;
 const CarouselSlide = styled.div`
   display: flex;
@@ -179,6 +187,16 @@ const Indicator = styled.div`
 `;
 const label = ['Frontend', 'Backend', 'Other'];
 const Skills: React.FunctionComponent<ISkillsProps> = (props) => {
+  const [isLampVisible, setIsLampVisible] = useState();
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     if (window.a) {
+  //       setIsLampVisible(true);
+  //     } else {
+  //       setIsLampVisible(false);
+  //     }
+  //   }, 1000);
+  // }, []);
   return (
     <SkillsContainer>
       <SkillsContent>
@@ -186,8 +204,15 @@ const Skills: React.FunctionComponent<ISkillsProps> = (props) => {
           <SkillsTitle>Skills</SkillsTitle>
         </SkillsTitleContainer>
         <SkillsCanvas>
-          <Lamp></Lamp>
+          {isLampVisible && <Lamp></Lamp>}
           <Slide
+            onChange={(previous, next) => {
+              console.log(previous, next);
+              setIsLampVisible(false);
+              setTimeout(() => {
+                setIsLampVisible(true);
+              }, 500);
+            }}
             indicators={(i) => <Indicator>{label[i]}</Indicator>}
             autoplay={false}
             prevArrow={<div />}
