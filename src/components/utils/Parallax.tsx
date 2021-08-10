@@ -33,9 +33,6 @@ const Parallax: React.FunctionComponent<IParallaxProps> = ({
     setElementHeight(
       element.firstElementChild.firstElementChild.getBoundingClientRect().height
     );
-    console.log(
-      element.firstElementChild.firstElementChild.getBoundingClientRect().height
-    );
   }, [ref]);
   return (
     <div ref={ref}>

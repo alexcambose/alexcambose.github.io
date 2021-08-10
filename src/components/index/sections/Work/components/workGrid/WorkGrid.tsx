@@ -3,47 +3,47 @@ import { WorkGridContainer } from './workGrid.styled';
 import WorkGridItem from './WorkGridItem';
 const workItems = [
   {
-    images: ['a'],
+    images: ['proofchain/main.png'],
     title: 'Proofchain',
     type: 'a',
   },
   {
-    images: ['a'],
+    images: [],
     title: 'Instanoption',
     type: 'b',
   },
   {
-    images: ['a'],
+    images: [],
     title: 'Mixdice',
     type: 'c',
   },
   {
-    images: ['a'],
+    images: [],
     title: 'Portolio v1',
     type: 'd',
   },
   {
-    images: ['a'],
+    images: [],
     title: 'Motus',
     type: 'e',
   },
   {
-    images: ['a'],
+    images: [],
     title: 'Studeo',
     type: 'f',
   },
   {
-    images: ['a'],
+    images: [],
     title: 'Rapoarte Drumuri',
     type: 'g',
   },
   {
-    images: ['a'],
+    images: [],
     title: 'Time Tracker',
     type: 'h',
   },
   {
-    images: ['a'],
+    images: [],
     title: 'Zound',
     type: 'i',
   },
