@@ -10,7 +10,9 @@ import {
   WorkGridTag,
   WorkGridTags,
   WorkGridTitle,
-} from './workGridItem.styled';
+} from './WorkGridItem.styled';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+
 import WorkGridItemGallery from './WorkGridItemGallery';
 type IWorkGridItemProps = IWorkItem;
 const WorkGridItem: React.FunctionComponent<IWorkGridItemProps> = ({
@@ -34,7 +36,11 @@ const WorkGridItem: React.FunctionComponent<IWorkGridItemProps> = ({
         <WorkGridSummary>{summary}</WorkGridSummary>
         <WorkGridDate>{date}</WorkGridDate>
         <WorkGridAction>
-          <Button>View</Button>
+          <Button>
+            <AniLink paintDrip to="proofchain">
+              View
+            </AniLink>
+          </Button>
         </WorkGridAction>
       </WorkGridItemOverlay>
     </WorkGridItemContainer>

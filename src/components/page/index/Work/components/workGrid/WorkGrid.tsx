@@ -1,30 +1,30 @@
 import { IWorkItem } from '@/interfaces';
 import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
-import { WorkGridContainer } from './workGrid.styled';
+import { WorkGridContainer } from './WorkGrid.styled';
 import WorkGridItem from './WorkGridItem';
 const workItems: IWorkItem[] = [
   {
     images: [
-      (props) => (
+      (props: { style?: React.CSSProperties }) => (
         <StaticImage
-          {...props}
+          style={props.style}
           imgStyle={{ objectFit: `contain` }}
           src={`../../../../../../images/work/proofchain/main.png`}
           alt="Logo"
         />
       ),
-      (props) => (
+      (props: { style?: React.CSSProperties }) => (
         <StaticImage
-          {...props}
+          style={props.style}
           src={`../../../../../../images/work/proofchain/proofchain-macbook.png`}
           alt="Logo"
           imgStyle={{ objectFit: `contain` }}
         />
       ),
-      (props) => (
+      (props: { style?: React.CSSProperties }) => (
         <StaticImage
-          {...props}
+          style={props.style}
           src={`../../../../../../images/work/proofchain/dual.png`}
           alt="Logo"
           imgStyle={{ objectFit: `contain` }}
