@@ -28,6 +28,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     `gatsby-plugin-tsconfig-paths`,
     'gatsby-transformer-sharp',
+    `gatsby-plugin-transition-link`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

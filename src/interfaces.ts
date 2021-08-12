@@ -8,4 +8,6 @@ export interface IWorkItem {
   date: string;
   platform: string;
   summary: string;
+  repoUrl?: string;
+  url?: string;
 }

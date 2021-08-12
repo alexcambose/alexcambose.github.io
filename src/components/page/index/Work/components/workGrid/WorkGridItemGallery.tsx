@@ -14,7 +14,7 @@ const WorkGridItemGallery: React.FunctionComponent<IWorkGridItemGalleryProps> =
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentImage((v) => (v + 1) % images.length);
-      }, 2000);
+      }, 2000000);
       return () => {
         clearInterval(interval);
       };
@@ -46,10 +46,26 @@ const WorkGridItemGallery: React.FunctionComponent<IWorkGridItemGalleryProps> =
         }}
       >
         <WorkGridItemGalleryImage>
-          {e({ style: { height: '100%' } })}
+          {e({
+            style: {
+              height: '100%',
+              width: '100%',
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+            },
+          })}
         </WorkGridItemGalleryImage>
         <WorkGridItemGalleryImageBackground>
-          {e({ style: { height: '100%' } })}
+          {e({
+            style: {
+              height: '100%',
+              width: '100%',
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+            },
+          })}
         </WorkGridItemGalleryImageBackground>
       </div>
     ));
