@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 interface ILinkProps {
   to: string;
-  children: string;
+  children: React.ReactNode;
   [key: string]: any;
 }
 const LinkStyle = css`
@@ -22,7 +22,7 @@ const Link: React.FunctionComponent<ILinkProps> = ({
   children,
   ...props
 }) => {
-  if (to.indexOf('http') !== -1) {
+  if (to && to.indexOf('http') !== -1) {
     return (
       <StyledHrefLink target="_blank" href={to} {...props}>
         {children}

@@ -30,6 +30,7 @@ export const ProjectHeaderTitle = styled.div`
 export const ProjectHeaderInfo = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 `;
 
 export const ProjectHeaderInfoLabel = styled.div`
@@ -42,6 +43,8 @@ export const ProjectHeaderInfoValue = styled.div`
 `;
 
 export const ProjectHeaderInfoItem = styled.div`
+  display: flex;
+  flex-direction: column;
   & svg {
     font-size: 3rem;
   }

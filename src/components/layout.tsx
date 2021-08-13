@@ -26,19 +26,41 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     height: 3rem;
   }
+  /* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: green;
+}
 `;
 
 interface ILayoutProps {
   children: React.ReactNode;
   title: string;
   description: string;
+  transitionStatus?: 'exiting' | 'entering';
 }
 const Layout: React.FunctionComponent<ILayoutProps> = ({
   children,
   title,
   description,
+  transitionStatus,
 }) => {
   const data = useSiteMetadata();
+  // if (transitionStatus === 'exiting') return null;
 
   return (
     <ThemeProvider theme={theme}>

@@ -7,18 +7,34 @@ import {
 } from './WorkGridItemGallery.styled';
 interface IWorkGridItemGalleryProps {
   images: (props: any) => React.ReactNode[];
+  disabled?: boolean;
 }
 const WorkGridItemGallery: React.FunctionComponent<IWorkGridItemGalleryProps> =
-  ({ images }) => {
-    const [currentImage, setCurrentImage] = useState(1);
-    useEffect(() => {
+  ({ images, disabled }) => {
+    const [currentImage, setCurrentImage] = useState(0);
+    const [galleryInterval, setGalleryInterval] = useState<any>(null);
+    const startInterval = () => {
       const interval = setInterval(() => {
-        setCurrentImage((v) => (v + 1) % images.length);
-      }, 2000000);
+        if (disabled) {
+          setCurrentImage(0);
+        } else {
+          setCurrentImage((v) => (v + 1) % images.length);
+        }
+      }, 2000);
+      setGalleryInterval(interval);
       return () => {
-        clearInterval(interval);
+        clearInterval(galleryInterval);
       };
+    };
+    useEffect(() => {
+      return startInterval();
     }, []);
+    useEffect(() => {
+      if (disabled) {
+        setCurrentImage(0);
+        clearInterval(galleryInterval);
+      }
+    }, [disabled]);
     const imagesObj = images.map((e, i) => (
       <div
         key={i}

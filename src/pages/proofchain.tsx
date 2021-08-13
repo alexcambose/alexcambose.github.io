@@ -1,4 +1,5 @@
 import Layout from '@/components/layout';
+import CloseButton from '@/components/page/project/closeButton/CloseButton';
 import ProjectHeader from '@/components/page/project/header/ProjectHeader';
 import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
@@ -37,10 +38,12 @@ const workItem: IWorkItem = {
   platform: 'Web - Dapp',
   date: '2021',
   repoUrl: 'https://github.com/alexcambose/proofchain',
+  url: 'http://proofchain.alexcambose.ro/',
 };
-const Proofchain: React.FunctionComponent = () => {
+const Proofchain: React.FunctionComponent = (props) => {
   return (
-    <Layout title={workItem.title} description={workItem.summary}>
+    <Layout title={workItem.title} description={workItem.summary} {...props}>
+      <CloseButton />
       <ProjectHeader workItem={workItem}></ProjectHeader>
     </Layout>
   );

@@ -1,21 +1,19 @@
+import Button from '@/components/ui/Button';
+import Link from '@/components/ui/Link';
+import GithubSVG from '@/images/svg/github.svg';
 import { IWorkItem } from '@/interfaces';
-import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import WorkGridItemGallery from '../../index/Work/components/workGrid/WorkGridItemGallery';
 import {
   ProjectHeaderContainer,
-  ProjectHeaderTitle,
   ProjectHeaderInfo,
-  ProjectHeaderPlatform,
-  ProjectHeaderInfoLabel,
-  ProjectHeaderInfoValue,
-  ProjectHeaderYear,
-  ProjectHeaderTags,
-  ProjectHeaderOverlay,
   ProjectHeaderInfoContainer,
   ProjectHeaderInfoItem,
+  ProjectHeaderInfoLabel,
+  ProjectHeaderInfoValue,
+  ProjectHeaderOverlay,
+  ProjectHeaderTitle,
 } from './ProjectHeader.styled';
-import GithubSVG from '@/images/svg/github.svg';
 
 interface IProjectHeaderProps {
   workItem: IWorkItem;
@@ -47,11 +45,26 @@ const ProjectHeader: React.FunctionComponent<IProjectHeaderProps> = ({
                 {workItem.tags.join(', ')}
               </ProjectHeaderInfoValue>
             </ProjectHeaderInfoItem>
-            {workItem.repoUrl && (
-              <ProjectHeaderInfoItem>
-                <a target="_blank" href={workItem.repoUrl}>
-                  <GithubSVG />
-                </a>
+            {(workItem.repoUrl || workItem.url) && (
+              <ProjectHeaderInfoItem
+                style={{
+                  alignItems: 'center',
+                }}
+              >
+                {workItem.url && (
+                  <Link
+                    style={{ marginBottom: '1rem' }}
+                    target="_blank"
+                    to={workItem.url}
+                  >
+                    <Button>View</Button>
+                  </Link>
+                )}
+                {workItem.repoUrl && (
+                  <Link target="_blank" to={workItem.repoUrl}>
+                    <GithubSVG />
+                  </Link>
+                )}
               </ProjectHeaderInfoItem>
             )}
           </ProjectHeaderInfo>

@@ -9,10 +9,10 @@ import { StickyContainer } from 'react-sticky';
 import Blog from '@/components/page/index/Blog/index';
 import Layout from '../components/layout';
 
-const IndexPage: React.FC = () => {
+const IndexPage: React.FC = (props) => {
   const data = useSiteMetadata();
   return (
-    <Layout title={data.title} description={data.description}>
+    <Layout title={data.title} description={data.description} {...props}>
       <Home />
       <StickyContainer>
         <Menu />
