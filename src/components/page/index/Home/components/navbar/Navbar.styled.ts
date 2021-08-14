@@ -1,5 +1,5 @@
 import Container from '@/components/ui/layout/Container';
-import Link from '@/components/ui/Link';
+import Link from '@/components/ui/typography/Link';
 import styled from 'styled-components';
 export const NavbarContainer = styled(Container)`
   margin-top: 1rem;

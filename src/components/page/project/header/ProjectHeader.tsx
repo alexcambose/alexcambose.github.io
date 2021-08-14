@@ -1,5 +1,5 @@
 import Button from '@/components/ui/Button';
-import Link from '@/components/ui/Link';
+import Link from '@/components/ui/typography/Link';
 import GithubSVG from '@/images/svg/github.svg';
 import { IWorkItem } from '@/interfaces';
 import * as React from 'react';

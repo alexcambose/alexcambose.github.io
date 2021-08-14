@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
-import Link from '../Link';
+import Link from '../typography/Link';
 
 export const MenuContainer = styled(motion.div)`
   position: fixed;

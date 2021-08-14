@@ -5,7 +5,6 @@ import { Normalize } from 'styled-normalize';
 import theme from '@/theme';
 import 'react-slideshow-image/dist/styles.css';
 import { Helmet } from 'react-helmet';
-import useSiteMetadata from '@/hooks/useSiteMetadata';
 
 const GlobalStyle = createGlobalStyle`
   ${fontFaces}
@@ -49,28 +48,19 @@ const GlobalStyle = createGlobalStyle`
 
 interface ILayoutProps {
   children: React.ReactNode;
-  title: string;
-  description: string;
   transitionStatus?: 'exiting' | 'entering';
 }
 const Layout: React.FunctionComponent<ILayoutProps> = ({
   children,
-  title,
-  description,
   transitionStatus,
 }) => {
-  const data = useSiteMetadata();
   // if (transitionStatus === 'exiting') return null;
 
   return (
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyle />
-      <Helmet htmlAttributes={{ lang: data.lang }}>
-        <meta charSet="utf-8" />
-        <title>{title}</title>
-        <meta name="description" content={description}></meta>
-      </Helmet>
+
       <main>{children}</main>
     </ThemeProvider>
   );

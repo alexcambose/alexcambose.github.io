@@ -5,6 +5,7 @@ interface ISiteMetadata {
   author: string;
   siteUrl: string;
   lang: string;
+  social: { twitter: string };
 }
 const useSiteMetadata = (): ISiteMetadata => {
   const { site } = useStaticQuery<{ site: { siteMetadata: ISiteMetadata } }>(
@@ -17,6 +18,9 @@ const useSiteMetadata = (): ISiteMetadata => {
             author
             siteUrl
             lang
+            social {
+              twitter
+            }
           }
         }
       }

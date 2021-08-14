@@ -8,11 +8,13 @@ import * as React from 'react';
 import { StickyContainer } from 'react-sticky';
 import Blog from '@/components/page/index/Blog/index';
 import Layout from '../components/layout';
+import SEOMeta from '@/components/SEOMeta';
 
 const IndexPage: React.FC = (props) => {
   const data = useSiteMetadata();
   return (
-    <Layout title={data.title} description={data.description} {...props}>
+    <Layout {...props}>
+      <SEOMeta />
       <Home />
       <StickyContainer>
         <Menu />

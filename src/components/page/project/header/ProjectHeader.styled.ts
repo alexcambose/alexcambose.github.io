@@ -5,6 +5,7 @@ export const ProjectHeaderContainer = styled.div`
   height: 100vh;
   width: 100vw;
   position: relative;
+  color: white;
 `;
 
 export const ProjectHeaderOverlay = styled.div`

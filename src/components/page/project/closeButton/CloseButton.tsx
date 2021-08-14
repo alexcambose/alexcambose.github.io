@@ -8,7 +8,7 @@ const CloseButtonContainer = styled.div`
   position: fixed;
   top: 3rem;
   right: 3rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   width: 2rem;
   height: 2rem;
   z-index: 10;
@@ -17,8 +17,11 @@ const CloseButtonContainer = styled.div`
   transition: 0.3s;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     transform: scale(1.1);
+  }
+  &:active {
+    background: rgba(0, 0, 0, 1);
   }
 `;
 
