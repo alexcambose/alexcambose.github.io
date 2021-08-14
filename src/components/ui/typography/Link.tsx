@@ -7,9 +7,7 @@ interface ILinkProps {
   [key: string]: any;
 }
 const LinkStyle = css`
-  font-weight: 300;
   color: ${({ theme }) => theme.link.color};
-  text-decoration: none;
 `;
 const StyledLink = styled(GatsbyLink)`
   ${LinkStyle}

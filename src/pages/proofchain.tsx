@@ -1,5 +1,6 @@
 import Layout from '@/components/layout';
 import CloseButton from '@/components/page/project/closeButton/CloseButton';
+import ProjectFooter from '@/components/page/project/footer/Footer';
 import ProjectHeader from '@/components/page/project/header/ProjectHeader';
 import SectionTitleLined from '@/components/page/project/sectionTitleLined/SectionTitleLined';
 import StatementSection from '@/components/page/project/statementSection/StatementSection';
@@ -189,6 +190,7 @@ const Proofchain: React.FunctionComponent = (props) => {
           <SectionTitleLined>Development</SectionTitleLined>
         </Container>
       </ProofchainWrapper>
+      <ProjectFooter github={workItem.repoUrl} />
     </Layout>
   );
 };
