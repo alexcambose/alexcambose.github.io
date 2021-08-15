@@ -6,8 +6,10 @@ export const SkillsSlideRow = styled.div`
   padding: 1rem 0 1.6rem;
 `;
 export const SkillsSlideColumn = styled.div`
-  flex: 1;
   &:not(:last-of-type) {
+    padding-right: 2rem;
+  }
+  &:first-of-type {
     padding-right: 2rem;
   }
 `;
@@ -16,8 +18,9 @@ export const SkillsItemContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #00000052;
-  box-shadow: 0px 4px 20px 3px #23211a;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 4px 10px 0px #23211a;
   padding: 0 1rem 0.6rem;
 `;
 export const SkillsItemIcon = styled.div`

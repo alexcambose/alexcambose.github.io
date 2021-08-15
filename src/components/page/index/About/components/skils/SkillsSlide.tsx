@@ -37,7 +37,7 @@ const SkillsSlide: React.FunctionComponent<ISkillsSlideProps> = ({
       {chunk(skills, 5).map((skillsRow, i) => (
         <SkillsSlideRow key={i}>
           {skillsRow.map((skill, i) => (
-            <SkillsSlideColumn key={i}>
+            <SkillsSlideColumn key={i} style={{ flexBasis: '20%' }}>
               <SkillItem skill={skill} />
             </SkillsSlideColumn>
           ))}
