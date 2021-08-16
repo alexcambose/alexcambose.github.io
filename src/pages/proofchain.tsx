@@ -32,6 +32,7 @@ import TravisSVG from '../images/svg/travis.svg';
 import TorusSVG from '../images/svg/torus.svg';
 import SkillsSlide from '@/components/page/index/About/components/skils/SkillsSlide';
 import BackgroundImageFromProp from '@/components/utils/BackgroundImageFromProp';
+import ImageGalery from '@/components/page/project/imageGallery/ImageGallery';
 
 const workItem: IWorkItem = {
   images: [
@@ -112,15 +113,16 @@ const ApplicationDesignImage = styled(ImageFromProp)`
   top: 3rem;
   width: 30vw;
 `;
-const DevelopmentBackgroundContainer = styled.div`
-  position: relative;
-`;
-const DevelopmentBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+const DevelopmentBackground = styled(BackgroundImageFromProp)`
+  height: 150vh;
+  margin-bottom: 3rem;
+  &:after {
+    opacity: 0.25 !important;
+    margin-top: 3rem;
+  }
+  &:before {
+    margin-top: 3rem;
+  }
 `;
 const Section: React.FunctionComponent<{
   title?: string;
@@ -310,49 +312,135 @@ const Proofchain: React.FunctionComponent = (props) => {
             style={{ marginRight: '4vw' }}
           />
         </Section>
-        <DevelopmentBackgroundContainer>
-          {/* <DevelopmentBackground>
-            <ImageFromProp isBackground image="work/proofchain/uml.png" />
-          </DevelopmentBackground> */}
-          <BackgroundImageFromProp image="work/proofchain/uml.png">
-            <Container>
-              <Section title="Development">
-                <P>
-                  The application is based on smart contracts, written in
-                  Solidity, which is on the Ethereum platform. They make up a
-                  system that anyone can interact with.
-                </P>
-                <P>
-                  The frontend part is developed using React & Next.js as the
-                  backbone tools and Web3 for interacting with the smart
-                  contracts. The users can login in via their Google account,
-                  Metamask wallet or mnemonic phrase, therefore authentication
-                  uses multiple services such as Torus for the social login
-                  (Google), Metamask and bip39 & ethereumjs-wallet for
-                  generating key pairs.
-                </P>
-                <H2>Some of the technologies used</H2>
-                <Container>
-                  <SkillsSlide
-                    skills={[
-                      { icon: RSVG, name: 'React' },
-                      { icon: ReduxSVG, name: 'Redux' },
-                      { icon: NextJsSVG, name: 'NEXT.JS' },
-                      { icon: TypescriptSVG, name: 'Typescript' },
-                      { icon: Web3SVG, name: 'Web3.js' },
-                      { icon: EthereumSVG, name: 'Ethereum' },
-                      { icon: SoliditySVG, name: 'Solidity' },
-                      { icon: TruffleSVG, name: 'Truffle' },
-                      { icon: VercelSVG, name: 'Vercel' },
-                      { icon: TravisSVG, name: 'Travis' },
-                      { icon: TorusSVG, name: 'Torus' },
-                    ]}
-                  />
-                </Container>
-              </Section>
-            </Container>
-          </BackgroundImageFromProp>
-        </DevelopmentBackgroundContainer>
+        <DevelopmentBackground image="work/proofchain/uml.png">
+          <Container>
+            <Section title="Development">
+              <P>
+                The application is based on smart contracts, written in
+                Solidity, which is on the Ethereum platform. They make up a
+                system that anyone can interact with.
+              </P>
+              <P>
+                The frontend part is developed using React & Next.js as the
+                backbone tools and Web3 for interacting with the smart
+                contracts. The users can login in via their Google account,
+                Metamask wallet or mnemonic phrase, therefore authentication
+                uses multiple services such as Torus for the social login
+                (Google), Metamask and bip39 & ethereumjs-wallet for generating
+                key pairs.
+              </P>
+              <H2>Some of the technologies used</H2>
+              <Container>
+                <SkillsSlide
+                  skills={[
+                    {
+                      icon: RSVG,
+                      name: 'React',
+                      description: 'Main UI library',
+                    },
+                    {
+                      icon: ReduxSVG,
+                      name: 'Redux',
+                      description: 'State management library',
+                    },
+                    {
+                      icon: NextJsSVG,
+                      name: 'NEXT.JS',
+                      description: 'React library',
+                      url: 'https://nextjs.org/',
+                    },
+                    {
+                      icon: TypescriptSVG,
+                      name: 'Typescript',
+                      description: 'Typed JavaScript and React components',
+                      url: 'https://www.typescriptlang.org/',
+                    },
+                    {
+                      icon: Web3SVG,
+                      name: 'Web3.js',
+                      description:
+                        'Library that interacts with a ethereum node',
+                    },
+                    {
+                      icon: EthereumSVG,
+                      name: 'Ethereum',
+                      description: 'EVM handles the smart contract execution',
+                      url: 'https://ethereum.org/en/',
+                    },
+                    {
+                      icon: SoliditySVG,
+                      name: 'Solidity',
+                      description: 'Smart contract programming language',
+                      url: 'https://docs.soliditylang.org/',
+                    },
+                    {
+                      icon: TruffleSVG,
+                      name: 'Truffle',
+                      description: 'A smart contract development environment',
+                      url: 'https://www.trufflesuite.com/',
+                    },
+                    {
+                      icon: VercelSVG,
+                      name: 'Vercel',
+                      description: 'Powerful CD service',
+                      url: 'https://vercel.com/',
+                    },
+                    {
+                      icon: TravisSVG,
+                      name: 'Travis',
+                      description: 'Continuous testing service',
+                      url: 'https://travis-ci.org/',
+                    },
+                    {
+                      icon: TorusSVG,
+                      name: 'Torus',
+                      description: 'Blockchain based social auth',
+                      url: 'https://tor.us/',
+                    },
+                  ]}
+                />
+              </Container>
+            </Section>
+          </Container>
+        </DevelopmentBackground>
+        <Container>
+          <Section title="Gallery"></Section>
+        </Container>
+        <ImageGalery
+          images={[
+            'work/proofchain/screenshots/all-batches.png',
+            'work/proofchain/screenshots/all-certificates.png',
+            'work/proofchain/screenshots/all-transports.png',
+            'work/proofchain/screenshots/assign-certificate.png',
+            'work/proofchain/screenshots/batch-info.png',
+            'work/proofchain/screenshots/client-material-certificates.png',
+            'work/proofchain/screenshots/client-material-company-overview.png',
+            'work/proofchain/screenshots/client-material-graph.png',
+            'work/proofchain/screenshots/client-material-history.png',
+            'work/proofchain/screenshots/client-material-info.png',
+            'work/proofchain/screenshots/client-material-overview.png',
+            'work/proofchain/screenshots/create-batch.png',
+            'work/proofchain/screenshots/create-certificate.png',
+            'work/proofchain/screenshots/create-material.png',
+            'work/proofchain/screenshots/create-new-raw-material.png',
+            'work/proofchain/screenshots/create-transport.png',
+            'work/proofchain/screenshots/home.png',
+            'work/proofchain/screenshots/library-api-docs.png',
+            'work/proofchain/screenshots/material-certificate-info-certificate.png',
+            'work/proofchain/screenshots/material-certificate-info-history.png',
+            'work/proofchain/screenshots/material-info.png',
+            'work/proofchain/screenshots/material-qr-code.png',
+            'work/proofchain/screenshots/materials-list.png',
+            'work/proofchain/screenshots/overall-documentation-architecture.png',
+            'work/proofchain/screenshots/overall-documentation-home.png',
+            'work/proofchain/screenshots/presentation1.png',
+            'work/proofchain/screenshots/presentation2.png',
+            'work/proofchain/screenshots/proofchain3.png',
+            'work/proofchain/screenshots/raw-material.png',
+            'work/proofchain/screenshots/transport-info2.png',
+            'work/proofchain/screenshots/transport-info.png',
+          ]}
+        />
       </ProofchainWrapper>
       <ProjectFooter github={workItem.repoUrl} />
     </Layout>

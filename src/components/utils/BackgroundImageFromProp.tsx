@@ -21,7 +21,7 @@ const BackgroundImageFromProp: React.FunctionComponent<IBackgroundImageFromPropP
               relativePath
               name
               childImageSharp {
-                fluid(maxWidth: 2000, maxHeight: 4000) {
+                fluid(pngQuality: 100, maxWidth: 3000) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
@@ -56,8 +56,6 @@ const BackgroundImageFromProp: React.FunctionComponent<IBackgroundImageFromPropP
   };
 
 export default styled(BackgroundImageFromProp)`
-  width: 100%;
-  height: 100%;
-  background-position: bottom center;
-  background-repeat: repeat-y;
+  background-size: contain;
+  opacity: 0.7;
 `;

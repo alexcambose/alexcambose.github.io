@@ -5,6 +5,7 @@ import { Normalize } from 'styled-normalize';
 import theme from '@/theme';
 import 'react-slideshow-image/dist/styles.css';
 import { Helmet } from 'react-helmet';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 const GlobalStyle = createGlobalStyle`
   ${fontFaces}
