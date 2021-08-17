@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionTitleLinedContainer = styled.div`
   position: relative;
-  padding: 2rem 0;
+  padding: 10rem 0 4rem;
   &:before {
     content: ' ';
     position: absolute;

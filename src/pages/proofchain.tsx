@@ -110,7 +110,7 @@ const ProofchainComponentsFooterLink = styled(Link)`
 const ApplicationDesignImage = styled(ImageFromProp)`
   position: absolute;
   right: -30px;
-  top: 3rem;
+  top: 10rem;
   width: 30vw;
 `;
 const DevelopmentBackground = styled(BackgroundImageFromProp)`
