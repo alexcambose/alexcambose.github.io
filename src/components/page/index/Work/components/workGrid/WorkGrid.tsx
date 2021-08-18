@@ -6,30 +6,9 @@ import WorkGridItem from './WorkGridItem';
 const workItems: IWorkItem[] = [
   {
     images: [
-      (props: { style?: React.CSSProperties }) => (
-        <StaticImage
-          style={props.style}
-          imgStyle={{ objectFit: `contain` }}
-          src={`../../../../../../images/work/proofchain/main.png`}
-          alt="Logo"
-        />
-      ),
-      (props: { style?: React.CSSProperties }) => (
-        <StaticImage
-          style={props.style}
-          src={`../../../../../../images/work/proofchain/proofchain-macbook.png`}
-          alt="Logo"
-          imgStyle={{ objectFit: `contain` }}
-        />
-      ),
-      (props: { style?: React.CSSProperties }) => (
-        <StaticImage
-          style={props.style}
-          src={`../../../../../../images/work/proofchain/dual.png`}
-          alt="Logo"
-          imgStyle={{ objectFit: `contain` }}
-        />
-      ),
+      'projects/proofchain/main.png',
+      'projects/proofchain/proofchain-macbook.png',
+      'projects/proofchain/dual.png',
     ],
     title: 'Proofchain',
     type: 'a',

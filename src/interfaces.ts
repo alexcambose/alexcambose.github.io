@@ -1,7 +1,5 @@
-import React from 'react';
-
 export interface IWorkItem {
-  images: (props: { style?: React.CSSProperties }) => React.ReactNode[];
+  images: string[];
   title: string;
   type: string;
   tags: string[];

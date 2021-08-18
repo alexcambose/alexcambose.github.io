@@ -1,3 +1,4 @@
+import ImageFromProp from '@/components/utils/ImageFromProp';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import {
@@ -6,7 +7,7 @@ import {
   WorkGridItemGalleryImageBackground,
 } from './WorkGridItemGallery.styled';
 interface IWorkGridItemGalleryProps {
-  images: (props: any) => React.ReactNode[];
+  images: (props: any) => string[];
   disabled?: boolean;
 }
 const WorkGridItemGallery: React.FunctionComponent<IWorkGridItemGalleryProps> =
@@ -62,26 +63,30 @@ const WorkGridItemGallery: React.FunctionComponent<IWorkGridItemGalleryProps> =
         }}
       >
         <WorkGridItemGalleryImage>
-          {e({
-            style: {
+          <ImageFromProp
+            image={e}
+            imgStyle={{ objectFit: `contain` }}
+            style={{
               height: '100%',
               width: '100%',
               position: 'absolute',
               left: '50%',
               transform: 'translateX(-50%)',
-            },
-          })}
+            }}
+          />
         </WorkGridItemGalleryImage>
         <WorkGridItemGalleryImageBackground>
-          {e({
-            style: {
+          <ImageFromProp
+            image={e}
+            imgStyle={{ objectFit: `contain` }}
+            style={{
               height: '100%',
               width: '100%',
               position: 'absolute',
               left: '50%',
               transform: 'translateX(-50%)',
-            },
-          })}
+            }}
+          />
         </WorkGridItemGalleryImageBackground>
       </div>
     ));
