@@ -1,5 +1,5 @@
+import { ConnectWalletButtons } from '@/components/wallet/ConnectWalletButtons'
 import Head from 'next/head'
-// import styles from '@/styles/Home.module.css'
 
 const Home = () => {
   return (
@@ -13,16 +13,7 @@ const Home = () => {
         <h1>Welcome</h1>
       </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=typescript-nextjs-starter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{` `}
-          <img src="/vercel.svg" alt="Vercel Logo" />
-        </a>
-      </footer>
+      <footer>footer</footer>
     </div>
   )
 }

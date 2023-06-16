@@ -1,12 +1,20 @@
 import { ReactNode } from 'react'
-import Link from 'next/link'
+import { WalletNav } from './navigation/WalletNav'
 import { Navbar } from './navigation/Navbar'
+import { Container } from '@/components/layout/Container'
 
-export const Layout = ({ children }: { children: ReactNode }) => {
+interface LayoutProps {
+  children: ReactNode
+}
+
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen border-8 border-blue-500 bg-slate-100">
-      <Navbar />
-      {children}
+      <WalletNav />
+      <Container>
+        <Navbar />
+        {children}
+      </Container>
     </div>
   )
 }

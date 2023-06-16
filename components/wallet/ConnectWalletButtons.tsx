@@ -4,6 +4,15 @@ import { Button } from '../button/Button'
 import { useAccount, useConnect, useDisconnect, useEnsAvatar, useEnsName } from 'wagmi'
 import { useIsMounted } from '@/hooks'
 import metamaskIcon from '../../public/metamask.svg'
+import walletconnectIcon from '../../public/walletconnect.svg'
+import coinbaseIcon from '../../public/coinbase.svg'
+import { Icon } from '../icon/Icon'
+
+const icons: { [key: string]: React.ReactNode } = {
+  metaMask: <Icon src={metamaskIcon} alt="Connect with MetaMask" />,
+  walletConnect: <Icon src={walletconnectIcon} alt="Connect with WalletConnect" />,
+  coinbaseWallet: <Icon src={coinbaseIcon} alt="Connect with CoinbaseWallet" />,
+}
 
 export const ConnectWalletButtons = () => {
   const { address, connector, isConnected } = useAccount()
@@ -34,14 +43,7 @@ export const ConnectWalletButtons = () => {
           key={connector.id}
           onClick={() => connect({ connector })}
         >
-          <Image
-            width={50}
-            height={50}
-            className="w-7"
-            priority
-            src={metamaskIcon}
-            alt="Follow us on Twitter"
-          />
+          {icons[connector.id]}
           {connector.name}
           {!connector.ready && ' (unsupported)'}
           {isLoading && connector.id === pendingConnector?.id && ' (connecting)'}

@@ -1,6 +1,16 @@
+import { Tab } from '@headlessui/react'
 import Link from 'next/link'
 
 export const Navbar = () => {
+  return (
+    <Tab.Group>
+      <Tab.List>
+        <Tab>Tab 1</Tab>
+        <Tab>Tab 2</Tab>
+        <Tab>Tab 3</Tab>
+      </Tab.List>
+    </Tab.Group>
+  )
   return (
     <nav className="bg-background relative z-20 border-b border-gray-200 py-5 shadow-[0_0_15px_0_rgb(0,0,0,0.1)]">
       <div className="mx-auto flex max-w-7xl items-center px-14 lg:px-6">

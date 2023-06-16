@@ -8,7 +8,11 @@ module.exports = {
     fontFamily: {
       sans: 'Inter',
     },
-    extend: {},
+    extend: {
+      spacing: {
+        200: '50rem',
+      },
+    },
   },
   variants: {
     extend: {},
