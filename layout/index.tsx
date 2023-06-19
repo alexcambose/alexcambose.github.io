@@ -22,7 +22,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <WalletNav />
         <Container>
           <Navbar />
-          <main className="w-200 bg-red-200">{children}</main>
+          <main>{children}</main>
         </Container>
       </div>
       <footer>footer</footer>
