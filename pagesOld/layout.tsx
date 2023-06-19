@@ -1,5 +1,5 @@
-import { Metadata } from 'next'
-import { ReactNode } from 'react'
+import { Metadata } from 'next';
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'foo',
@@ -8,12 +8,12 @@ export const metadata: Metadata = {
     title: 'foo',
     description: 'foobar',
   },
-}
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  )
+  );
 }

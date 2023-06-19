@@ -14,4 +14,4 @@ module.exports = {
   insertPragma: false,
   proseWrap: 'preserve',
   endOfLine: 'lf',
-}
+};

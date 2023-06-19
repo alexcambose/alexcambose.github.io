@@ -1,11 +1,11 @@
-import { Dialog } from '@headlessui/react'
-import { ReactNode } from 'react'
+import { Dialog } from '@headlessui/react';
+import { ReactNode } from 'react';
 
 interface ModalProps {
-  isOpen: boolean
-  onClose: () => void
-  title: ReactNode
-  children: ReactNode
+  isOpen: boolean;
+  onClose: () => void;
+  title: ReactNode;
+  children: ReactNode;
 }
 export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
   return (
@@ -20,5 +20,5 @@ export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
         </Dialog.Panel>
       </div>
     </Dialog>
-  )
-}
+  );
+};
