@@ -3,7 +3,6 @@ import { WalletNav } from './navigation/WalletNav';
 import { Navbar } from './navigation/Navbar';
 import { Container } from '@/components/layout/Container';
 import { Inter } from 'next/font/google';
-import Head from 'next/head';
 import classNames from 'classnames';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });

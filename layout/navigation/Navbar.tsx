@@ -1,22 +1,24 @@
-"use client"
-import { Tab } from '@headlessui/react'
-import Link, { LinkProps } from 'next/link'
-import { ReactNode } from 'react'
+'use client';
+import { Tab } from '@headlessui/react';
+import Link, { LinkProps } from 'next/link';
+import { ReactNode } from 'react';
+
+const NavItemLink = () => <Link href="aa" />;
 
 const NavItem = ({ children, ...props }: { children: ReactNode } & LinkProps) => {
   return (
     <Tab as={Link} className="px-[1vw] py-4" {...props}>
       {children}
     </Tab>
-  )
-}
+  );
+};
 const NavContainer = ({ children }: { children: ReactNode }) => {
   return (
     <Tab.Group>
       <Tab.List className="flex justify-center">{children}</Tab.List>
     </Tab.Group>
-  )
-}
+  );
+};
 export const Navbar = () => {
   return (
     <NavContainer>
@@ -24,7 +26,7 @@ export const Navbar = () => {
       <NavItem href="/skills">Skills</NavItem>
       <NavItem href="/projects">Projects</NavItem>
       <NavItem href="/blog">Blog</NavItem>
-      <NavItem href="/contatc">Contact</NavItem>
+      <NavItem href="/contact">Contact</NavItem>
     </NavContainer>
-  )
-}
+  );
+};
