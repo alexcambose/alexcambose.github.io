@@ -1,15 +1,19 @@
 'use client';
-import { ReactNode, useState, useEffect, useMemo } from 'react';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import { prefersDarkMode, watchPrefersDarkMode } from '../mediaUtils';
+import { prefersDarkMode } from '../mediaUtils';
 import { ThemeTypeEnum } from '../types';
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<ThemeTypeEnum>(() => {
+  const [theme, setTheme] = useState<ThemeTypeEnum>(ThemeTypeEnum.AUTO);
+
+  useEffect(() => {
     const localStorageTheme = localStorage.getItem('theme') as ThemeTypeEnum;
-    if (localStorageTheme) return localStorageTheme;
-    if (!localStorageTheme) return prefersDarkMode() ? ThemeTypeEnum.DARK : ThemeTypeEnum.LIGHT;
-  });
+    setTheme(() => {
+      if (localStorageTheme) return localStorageTheme;
+      return prefersDarkMode() ? ThemeTypeEnum.DARK : ThemeTypeEnum.LIGHT;
+    });
+  }, []);
 
   useEffect(() => {
     if (theme !== 'auto') localStorage.setItem('theme', theme);

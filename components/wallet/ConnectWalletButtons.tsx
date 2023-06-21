@@ -16,7 +16,6 @@ const icons: { [key: string]: React.ReactNode } = {
 
 export const ConnectWalletButtons = () => {
   const { address, connector, isConnected } = useAccount();
-  const { data: ensAvatar } = useEnsAvatar({ address });
   const { data: ensName } = useEnsName({ address });
   const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
   const { disconnect } = useDisconnect();
@@ -26,9 +25,8 @@ export const ConnectWalletButtons = () => {
   if (isConnected) {
     return (
       <div>
-        <img src={ensAvatar} alt="ENS Avatar" />
         <div>{ensName ? `${ensName} (${address})` : address}</div>
-        <div>Connected to {connector.name}</div>
+        <div>Connected to {connector?.name}</div>
         <Button onClick={() => disconnect()}>Disconnect</Button>
       </div>
     );

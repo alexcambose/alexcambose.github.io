@@ -20,6 +20,5 @@ export const SwitchThemeButton = () => {
       return ThemeTypeEnum.LIGHT;
     });
   };
-  console.log({ theme, icons: icons[theme] });
   return <Button onClick={handleSwitchTheme}>Toggle {icons[theme]}</Button>;
 };

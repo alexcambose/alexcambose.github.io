@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import { HTMLAttributes } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import { buttonTheme } from './theme';
 
-type ButtonProps = { fullWidth?: boolean } & HTMLAttributes<HTMLButtonElement>;
+type ButtonProps = { fullWidth?: boolean } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({ fullWidth, ...props }: ButtonProps) => {
   const className = classNames(

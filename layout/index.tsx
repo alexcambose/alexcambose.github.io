@@ -1,37 +1,39 @@
 'use client';
-import { ReactNode } from 'react';
-import { WalletNav } from './navigation/WalletNav';
-import { Navbar } from './navigation/Navbar';
-import { Container } from '@/components/layout/Container';
-import { Inter } from 'next/font/google';
-import classNames from 'classnames';
 import { AvatarCard } from '@/components/avatarCard/AvatarCard';
+import { Container } from '@/components/layout/Container';
 import { SwitchThemeButton } from '@/components/switchThemeButton/SwitchThemeButton';
-import { ThemeTypeEnum } from '@/theme/types';
-import { useTheme } from '@/theme/hooks/useTheme';
 import { usePrefersDarkMode } from '@/theme/hooks/usePrefersDarkMode';
+import { useTheme } from '@/theme/hooks/useTheme';
+import { shouldAppendDarkRoot } from '@/theme/utils';
+import classNames from 'classnames';
+import { Inter } from 'next/font/google';
+import { ReactNode } from 'react';
+import { Navbar } from './navigation/Navbar';
+import { WalletNav } from './navigation/WalletNav';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 interface LayoutProps {
   children: ReactNode;
 }
-
-const shouldAppendDark = (theme: ThemeTypeEnum, prefersDarkMode: boolean) => {
-  if (theme === ThemeTypeEnum.DARK) return true;
-  if (theme === ThemeTypeEnum.LIGHT) return false;
-  return prefersDarkMode;
+const layoutTheme = {
+  background: 'bg-slate-100 dark:bg-slate-950',
+  border: 'border-8 border-blue-500 dark:border-blue-950',
+  height: 'min-h-screen',
+  font: 'font-sans text-black dark:text-white',
 };
-
 export const Layout = ({ children }: LayoutProps) => {
   const { theme } = useTheme();
   const prefersDarkMode = usePrefersDarkMode();
   return (
-    <html lang="en" className={classNames({ dark: shouldAppendDark(theme, prefersDarkMode) })}>
+    <html lang="en" className={classNames({ dark: shouldAppendDarkRoot(theme, prefersDarkMode) })}>
       <body>
         <div
           className={classNames(
             inter.variable,
-            'min-h-screen border-8 border-blue-500 bg-slate-100 font-sans'
+            layoutTheme.background,
+            layoutTheme.border,
+            layoutTheme.height,
+            layoutTheme.font
           )}
         >
           <WalletNav />

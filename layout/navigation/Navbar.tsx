@@ -1,12 +1,11 @@
 'use client';
 import { Tab } from '@headlessui/react';
 import Link, { LinkProps } from 'next/link';
-import { ReactNode } from 'react';
-
-const NavItemLink = () => <Link href="aa" />;
+import { ReactNode, ElementType } from 'react';
 
 const NavItem = ({ children, ...props }: { children: ReactNode } & LinkProps) => {
   return (
+    // @ts-ignore
     <Tab as={Link} className="px-[1vw] py-4" {...props}>
       {children}
     </Tab>
