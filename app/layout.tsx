@@ -5,13 +5,9 @@ import { Providers } from './providers';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <Providers>
-          <Layout>{children}</Layout>
-        </Providers>
-      </body>
-    </html>
+    <Providers>
+      <Layout>{children}</Layout>
+    </Providers>
   );
 }
 

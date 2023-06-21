@@ -1,7 +1,7 @@
 'use client';
 import { Modal } from '@/components';
 import { ClientOnly } from '@/components/ClientOnly';
-import { Button } from '@/components/button/Button';
+import { Button } from '@/components/baseComponents/button/Button';
 import { ConnectWalletButtons } from '@/components/wallet/ConnectWalletButtons';
 import { useState } from 'react';
 import { useAccount } from 'wagmi';

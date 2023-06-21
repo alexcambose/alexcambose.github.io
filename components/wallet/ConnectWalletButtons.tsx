@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '../button/Button';
+import { Button } from '../baseComponents/button/Button';
 import { useAccount, useConnect, useDisconnect, useEnsAvatar, useEnsName } from 'wagmi';
 import { useIsMounted } from '@/hooks';
 import metamaskIcon from '../../public/metamask.svg';

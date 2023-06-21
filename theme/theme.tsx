@@ -1,6 +1,5 @@
-import { buttonTheme } from '../components/button/theme';
+import { buttonTheme } from '../components/baseComponents/button/theme';
 
-export const defaultTheme = {
+export const themeConfig = {
   button: buttonTheme,
 };
-export type Theme = typeof defaultTheme;

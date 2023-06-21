@@ -1,13 +1,14 @@
-'use client';
-
 import { WagmiProvider } from '@/components/wallet/providers/wagmiProvider';
-import { ThemeProvider } from '@/theme';
+import { IconProvider } from '@/theme/providers/IconProvider';
+import { ThemeProvider } from '@/theme/providers/ThemeProvider';
 import { ReactNode } from 'react';
 
 export const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <ThemeProvider>
-      <WagmiProvider>{children}</WagmiProvider>
+      <IconProvider>
+        <WagmiProvider>{children}</WagmiProvider>
+      </IconProvider>
     </ThemeProvider>
   );
 };
