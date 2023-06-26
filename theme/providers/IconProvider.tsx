@@ -5,9 +5,11 @@ import { IconContext } from '../context/IconsContext';
 import { useTheme } from '../hooks/useTheme';
 import { ThemeTypeEnum } from '../types';
 import classNames from 'classnames';
+import { usePrefersDarkMode } from '../hooks/usePrefersDarkMode';
 
 export const IconProvider = ({ children }: { children: ReactNode }) => {
   const { theme } = useTheme();
+  const prefersDarkMode = usePrefersDarkMode();
   const providerValue = useMemo(() => {
     return {
       color: 'inherit',
