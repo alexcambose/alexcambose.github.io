@@ -20,7 +20,7 @@ const layoutTheme = {
   background: 'bg-slate-100 dark:bg-slate-950',
   border: 'border-8 border-blue-500 dark:border-blue-950',
   height: 'min-h-screen',
-  font: 'font-sans text-black dark:text-white',
+  font: 'font-sans text-black dark:text-gray-400',
 };
 export const Layout = ({ children }: LayoutProps) => {
   const { theme } = useTheme();
@@ -39,19 +39,25 @@ export const Layout = ({ children }: LayoutProps) => {
           )}
         >
           <WalletNav />
-          <Container className="mt-40">
-            <AvatarCard
-              title="Lorem ipsum"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget vehicula tellus, id porta libero. Nunc ornare rutrum mauris ac congue. Fusce vestibulum dolor quis lorem dictum, quis feugiat ipsum ullamcorper. Donec imperdiet dui leo, eget tempor leo semper sit amet. Etiam tempus felis sit amet augue rutrum, nec consectetur mi vulputate."
-              imageUrl="https://placehold.co/600x400.png"
-              action="aa"
-            />
+          <Container
+            className="mt-40"
+            leftSidebar={
+              <>
+                <AvatarCard
+                  title="Lorem ipsum"
+                  description="Software engineer"
+                  imageUrl="https://placehold.co/600x400.png"
+                  action="I thrive on tackling complex challenges"
+                />
+                <Navbar />
+              </>
+            }
+          >
             <SwitchThemeButton />
-            <Navbar />
             <main>{children}</main>
           </Container>
+          <footer>footer</footer>
         </div>
-        <footer>footer</footer>
       </body>
     </html>
   );
