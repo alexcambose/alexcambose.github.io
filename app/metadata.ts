@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 const description =
   'Alexandru Cambose is a talented software engineer with expertise in software development. Discover his diverse range of projects, programming skills, and career achievements. With a passion for coding and a commitment to delivering high-quality solutions, Alexandru Cambose is dedicated to pushing the boundaries of software engineering. Visit now to witness the innovation and expertise firsthand.';
+
 export const metadata: Metadata = {
   title: {
     template: '%s - Alexandru Cambose',
@@ -43,8 +44,8 @@ export const metadata: Metadata = {
     },
   ],
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: '(prefers-color-scheme: light)', color: '#fff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000' },
   ],
   colorScheme: 'light',
   twitter: {
@@ -59,4 +60,14 @@ export const metadata: Metadata = {
   archives: ['https://alexcambose.com'],
   category: 'technology',
   publisher: 'Vercel',
+  other: {
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'Alexandru Cambose - Portfolio',
+    'format-detection': 'telephone=no',
+    'mobile-web-app-capable': 'yes',
+    'msapplication-config': '/icons/browserconfig.xml',
+    'msapplication-TileColor': '#2B5797',
+    'msapplication-tap-highlight': 'no',
+  },
 };
