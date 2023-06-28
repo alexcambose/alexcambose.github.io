@@ -11,6 +11,7 @@ const NavItem = ({ children, ...props }: { children: ReactNode } & LinkProps) =>
     </Tab>
   );
 };
+
 const NavContainer = ({ children }: { children: ReactNode }) => {
   return (
     <Tab.Group>
@@ -18,10 +19,11 @@ const NavContainer = ({ children }: { children: ReactNode }) => {
     </Tab.Group>
   );
 };
+
 export const Navbar = () => {
   return (
     <NavContainer>
-      <NavItem href="/">Home</NavItem>
+      <NavItem href="/">About</NavItem>
       <NavItem href="/skills">Skills</NavItem>
       <NavItem href="/projects">Projects</NavItem>
       <NavItem href="/blog">Blog</NavItem>

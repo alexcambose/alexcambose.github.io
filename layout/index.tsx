@@ -40,16 +40,17 @@ export const Layout = ({ children }: LayoutProps) => {
         >
           <WalletNav />
           <Container
-            className="mt-40"
+            className="mt-20"
             leftSidebar={
               <>
                 <AvatarCard
                   title="Lorem ipsum"
-                  description="Software engineer"
+                  description="Product-focused Software engineer"
                   imageUrl="https://placehold.co/600x400.png"
-                  action="I thrive on tackling complex challenges"
+                  action="I thrive on tackling complex challenges that empowers financial systems. Can-do attitude. Always shipping."
                 />
                 <Navbar />
+                <div className="">aa</div>
               </>
             }
           >

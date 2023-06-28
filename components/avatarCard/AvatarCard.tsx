@@ -19,7 +19,7 @@ export const AvatarCard = ({
   activeStatus = ActiveStatusEnum.ACTIVE,
 }: AvatarCardProps) => {
   return (
-    <header className="flex items-center flex-col">
+    <header className="flex flex-col">
       <div className="relative h-40 w-40 flex-none overflow-hidden mb-8">
         <Image alt="Profile image" src={imageUrl} fill className="object-cover rounded-full" />
         {activeStatus && (
@@ -31,13 +31,11 @@ export const AvatarCard = ({
         )}
       </div>
 
-      <div>
-        <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">{title}</h1>
-        <p className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-          {description}
-        </p>
-        <p className="mt-4 max-w-xs leading-normal">{action}</p>
-      </div>
+      <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">{title}</h1>
+      <p className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+        {description}
+      </p>
+      <p className="mt-4 max-w-xs leading-normal">{action}</p>
     </header>
   );
 };
