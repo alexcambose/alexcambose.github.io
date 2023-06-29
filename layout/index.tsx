@@ -10,7 +10,7 @@ import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 import { Navbar } from './navigation/Navbar';
 import { WalletNav } from './navigation/WalletNav';
-import { SocialElementType, SocialIcons } from '@/app/socialIcons/SocialIcons';
+import { SocialElementType, SocialIcons } from '@/components/socialIcons/SocialIcons';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 interface LayoutProps {

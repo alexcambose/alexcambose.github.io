@@ -17,7 +17,8 @@
     "export": "next build && next export",
     "lint": "eslint --ignore-path .gitignore --fix",
     "format": "prettier --ignore-path .gitignore \"./**/*.+(ts|js|tsx)\" --write",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "analyze": "ANALYZE=true next build"
   },
   "lint-staged": {
     "./**/*.{ts,js,jsx,tsx}": [
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.15",
+    "@next/bundle-analyzer": "13.4.7",
     "@phosphor-icons/react": "2.0.10",
     "@tailwindcss/typography": "0.5.9",
     "classnames": "2.3.2",

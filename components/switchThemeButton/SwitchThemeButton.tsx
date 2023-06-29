@@ -27,7 +27,11 @@ export const SwitchThemeButton = () => {
   };
 
   return (
-    <Button className={classNames('absolute top-0 left-0')} onClick={handleSwitchTheme}>
+    <Button
+      aria-label="Switch Theme"
+      className={classNames('absolute top-0 left-0')}
+      onClick={handleSwitchTheme}
+    >
       {icons[theme]}
     </Button>
   );
