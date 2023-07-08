@@ -14,7 +14,7 @@ module.exports = withBundleAnalyzer(
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'placehold.co',
+          hostname: '*',
         },
       ],
     },

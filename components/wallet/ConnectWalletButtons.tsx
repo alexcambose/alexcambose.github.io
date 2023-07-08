@@ -6,7 +6,7 @@ import { useIsMounted } from '@/hooks';
 import metamaskIcon from '../../public/metamask.svg';
 import walletconnectIcon from '../../public/walletconnect.svg';
 import coinbaseIcon from '../../public/coinbase.svg';
-import { Icon } from '../icon/Icon';
+import { Icon } from '../baseComponents/imageIcon/ImageIcon';
 
 const icons: { [key: string]: React.ReactNode } = {
   metaMask: <Icon src={metamaskIcon} alt="Connect with MetaMask" />,

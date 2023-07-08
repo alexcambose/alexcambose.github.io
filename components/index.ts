@@ -1,2 +1,2 @@
 export * from './baseComponents/button/Button';
-export * from './modal/Modal';
+export * from './baseComponents/modal/Modal';
