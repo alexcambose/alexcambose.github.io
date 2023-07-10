@@ -9,13 +9,22 @@ interface WorkTimelineProps {
 }
 
 export const WorkTimeline = ({ data }: WorkTimelineProps) => {
+  const sortedData = data.sort(
+    (itemA, itemB) => itemB.startDate.getTime() - itemA.startDate.getTime()
+  );
+
   return (
     <ul>
-      {data.map((item, index) => {
+      {sortedData.map((item) => {
         return (
-          <li className="flex mt-12 first:mt-0" key={item.title + item.companyName}>
-            <WorkTimelineDate startDate={item.startDate} endDate={item.endDate} />
-            <div className="w-9/12">
+          <li
+            className="mt-12 flex flex-col first:mt-0 lg:flex-row"
+            key={item.title + item.companyName}
+          >
+            <div className="lg:w-[24%]">
+              <WorkTimelineDate startDate={item.startDate} endDate={item.endDate} />
+            </div>
+            <div className="lg:w-[76%]">
               <WorkTimelineHeader
                 subtitle={item.subtitle}
                 title={item.title}
