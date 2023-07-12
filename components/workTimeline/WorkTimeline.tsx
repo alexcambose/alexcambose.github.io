@@ -21,7 +21,7 @@ export const WorkTimeline = ({ data }: WorkTimelineProps) => {
             className="mt-12 flex flex-col first:mt-0 lg:flex-row"
             key={item.title + item.companyName}
           >
-            <div className="lg:w-[24%]">
+            <div className="max-w-fit text-center">
               <WorkTimelineDate startDate={item.startDate} endDate={item.endDate} />
             </div>
             <div className="lg:w-[76%]">

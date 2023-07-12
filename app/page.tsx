@@ -77,6 +77,7 @@ Technologies:
 My work includes helping to define feature specifications, development, code reviews and releasing 
 - lead react native developer
 - conducted code reviews and offered feedback
+- 
 `,
         techStack: [
           'React',
@@ -124,7 +125,7 @@ const Home = () => {
       <SectionContainer id="work" title="Work">
         <WorkTimeline data={workTimelineData} />
       </SectionContainer>
-      <SectionContainer id="services" title="Services I am providing">
+      {/* <SectionContainer id="services" title="Services I am providing">
         <Tabs
           data={[
             {
@@ -147,23 +148,8 @@ const Home = () => {
         <h2 className="m-8 text-2xl">Frontend development</h2>
         <h2 className="m-8 text-2xl">Backend development</h2>
         <h2 className="m-8 text-2xl">Web3 development</h2>
-      </SectionContainer>
-      <SectionContainer id="experience" title="Experience">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quis accusamus nihil tempore
-        aliquid vero maxime similique! Voluptas itaque earum iste deleniti quis quae repudiandae!
-        Eum sit aliquid labore aut. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quis accusamus nihil tempore
-        aliquid vero maxime similique! Voluptas itaque earum iste deleniti quis quae repudiandae!
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quis accusamus nihil tempore
-        aliquid vero maxime similique! Voluptas itaque earum iste deleniti quis quae repudiandae!
-        Eum sit aliquid labore aut. Eum sit aliquid labore aut. quis accusamus nihil tempore aliquid
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quis accusamus nihil tempore
-        aliquid vero maxime similique! Voluptas itaque earum iste deleniti quis quae repudiandae!
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quis accusamus nihil tempore
-        aliquid vero maxime similique! Voluptas itaque earum iste deleniti quis quae repudiandae!
-        Eum sit aliquid labore aut. Eum sit aliquid labore aut. vero maxime similique! Voluptas
-        itaque earum iste deleniti quis quae repudiandae! Eum sit aliquid labore aut.
-      </SectionContainer>
+      </SectionContainer> */}
+      <SectionContainer id="projects" title="Projects"></SectionContainer>
     </>
   );
 };
