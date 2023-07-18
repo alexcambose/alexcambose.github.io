@@ -1,8 +1,8 @@
 import { Tabs } from '@/components/baseComponents/tabs/Tabs';
 import { SectionContainer } from '@/components/layout/SectionContainer';
+import { Projects } from '@/components/projects/Projects';
 import { WorkTimeline } from '@/components/workTimeline/WorkTimeline';
 import type { Metadata } from 'next';
-console.log(process.env);
 export const metadata: Metadata = {
   title: 'Home - Alexandru Cambose',
 };
@@ -96,8 +96,7 @@ My work includes helping to define feature specifications, development, code rev
   },
 ];
 
-const Home = (...props) => {
-  console.log(props);
+const Home = () => {
   return (
     <>
       <SectionContainer id="about" title="About Me">
@@ -150,20 +149,11 @@ const Home = (...props) => {
         <h2 className="m-8 text-2xl">Backend development</h2>
         <h2 className="m-8 text-2xl">Web3 development</h2>
       </SectionContainer> */}
-      <SectionContainer id="projects" title="Projects"></SectionContainer>
+      <SectionContainer id="projects" title="Projects">
+        <Projects />
+      </SectionContainer>
     </>
   );
 };
 
 export default Home;
-
-// This function gets called at build time
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api`);
-  const posts = await res.json();
-  console.log(posts);
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {};
-}
