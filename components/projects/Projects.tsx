@@ -6,7 +6,14 @@ export const Projects = async () => {
   return (
     <>
       {JSON.stringify(userData, null, 2)}
-      <ProjectsList projects={[]} />
+      <ProjectsList
+        projects={userData.projects.map((e) => ({
+          id: 1,
+          title: 'Build an App App',
+          description: 'lorem',
+          thumbnailImageUrl: 'https://placehold.co/600x400',
+        }))}
+      />
     </>
   );
 };

@@ -8,7 +8,7 @@ export const ProjectsList = ({ projects }: ProjectsListProps) => {
   return (
     <div>
       {projects.map((project) => (
-        <ProjectCard key={project.id} />
+        <ProjectCard key={project.id} data={project} />
       ))}
     </div>
   );
