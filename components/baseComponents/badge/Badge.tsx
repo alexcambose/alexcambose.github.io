@@ -5,7 +5,7 @@ export interface BadgeProps {
 }
 export const Badge = ({ children }: BadgeProps) => {
   return (
-    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 select-none">
+    <span className="mb-2 mr-2 inline-block select-none rounded-full bg-gray-200 px-3 py-1 text-xs font-semibold text-gray-700">
       {children}
     </span>
   );

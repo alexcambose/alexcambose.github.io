@@ -5,19 +5,18 @@ export interface ProjectCard {
   data: ProjectItem;
 }
 export const ProjectCard = ({ data }: ProjectCard) => {
-  console.log({ data });
   return (
-    <div className="flex">
+    <div className="mt-14 flex first:mt-0">
       <Image
         alt="Project mage"
-        width="100"
-        height="100"
-        style={{ width: 100, height: 100 }}
+        className="w-36"
+        width={500}
+        height={500}
         src={data.thumbnailImageUrl}
       />
-      <div>
-        <h3>Build an App</h3>
-        <p>
+      <div className="ml-5">
+        <h3 className="mb-5">Build an App</h3>
+        <p className="text-sm">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime placeat consequuntur nam,
           mollitia quis ipsum vitae deleniti odit fuga rerum vero veritatis quod impedit, earum non
           et iste exercitationem voluptatibus?
