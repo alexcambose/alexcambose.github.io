@@ -1,9 +1,11 @@
 'use client';
 import classNames from 'classnames';
 import Image from 'next/image';
+
 export enum ActiveStatusEnum {
   ACTIVE = 'ACTIVE',
 }
+
 interface AvatarCardProps {
   title: string;
   description: string;
@@ -31,11 +33,13 @@ export const AvatarCard = ({
         )}
       </div>
 
-      <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">{title}</h1>
-      <p className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+      <h1 className="text-4xl font-bold tracking-tight dark:text-highlighted-dark sm:text-5xl">
+        {title}
+      </h1>
+      <p className="mt-3 text-lg font-medium tracking-tight dark:text-highlighted-dark sm:text-xl">
         {description}
       </p>
-      <p className="mt-4 max-w-xs leading-normal">{action}</p>
+      <p className="mt-4 leading-normal">{action}</p>
     </header>
   );
 };

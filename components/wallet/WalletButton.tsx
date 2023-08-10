@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, useState } from 'react';
 import { useAccount } from 'wagmi';
 import { Button } from '../baseComponents/button/Button';
 import { ConnectWalletButtons } from './ConnectWalletButtons';
-import { Modal } from '../modal/Modal';
+import { Modal } from '../baseComponents/modal/Modal';
 import classNames from 'classnames';
 
 type WalletButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;

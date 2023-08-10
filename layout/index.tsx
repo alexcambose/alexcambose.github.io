@@ -1,39 +1,43 @@
 'use client';
 import { AvatarCard } from '@/components/avatarCard/AvatarCard';
+import { Link } from '@/components/baseComponents/link/Link';
 import { Container } from '@/components/layout/Container';
-import { SwitchThemeButton } from '@/components/switchThemeButton/SwitchThemeButton';
-import { usePrefersDarkMode } from '@/theme/hooks/usePrefersDarkMode';
+import { SocialElementType, SocialIcons } from '@/components/socialIcons/SocialIcons';
 import { useTheme } from '@/theme/hooks/useTheme';
-import { shouldAppendDarkRoot } from '@/theme/utils';
 import classNames from 'classnames';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 import { Navbar } from './navigation/Navbar';
-import { WalletNav } from './navigation/WalletNav';
-import { SocialElementType, SocialIcons } from '@/components/socialIcons/SocialIcons';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 interface LayoutProps {
   children: ReactNode;
 }
+
 const layoutTheme = {
   position: 'relative',
   background: 'bg-slate-100 dark:bg-slate-950',
   border: 'border-8 border-blue-500 dark:border-blue-950',
   height: 'min-h-screen',
-  font: 'font-sans text-black dark:text-gray-400',
+  font: 'font-sans dark:text-default-dark text-default-light',
 };
+
 export const Layout = ({ children }: LayoutProps) => {
-  const { theme } = useTheme();
-  const prefersDarkMode = usePrefersDarkMode();
+  const { isDark } = useTheme();
   return (
     <html
       lang="en"
       className={classNames(
-        { dark: shouldAppendDarkRoot(theme, prefersDarkMode) },
+        { dark: isDark },
         {
-          'bg-slate-100': !prefersDarkMode,
-          'bg-slate-950': prefersDarkMode,
+          'background-light': !isDark,
+          'dark:background-dark': isDark,
+        },
+        {
+          'selection:bg-cyan-800': isDark,
+          'selection:text-white': isDark,
+          // 'selection:bg-slate-900': is Dark,
+          // 'selection:bg-red-950': isDark,
         }
       )}
     >
@@ -48,43 +52,63 @@ export const Layout = ({ children }: LayoutProps) => {
             layoutTheme.font
           )}
         >
-          <WalletNav />
-          <Container
-            className="mt-20"
-            leftSidebar={
-              <>
-                <div>
-                  <AvatarCard
-                    title="Lorem ipsum"
-                    description="Product-focused Software engineer"
-                    imageUrl="https://placehold.co/600x400.png"
-                    action="I thrive on tackling complex challenges that empowers financial systems. Can-do attitude. Always shipping."
-                  />
-                  <Navbar />
-                </div>
-
-                <div className="">
-                  <SocialIcons
-                    data={{
-                      [SocialElementType.Twitter]: { url: 'https://twitter.com/alexcambose' },
-                      [SocialElementType.Github]: { url: 'https://github.com/alexcambose' },
-                      [SocialElementType.Linkedin]: {
-                        url: 'https://www.linkedin.com/in/alexcambose/',
-                      },
-                      [SocialElementType.Instagram]: {
-                        url: 'https://www.instagram.com/alexcambose/',
-                      },
-                      [SocialElementType.Facebook]: { url: 'https://facebook.com/alexcambose' },
-                    }}
-                  />
-                </div>
-              </>
-            }
-          >
-            <SwitchThemeButton />
-            <main>{children}</main>
-          </Container>
-          <footer>footer</footer>
+          {/* <WalletNav /> */}
+          <div className="px-6 md:px-12 lg:px-24">
+            <Container
+              leftSidebar={
+                <>
+                  <div>
+                    <AvatarCard
+                      title="Lorem ipsum"
+                      description="Product-focused Software engineer"
+                      imageUrl="https://placehold.co/600x400.png"
+                      action="I thrive on tackling complex challenges that empowers financial systems. Can-do attitude. Always shipping."
+                    />
+                    <Navbar />
+                  </div>
+                  <div>
+                    <SocialIcons
+                      data={{
+                        [SocialElementType.Twitter]: { url: 'https://twitter.com/alexcambose' },
+                        [SocialElementType.Github]: { url: 'https://github.com/alexcambose' },
+                        [SocialElementType.Linkedin]: {
+                          url: 'https://www.linkedin.com/in/alexcambose/',
+                        },
+                        [SocialElementType.Instagram]: {
+                          url: 'https://www.instagram.com/alexcambose/',
+                        },
+                        [SocialElementType.Facebook]: { url: 'https://facebook.com/alexcambose' },
+                      }}
+                    />
+                  </div>
+                </>
+              }
+            >
+              {/* <SwitchThemeButton /> */}
+              <main>{children}</main>
+            </Container>
+            <footer className="py-8">
+              <p className="text-sm text-slate-500 tracking-wide">
+                Designed and coded by Alexandru Cambose. Built with{' '}
+                <Link href="https://nextjs.org/" target="_blank">
+                  Next.js
+                </Link>{' '}
+                and{' '}
+                <Link href="https://tailwindcss.com/" target="_blank">
+                  Tailwind CSS
+                </Link>
+                , deployed with{' '}
+                <Link href="https://vercel.com/" target="_blank">
+                  Vercel
+                </Link>
+                . All text is set in the Inter typeface. See{' '}
+                <Link href="https://github.com/alexcambose/alexcambose.github.io" target="_blank">
+                  Github repository
+                </Link>
+                .
+              </p>
+            </footer>
+          </div>
         </div>
       </body>
     </html>
