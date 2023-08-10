@@ -15,7 +15,7 @@ const NavItem = ({ children, ...props }: { children: ReactNode } & LinkProps) =>
 const NavContainer = ({ children }: { children: ReactNode }) => {
   return (
     <Tab.Group>
-      <Tab.List className="flex justify-center">{children}</Tab.List>
+      <Tab.List className="flex flex-col justify-center">{children}</Tab.List>
     </Tab.Group>
   );
 };
