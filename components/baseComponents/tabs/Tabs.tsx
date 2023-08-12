@@ -60,9 +60,6 @@ export const Tabs = ({ data }: TabsProps) => {
             <div className={classNames('h-0 ', { 'h-fit transition-all': selected })}>aaaa</div>
           )}
         </Tab.Panel>
-        <Tab.Panel as={TabPanel} className="w-auto transition-all">
-          aaavsdvsdvs
-        </Tab.Panel>
       </Tab.Panels>
     </Tab.Group>
   );
