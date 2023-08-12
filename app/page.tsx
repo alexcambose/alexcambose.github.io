@@ -52,10 +52,12 @@ Key Responsibilities:
       'Geth',
       'Bcoin',
     ],
+    companyImageUrl: '',
   },
   {
     title: 'Senior Full-Stack Developer',
     companyName: 'Instantoption',
+    subtitle: 'aa',
     description: `Decentralized binary options protocol.
 Key Responsibilities:
 - led the frontend and backend development
@@ -77,6 +79,7 @@ Key Responsibilities:
       'Web3js',
       'MagicLink',
     ],
+    companyImageUrl: '',
   },
 
   {
@@ -108,6 +111,7 @@ Key Responsibilities:
       'PostgreSQL',
       'Ethers',
     ],
+    companyImageUrl: '',
   },
 ];
 
@@ -115,31 +119,10 @@ const Home = () => {
   return (
     <>
       <SectionContainer id="about" title="About Me">
-        Hi, I'm [Your Name], a passionate and experienced software engineer specializing in building
-        innovative solutions for complex problems. With a strong foundation in software development
-        and a knack for problem-solving, I strive to create efficient and user-friendly applications
-        that make a positive impact.
+        zzzz
       </SectionContainer>
       <SectionContainer id="skills" title="Skills">
-        With over 6 years of hands-on experience in software engineering, I've taken on diverse
-        roles ranging from frontend developer, backend developer, mentor, and architect. I have a
-        relentless drive to address intricate challenges in sectors like finance, web3, and
-        blockchain. Think of me as a Swiss Army Knife in the digital realm. ⭐ What I've Achieved: -
-        Successfully developed, launched, and maintained, numerous projects from scratch, overseeing
-        both back-end and front-end areas. - Expertise in front-end development including
-        TypeScript/JavaScript, React, Next.js, Redux, and more. My eye for UI/UX design ensures
-        optimal user experiences. - Backend-wise, I’ve delved deep from Node.js to advanced
-        frameworks like Nest.js, enhancing application speed, performance, and reliability. ⭐ More
-        Than Just Code: Beyond coding, I've been responsible for crucial project areas such as
-        planning, deployment, and even team recruitment interviews and mentorship. I’ve often
-        stepped into roles wherever needed, ensuring projects don't just launch but thrive. ⭐ Tech
-        Stack: - Frontend: HTML, CSS, JavaScript, React, Next.js, Redux, Webpack, SCSS, Styled
-        Components, Tailwind CSS, and more. - Backend: Node.js, NestJS, Express, PostgreSQL, AWS,
-        Redis, Kafka, GraphQL, and more. - Blockchain: Web3, Ethers, Solidity, Truffle, Web3.js,
-        Geth. - Mobile: React Native, Redux, React Navigation, Expo. ⭐ Personal Touch I am
-        perpetually pushing boundaries and stepping out of my comfort zone. A fervent believer that
-        success is a collective effort, I cherish being part of a team. I’m always eager to learn,
-        adapt, and stay updated with the latest in tech and finance.
+        aaa
       </SectionContainer>
       <SectionContainer id="work" title="Work">
         <WorkTimeline data={workTimelineData} />

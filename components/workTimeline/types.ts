@@ -5,7 +5,7 @@ export interface WorkTimelineItem {
   endDate?: Date;
   title: string;
   companyName: string;
-  subtitle: string;
+  subtitle?: string;
   description: ReactNode;
   techStack: string[];
   companyImageUrl: string;

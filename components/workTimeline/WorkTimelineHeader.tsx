@@ -3,7 +3,7 @@ import Image from 'next/image';
 interface WorkTimelineHeaderProps {
   title: string;
   company: string;
-  subtitle: string;
+  subtitle?: string;
   companyImageUrl: string;
 }
 export const WorkTimelineHeader = ({
@@ -18,7 +18,7 @@ export const WorkTimelineHeader = ({
         <h3 className="text-2xl dark:text-highlighted-dark">
           <span className="capitalize">{title}</span> - {company}
         </h3>
-        <h5 className="text-xl mt-1 capitalize">{subtitle}</h5>
+        {subtitle && <h5 className="text-xl mt-1 capitalize">{subtitle}</h5>}
       </div>
       <Image
         width={50}
