@@ -23,11 +23,11 @@ const NavContainer = ({ children }: { children: ReactNode }) => {
 export const Navbar = () => {
   return (
     <NavContainer>
-      <NavItem href="/">About</NavItem>
-      <NavItem href="/skills">Skills</NavItem>
-      <NavItem href="/projects">Projects</NavItem>
-      <NavItem href="/blog">Blog</NavItem>
-      <NavItem href="/contact">Contact</NavItem>
+      <NavItem href="#">About</NavItem>
+      <NavItem href="#skills">Skills</NavItem>
+      <NavItem href="#projects">Projects</NavItem>
+      <NavItem href="#blog">Blog</NavItem>
+      <NavItem href="#contact">Contact</NavItem>
     </NavContainer>
   );
 };

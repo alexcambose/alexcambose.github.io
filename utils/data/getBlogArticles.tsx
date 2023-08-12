@@ -17,6 +17,6 @@ export const getBlogArticles = async () => {
     categories: item.categories.map((e: string) => e.charAt(0).toUpperCase() + e.slice(1)),
     thumbnail: item.thumbnail,
     publishedDate: item.pubDate,
-    link: item.link,
+    linkUrl: item.link,
   })) as Article[];
 };

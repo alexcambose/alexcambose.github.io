@@ -6,12 +6,12 @@ import { useIsMounted } from '@/hooks';
 import metamaskIcon from '../../public/metamask.svg';
 import walletconnectIcon from '../../public/walletconnect.svg';
 import coinbaseIcon from '../../public/coinbase.svg';
-import { Icon } from '../baseComponents/imageIcon/ImageIcon';
+import { ImageIcon } from '../baseComponents/imageIcon/ImageIcon';
 
 const icons: { [key: string]: React.ReactNode } = {
-  metaMask: <Icon src={metamaskIcon} alt="Connect with MetaMask" />,
-  walletConnect: <Icon src={walletconnectIcon} alt="Connect with WalletConnect" />,
-  coinbaseWallet: <Icon src={coinbaseIcon} alt="Connect with CoinbaseWallet" />,
+  metaMask: <ImageIcon src={metamaskIcon} alt="Connect with MetaMask" />,
+  walletConnect: <ImageIcon src={walletconnectIcon} alt="Connect with WalletConnect" />,
+  coinbaseWallet: <ImageIcon src={coinbaseIcon} alt="Connect with CoinbaseWallet" />,
 };
 
 export const ConnectWalletButtons = () => {

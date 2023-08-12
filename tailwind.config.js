@@ -24,7 +24,7 @@ module.exports = {
       },
       textColor: {
         'default-dark': colors.gray[400],
-        'default-light': '',
+        'default-light': colors.gray[750],
         'highlighted-dark': colors.gray[100],
         // 'text-highlighted-dark': colors.gray[400],
       },
