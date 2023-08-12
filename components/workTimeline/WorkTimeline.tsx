@@ -1,4 +1,5 @@
 import { Badge } from '../baseComponents/badge/Badge';
+import { BadgeList } from '../baseComponents/badge/BadgeList';
 import { WorkTimelineContent } from './WorkTimelineContent';
 import { WorkTimelineDate } from './WorkTimelineDate';
 import { WorkTimelineHeader } from './WorkTimelineHeader';
@@ -32,11 +33,11 @@ export const WorkTimeline = ({ data }: WorkTimelineProps) => {
                 companyImageUrl={item.companyImageUrl}
               />
               <WorkTimelineContent>{item.description}</WorkTimelineContent>
-              <div className="mt-4">
+              <BadgeList>
                 {item.techStack.map((techLabel) => (
                   <Badge key={techLabel}>{techLabel}</Badge>
                 ))}
-              </div>
+              </BadgeList>
             </div>
           </li>
         );

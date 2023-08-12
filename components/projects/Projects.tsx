@@ -3,12 +3,13 @@ import { ProjectsList } from './ProjectsList';
 
 export const Projects = async () => {
   const userData = await getUserData();
+  console.log(userData.projects);
   return (
     <ProjectsList
       projects={userData.projects.map((e) => ({
         id: 1,
-        title: 'Build an App App',
-        description: 'lorem',
+        title: e.name,
+        description: e.description,
         thumbnailImageUrl: e.openGraphImageUrl,
       }))}
     />

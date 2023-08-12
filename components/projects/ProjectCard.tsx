@@ -1,3 +1,5 @@
+import { Badge } from '../baseComponents/badge/Badge';
+import { BadgeList } from '../baseComponents/badge/BadgeList';
 import { ProjectItem } from './types';
 import Image from 'next/image';
 
@@ -14,13 +16,13 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
         height={500}
         src={data.thumbnailImageUrl}
       />
-      <div className="w-6/12 ml-5">
-        <h3 className="mb-5">Build an App</h3>
-        <p className="text-sm">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime placeat consequuntur nam,
-          mollitia quis ipsum vitae deleniti odit fuga rerum vero veritatis quod impedit, earum non
-          et iste exercitationem voluptatibus?
-        </p>
+      <div className="ml-5">
+        <h3 className="mb-5">{data.title}</h3>
+        <p className="text-sm">{data.description}</p>
+        <BadgeList>
+          <Badge>Aaaa</Badge>
+          <Badge>Aaaa</Badge>
+        </BadgeList>
       </div>
     </div>
   );

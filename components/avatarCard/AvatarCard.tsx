@@ -22,12 +22,12 @@ export const AvatarCard = ({
 }: AvatarCardProps) => {
   return (
     <header className="flex flex-col">
-      <div className="relative h-40 w-40 flex-none overflow-hidden mb-8">
-        <Image alt="Profile image" src={imageUrl} fill className="object-cover rounded-full" />
+      <div className="relative mb-8 h-[15vh] w-[15vh] flex-none overflow-hidden">
+        <Image alt="Profile image" src={imageUrl} fill className="rounded-full object-cover" />
         {activeStatus && (
           <span
             className={classNames(
-              'absolute bottom-1 right-1 h-7 w-7 bg-green-400 rounded-full border-4 border-slate-100 dark:border-slate-950'
+              'absolute bottom-1 right-1 h-[3vh] w-[3vh] rounded-full border-[0.5vh] border-slate-100 bg-green-400 dark:border-slate-950'
             )}
           />
         )}
