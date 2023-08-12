@@ -1,6 +1,11 @@
+import classNames from 'classnames';
 import { Children, HTMLAttributes, ReactNode, isValidElement } from 'react';
 
-export const BadgeList = ({ children }: { children: ReactNode }) => {
+export interface BadgeListProps extends HTMLAttributes<HTMLUListElement> {
+  children: ReactNode;
+}
+
+export const BadgeList = ({ children, ...props }: BadgeListProps) => {
   const badges = Children.map(children, (child) => {
     if (isValidElement(child)) {
       return (
@@ -12,5 +17,10 @@ export const BadgeList = ({ children }: { children: ReactNode }) => {
     // non react elements (text inside the table ...etc)
     return child;
   });
-  return <ul className="mt-3">{badges}</ul>;
+
+  return (
+    <ul className={classNames('mt-3', props.className)} {...props}>
+      {badges}
+    </ul>
+  );
 };

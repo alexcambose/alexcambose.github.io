@@ -11,6 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        xxs: '0.6rem',
+      },
       colors: {
         'primary-light': '#0f0',
         'primary-dark': '#0f0',

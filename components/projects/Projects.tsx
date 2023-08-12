@@ -3,7 +3,6 @@ import { ProjectsList } from './ProjectsList';
 
 export const Projects = async () => {
   const userData = await getUserData();
-  console.log(userData.projects);
   return (
     <ProjectsList
       projects={userData.projects.map((e) => ({

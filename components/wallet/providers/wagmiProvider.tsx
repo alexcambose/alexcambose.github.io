@@ -7,7 +7,7 @@ import { publicProvider } from 'wagmi/providers/public';
 
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
+// import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet],
@@ -22,12 +22,12 @@ const connectors = [
       appName: 'wagmi',
     },
   }),
-  new WalletConnectConnector({
-    chains,
-    options: {
-      projectId: process.env.WALLETCONNECT_PROJECT_ID ?? '',
-    },
-  }),
+  // new WalletConnectConnector({
+  //   chains,
+  //   options: {
+  //     projectId: process.env.WALLETCONNECT_PROJECT_ID ?? '',
+  //   },
+  // }),
 ];
 
 const config = createConfig({
