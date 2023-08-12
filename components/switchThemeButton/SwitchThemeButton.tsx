@@ -28,8 +28,9 @@ export const SwitchThemeButton = () => {
 
   return (
     <Button
+      variant='transparent'
       aria-label="Switch Theme"
-      className={classNames('absolute top-0 left-0')}
+      className={classNames('top-[8px] left-[8px] fixed')}
       onClick={handleSwitchTheme}
     >
       {icons[theme]}

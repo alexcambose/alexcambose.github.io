@@ -1,15 +1,15 @@
-import { Children, ReactNode, isValidElement } from 'react';
+import { Children, HTMLAttributes, ReactNode, isValidElement } from 'react';
 
-export const BadgeList = ({ children }: { children: ReactNode }) => {
+export interface BadgeListProps extends HTMLAttributes<HTMLUListElement> {
+  children: ReactNode;
+}
+
+export const BadgeList = ({ children, ...props }: BadgeListProps) => {
   return (
-    <ul>
+    <ul {...props}>
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
-          return (
-            <li>
-              <child.type />
-            </li>
-          );
+          return <li className="inline">{child}</li>;
         }
         // non react elements (text inside the table ...etc)
         return child;

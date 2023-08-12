@@ -9,5 +9,5 @@ export interface WorkTimelineItem {
   description: ReactNode;
   techStack: string[];
   companyImageUrl: string;
-  subItems: Omit<WorkTimelineItem, 'companyImageUrl' | 'subtitle'>;
+  subItems?: Omit<WorkTimelineItem, 'companyImageUrl' | 'subtitle'>;
 }

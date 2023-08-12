@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 import { Navbar } from './navigation/Navbar';
+import { SwitchThemeButton } from '@/components/switchThemeButton/SwitchThemeButton';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 interface LayoutProps {
@@ -15,9 +16,9 @@ interface LayoutProps {
 }
 
 const layoutTheme = {
-  position: 'relative',
+  position: 'fixed',
   background: 'bg-slate-100 dark:bg-slate-950',
-  border: 'border-8 border-blue-500 dark:border-blue-950',
+  border: 'border-8 border-r-0 border-blue-500 dark:border-blue-950',
   height: 'min-h-screen',
   font: 'font-sans dark:text-default-dark text-default-light',
 };
@@ -49,7 +50,8 @@ export const Layout = ({ children }: LayoutProps) => {
             layoutTheme.background,
             layoutTheme.border,
             layoutTheme.height,
-            layoutTheme.font
+            layoutTheme.font,
+            'overflow-auto top-0 right-0 left-0 bottom-0'
           )}
         >
           {/* <WalletNav /> */}
@@ -84,7 +86,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 </>
               }
             >
-              {/* <SwitchThemeButton /> */}
+              <SwitchThemeButton />
               <main>{children}</main>
             </Container>
             <footer className="py-8">

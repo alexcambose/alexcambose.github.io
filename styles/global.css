@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* width */
 ::-webkit-scrollbar {
@@ -8,10 +8,14 @@
 }
 
 /* Track */
+/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  @apply bg-blue-500;
 }
 
+.dark ::-webkit-scrollbar-track {
+  @apply bg-blue-950;
+}
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
