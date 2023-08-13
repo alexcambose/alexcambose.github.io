@@ -14,7 +14,7 @@
 }
 
 .dark ::-webkit-scrollbar-track {
-  @apply bg-blue-950;
+  @apply bg-page-frame-color-dark;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {

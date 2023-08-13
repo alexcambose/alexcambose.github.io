@@ -14,16 +14,17 @@ module.exports = {
       fontSize: {
         xxs: '0.6rem',
       },
+      // https://coolors.co/palette/0a1128-001f54-034078-1282a2-fefcfb
       colors: {
         'primary-light': '#0f0',
         'primary-dark': '#0f0',
         'background-light': colors.slate[100],
-        'background-dark': colors.indigo[950],
+        'background-dark': '#0A1128',
         'page-frame-color-light': '',
-        'page-frame-color-dark': colors.black[950],
+        'page-frame-color-dark': '#001F54',
       },
       textColor: {
-        'default-dark': colors.gray[400],
+        'default-dark': colors.gray[300],
         'default-light': colors.gray[750],
         'highlighted-dark': colors.gray[100],
         // 'text-highlighted-dark': colors.gray[400],

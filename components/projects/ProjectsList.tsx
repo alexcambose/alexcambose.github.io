@@ -6,10 +6,10 @@ export interface ProjectsListProps {
 }
 export const ProjectsList = ({ projects }: ProjectsListProps) => {
   return (
-    <div>
+    <ul role="article list-none">
       {projects.map((project) => (
         <ProjectCard key={project.id} data={project} />
       ))}
-    </div>
+    </ul>
   );
 };

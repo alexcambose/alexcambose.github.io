@@ -17,8 +17,8 @@ interface LayoutProps {
 
 const layoutTheme = {
   position: 'fixed',
-  background: 'bg-slate-100 dark:bg-slate-950',
-  border: 'border-8 border-r-0 border-blue-500 dark:border-blue-950',
+  background: 'bg-background-light dark:bg-background-dark',
+  border: 'border-8 border-r-0 border-page-frame-color-light dark:border-page-frame-color-dark',
   height: 'min-h-screen',
   font: 'font-sans dark:text-default-dark text-default-light',
 };
@@ -89,7 +89,7 @@ export const Layout = ({ children }: LayoutProps) => {
               <SwitchThemeButton />
               <main>{children}</main>
             </Container>
-            <footer className="py-8">
+            <footer className="py-8 max-w-screen-xl mx-auto">
               <p className="text-sm text-slate-500 tracking-wide">
                 Designed and coded by Alexandru Cambose. Built with{' '}
                 <Link href="https://nextjs.org/" target="_blank">

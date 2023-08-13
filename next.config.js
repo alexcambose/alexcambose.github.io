@@ -17,6 +17,10 @@ module.exports = withBundleAnalyzer(
           hostname: '*',
         },
         {
+          protocol: 'http',
+          hostname: '*',
+        },
+        {
           protocol: 'https',
           hostname: 'placehold.co',
         },

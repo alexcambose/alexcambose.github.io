@@ -12,7 +12,7 @@ const workTimelineData = [
   {
     title: 'Fullstack developer',
     companyName: 'Cult of Coders',
-    subtitle: 'Senior Software Engineer',
+    companyUrl: 'https://www.cultofcoders.com/',
     startDate: new Date('01.09.2018'),
     endDate: new Date('01.10.2019'),
     description: `- responsible for front-end and back-end web development
@@ -23,12 +23,31 @@ Technologies:
 - Javascript, React, SASS
 - AWS, NodeJs, GraphQL, PostgreSQL`,
     techStack: ['React', 'SCSS', 'NodeJs', 'Typescript', 'GraphQL', 'AWS'],
-    companyImageUrl:
-      'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
+    companyImageUrls: {
+      smallSizeParams: {
+        width: 50,
+      },
+      largeSizeParams: {
+        width: 40,
+      },
+      light: {
+        small:
+          'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
+        large:
+          'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
+      },
+      dark: {
+        small:
+          'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
+        large:
+          'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
+      },
+    },
   },
   {
     title: 'Senior Full-Stack Developer',
     companyName: 'MixDice',
+    companyUrl: 'https://twitter.com/MixDiceCasino',
     description: `Lead Developer for a cryptocurrency-based gaming platform.
 Key Responsibilities:
 - led the development of the project
@@ -52,12 +71,26 @@ Key Responsibilities:
       'Geth',
       'Bcoin',
     ],
-    companyImageUrl: '',
+    companyImageUrls: {
+      smallSizeParams: {
+        width: 50,
+      },
+      largeSizeParams: {
+        width: 100,
+      },
+      light: {
+        small: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/mixdice-small.png`,
+        large: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/mixdice-large.png`,
+      },
+      dark: {
+        small: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/mixdice-small.png`,
+        large: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/mixdice-large.png`,
+      },
+    },
   },
   {
     title: 'Senior Full-Stack Developer',
     companyName: 'Instantoption',
-    subtitle: 'aa',
     description: `Decentralized binary options protocol.
 Key Responsibilities:
 - led the frontend and backend development
@@ -79,16 +112,30 @@ Key Responsibilities:
       'Web3js',
       'MagicLink',
     ],
-    companyImageUrl: '',
+    companyImageUrls: {
+      smallSizeParams: {
+        width: 50,
+      },
+      largeSizeParams: {
+        width: 100,
+      },
+      light: {
+        small: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/instantoption-small.svg`,
+        large: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/instantoption-large.svg`,
+      },
+      dark: {
+        small: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/instantoption-small.svg`,
+        large: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/instantoption-large.svg`,
+      },
+    },
   },
-
   {
     title: 'Senior Full-Stack Engineer',
     companyName: 'Rolla',
+    companyUrl: 'https://rolla.fi',
     startDate: new Date('01.09.2021'),
     endDate: new Date('01.09.2023'),
     description: `Worked on different projects over time, DeFi crypto options exchange, DeFi option-based yield generation app, DeFi price prediction app based on spreads and digital options.
-
 Key Responsibilities:
 - worked on diverse roles, frontend, backend, and mobile
 - lead backend developer
@@ -111,7 +158,22 @@ Key Responsibilities:
       'PostgreSQL',
       'Ethers',
     ],
-    companyImageUrl: '',
+    companyImageUrls: {
+      smallSizeParams: {
+        width: 50,
+      },
+      largeSizeParams: {
+        width: 80,
+      },
+      light: {
+        small: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/rolla-small-light.svg`,
+        large: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/rolla-large-light.svg`,
+      },
+      dark: {
+        small: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/rolla-small-light.svg`,
+        large: `${process.env.NEXT_PUBLIC_VERCEL_ENV}/logo/rolla-large-dark.svg`,
+      },
+    },
   },
 ];
 

@@ -30,7 +30,9 @@ export const WorkTimeline = ({ data }: WorkTimelineProps) => {
                 subtitle={item.subtitle}
                 title={item.title}
                 company={item.companyName}
-                companyImageUrl={item.companyImageUrl}
+                companyImageUrls={item.companyImageUrls}
+                companyUrl={item.companyUrl}
+                alt={item.companyName + ' logo'}
               />
               <WorkTimelineContent>{item.description}</WorkTimelineContent>
               <BadgeList>
