@@ -61,9 +61,9 @@ export const Layout = ({ children }: LayoutProps) => {
                 <>
                   <div>
                     <AvatarCard
-                      title="Lorem ipsum"
+                      title="Alexandru Cambose"
                       description="Product-focused Software engineer"
-                      imageUrl="https://placehold.co/600x400.png"
+                      imageUrl="https://avatars.githubusercontent.com/u/12383978?v=4"
                       action="I thrive on tackling complex challenges that empowers financial systems. Can-do attitude. Always shipping."
                     />
                     <Navbar />
