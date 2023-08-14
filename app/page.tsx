@@ -183,17 +183,14 @@ const Home = () => {
       <SectionContainer id="about" title="About Me">
         zzzz
       </SectionContainer>
-      <SectionContainer id="skills" title="Skills">
-        aaa
-      </SectionContainer>
-      <SectionContainer id="work" title="Work">
+      <SectionContainer id="experience" title="Experience">
         <WorkTimeline data={workTimelineData} />
       </SectionContainer>
 
       <SectionContainer id="projects" title="Projects">
         <Projects />
       </SectionContainer>
-      <SectionContainer id="writing" title="Writing">
+      <SectionContainer id="writings" title="Writings">
         <Blog />
       </SectionContainer>
       <SectionContainer id="contact" title="Contact">

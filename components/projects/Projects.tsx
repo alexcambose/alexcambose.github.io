@@ -3,14 +3,5 @@ import { ProjectsList } from './ProjectsList';
 
 export const Projects = async () => {
   const userData = await getUserData();
-  return (
-    <ProjectsList
-      projects={userData.projects.map((e) => ({
-        id: 1,
-        title: e.name,
-        description: e.description,
-        thumbnailImageUrl: e.openGraphImageUrl,
-      }))}
-    />
-  );
+  return <ProjectsList projects={userData.projects} />;
 };

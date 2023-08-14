@@ -44,6 +44,7 @@ export const Layout = ({ children }: LayoutProps) => {
     >
       <body>
         <div
+          id='scroll-container'
           className={classNames(
             inter.variable,
             layoutTheme.position,
@@ -86,7 +87,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 </>
               }
             >
-              <SwitchThemeButton />
+              {/* <SwitchThemeButton /> */}
               <main>{children}</main>
             </Container>
             <footer className="py-8 max-w-screen-xl mx-auto">

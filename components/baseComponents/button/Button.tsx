@@ -9,9 +9,11 @@ type ButtonProps = {
 
 export const Button = ({ fullWidth, variant = 'default', ...props }: ButtonProps) => {
   const className = classNames(
-    'p-4 inline-flex items-center justify-center font-medium outline-1 outline-offset-2 focus:outline',
+    'p-4 inline-flex items-center justify-center font-medium',
     { 'w-full': fullWidth },
     buttonTheme.background,
+    buttonTheme.border,
+    buttonTheme.outline,
     props.className,
     { '!bg-transparent': variant === 'transparent' }
   );

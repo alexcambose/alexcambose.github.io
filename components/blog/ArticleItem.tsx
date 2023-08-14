@@ -8,8 +8,12 @@ export interface ArticleItemProps {
 
 export const ArticleItem = ({ article }: ArticleItemProps) => {
   return (
-    <li>
-      <a className="flex items-center gap-4 mt-10" href={article.linkUrl} target="_blank">
+    <li className="group/item">
+      <a
+        className="flex items-center gap-4 mt-2 rounded-md group-hover:opacity-50 hover:!bg-slate-800/50 hover:!opacity-100 p-3 transition"
+        href={article.linkUrl}
+        target="_blank"
+      >
         <Image
           alt="Project mage"
           width={500}
@@ -22,8 +26,8 @@ export const ArticleItem = ({ article }: ArticleItemProps) => {
           <small className="text-xsm opacity-90">
             Published on {dayjs(article.publishedDate).format('MMM DD YYYY')}
           </small>
-          <p className="mt-2">{article.description}</p>
-          <div className="mt-2">
+          <p className="mt-1">{article.description}</p>
+          <div className="mt-1">
             {article.categories.map((category, i) => (
               <small className="text-xsm opacity-90" key={category}>
                 {category} {i < article.categories.length - 1 && '· '}

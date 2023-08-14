@@ -3,4 +3,6 @@ export interface ProjectItem {
   title: string;
   description: string;
   thumbnailImageUrl: string;
+  isAdditionalOpenSourceProject: boolean;
+  stargazersCount: number,
 }

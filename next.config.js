@@ -4,27 +4,21 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: ANALYZE === 'true',
 });
 
-const withPWA = require('next-pwa')({
-  dest: 'public',
+module.exports = withBundleAnalyzer({
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*',
+      },
+      {
+        protocol: 'http',
+        hostname: '*',
+      },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
+    ],
+  },
 });
-
-module.exports = withBundleAnalyzer(
-  withPWA({
-    images: {
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: '*',
-        },
-        {
-          protocol: 'http',
-          hostname: '*',
-        },
-        {
-          protocol: 'https',
-          hostname: 'placehold.co',
-        },
-      ],
-    },
-  })
-);

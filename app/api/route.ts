@@ -1,6 +1,5 @@
 import { Octokit } from '@octokit/core';
-const getQuery = () => `
-{
+const getQuery = () => `{
   viewer {
     databaseId
     login
@@ -18,42 +17,39 @@ const getQuery = () => `
     followers {
       totalCount
     }
-    itemShowcase {
-      hasPinnedItems
-      items(first: 10) {
-        totalCount
-        nodes {
-          ... on Repository {
+    repositories(first: 100) {
+      nodes {
+        ... on Repository {
+          id
+          name
+          homepageUrl
+          description
+          licenseInfo {
+            id
+          }
+          openGraphImageUrl
+          forkCount
+          createdAt
+          homepageUrl
+          stargazerCount
+          primaryLanguage {
             id
             name
-            description
-            licenseInfo {
-              id
-            }
-            openGraphImageUrl
-            forkCount
-            createdAt
-            homepageUrl
-            stargazerCount
-            primaryLanguage {
-              id
-              name
-              color
-            }
-            languages(first: 10) {
-              totalSize
-              totalCount
-              edges {
-                node {
-                  name
-                  color
-                }
-                size
+            color
+          }
+          languages(first: 10) {
+            totalSize
+            totalCount
+            edges {
+              node {
+                name
+                color
               }
+              size
             }
-            watchers {
-              totalCount
-            }
+          }
+          watchers {
+            totalCount
           }
         }
       }

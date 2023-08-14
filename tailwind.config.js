@@ -22,9 +22,10 @@ module.exports = {
         'background-dark': '#0A1128',
         'page-frame-color-light': '',
         'page-frame-color-dark': '#001F54',
+        'accent-color-dark': '#034078',
       },
       textColor: {
-        'default-dark': colors.gray[300],
+        'default-dark': colors.slate[400],
         'default-light': colors.gray[750],
         'highlighted-dark': colors.gray[100],
         // 'text-highlighted-dark': colors.gray[400],

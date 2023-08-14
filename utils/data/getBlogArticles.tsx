@@ -11,7 +11,7 @@ export const getBlogArticles = async () => {
     `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@alexcambose`
   );
   const data = await res.json();
-  return data.items.map((item: any) => ({
+  return (data.items || []).map((item: any) => ({
     title: item.title,
     description: extractDescription(item.description),
     categories: item.categories.map((e: string) => e.charAt(0).toUpperCase() + e.slice(1)),
