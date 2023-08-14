@@ -20,17 +20,26 @@ export const ProjectCard = ({ data, isReversed }: ProjectCardProps) => {
         height={500}
         src={data.thumbnailImageUrl}
       />
-      <div className={classNames('flex flex-col justify-center', { 'items-end': !isReversed })}>
-        <h3 className="mb-5 text-2xl">{data.title}</h3>
+      <div
+        className={classNames('flex flex-col justify-center ', {
+          'items-end': !isReversed,
+        })}
+      >
+        <div className="w-[120%] z-10">
+          <h3 className="mb-5 text-2xl text-slate-50">{data.title}</h3>
 
-        <div className="bg-page-frame-color-dark p-6 rounded-md drop-shadow-sm hover:drop-shadow-lg transition w-[120%]">
-          <p className={classNames('text-sm')}>{data.description}</p>
+          <div className="bg-page-frame-color-dark p-6 rounded-md drop-shadow-sm hover:drop-shadow-lg transition">
+            <p className={classNames('text-sm')}>{data.description}</p>
+          </div>
+          <BadgeList className={classNames({ 'align-right': !isReversed })}>
+            {data.tags.map((e) => (
+              <Badge size="small" key={e}>
+                {e}
+              </Badge>
+            ))}
+          </BadgeList>
         </div>
-        <BadgeList>
-          <Badge>Aaaa</Badge>
-          <Badge>Aaaa</Badge>
-        </BadgeList>
-        <ProjectCardFooter />
+        <ProjectCardFooter externalUrl={data.externalUrl} githubUrl={data.githubUrl} />
       </div>
     </li>
   );

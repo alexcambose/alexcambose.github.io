@@ -44,7 +44,7 @@ export const Layout = ({ children }: LayoutProps) => {
     >
       <body>
         <div
-          id='scroll-container'
+          id="scroll-container"
           className={classNames(
             inter.variable,
             layoutTheme.position,
@@ -72,10 +72,13 @@ export const Layout = ({ children }: LayoutProps) => {
                   <div>
                     <SocialIcons
                       data={{
-                        [SocialElementType.Twitter]: { url: 'https://twitter.com/alexcambose' },
-                        [SocialElementType.Github]: { url: 'https://github.com/alexcambose' },
                         [SocialElementType.Linkedin]: {
                           url: 'https://www.linkedin.com/in/alexcambose/',
+                        },
+                        [SocialElementType.Github]: { url: 'https://github.com/alexcambose' },
+                        [SocialElementType.Twitter]: { url: 'https://twitter.com/alexcambose' },
+                        [SocialElementType.Medium]: {
+                          url: 'https://medium.com/@alexcambose',
                         },
                         [SocialElementType.Instagram]: {
                           url: 'https://www.instagram.com/alexcambose/',

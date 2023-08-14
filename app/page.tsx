@@ -61,11 +61,12 @@ Key Responsibilities:
     endDate: new Date('01.06.2020'),
     techStack: [
       'React',
-      'SCSS',
       'Typescript',
       'Nodejs',
+      'Express',
+      'NextJS',
       'GraphQL',
-      'WS',
+      'WebSockets',
       'MongoDB',
       'Web3js',
       'Geth',
@@ -186,7 +187,6 @@ const Home = () => {
       <SectionContainer id="experience" title="Experience">
         <WorkTimeline data={workTimelineData} />
       </SectionContainer>
-
       <SectionContainer id="projects" title="Projects">
         <Projects />
       </SectionContainer>

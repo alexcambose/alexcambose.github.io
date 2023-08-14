@@ -17,7 +17,7 @@ const getQuery = () => `{
     followers {
       totalCount
     }
-    repositories(first: 100) {
+    repositories(first: 100,isArchived:false,isFork:false, orderBy: {field:UPDATED_AT,direction:DESC}) {
       nodes {
         ... on Repository {
           id
@@ -30,6 +30,7 @@ const getQuery = () => `{
           openGraphImageUrl
           forkCount
           createdAt
+          updatedAt
           homepageUrl
           stargazerCount
           primaryLanguage {
