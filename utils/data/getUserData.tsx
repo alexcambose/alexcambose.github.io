@@ -1,5 +1,5 @@
 export const getUserData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_ENV}/api`);
+  const res = await fetch(`${process.env.VERCEL_URL}/api`);
   const data = await res.json();
   return {
     projects: data.viewer.itemShowcase.items.nodes as [

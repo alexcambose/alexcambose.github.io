@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { Badge } from '../baseComponents/badge/Badge';
 import { BadgeList } from '../baseComponents/badge/BadgeList';
 import { ProjectItem } from './types';
@@ -5,10 +6,11 @@ import Image from 'next/image';
 
 export interface ProjectCardProps {
   data: ProjectItem;
+  isReversed?: boolean;
 }
-export const ProjectCard = ({ data }: ProjectCardProps) => {
+export const ProjectCard = ({ data, isReversed }: ProjectCardProps) => {
   return (
-    <div className="mt-14 flex first:mt-0">
+    <li className={classNames('mt-14 flex first:mt-0', { 'flex-row-reverse': isReversed })}>
       <Image
         alt="Project mage"
         className="max-w-[50%] h-72 object-cover"
@@ -16,14 +18,17 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
         height={500}
         src={data.thumbnailImageUrl}
       />
-      <div className="ml-5">
+      <div className={classNames('flex flex-col justify-center', { 'items-end': !isReversed })}>
         <h3 className="mb-5">{data.title}</h3>
-        <p className="text-sm">{data.description}</p>
+
+        <div className="bg-page-frame-color-dark p-6 rounded-md drop-shadow-sm hover:drop-shadow-lg transition w-[120%]">
+          <p className={classNames('text-sm')}>{data.description}</p>
+        </div>
         <BadgeList>
           <Badge>Aaaa</Badge>
           <Badge>Aaaa</Badge>
         </BadgeList>
       </div>
-    </div>
+    </li>
   );
 };

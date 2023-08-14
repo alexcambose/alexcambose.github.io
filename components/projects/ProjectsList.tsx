@@ -7,8 +7,8 @@ export interface ProjectsListProps {
 export const ProjectsList = ({ projects }: ProjectsListProps) => {
   return (
     <ul role="article list-none">
-      {projects.map((project) => (
-        <ProjectCard key={project.id} data={project} />
+      {projects.map((project, index) => (
+        <ProjectCard key={project.id} data={project} isReversed={index % 2 === 0} />
       ))}
     </ul>
   );

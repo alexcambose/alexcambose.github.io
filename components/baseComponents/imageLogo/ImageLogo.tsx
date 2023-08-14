@@ -49,7 +49,7 @@ export const ImageLogo = ({
     </>
   );
   return url ? (
-    <a href={url} target="_blank">
+    <a href={url} rel="noopener noreferrer" target="_blank">
       {images}
     </a>
   ) : (
