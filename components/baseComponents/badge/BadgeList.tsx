@@ -5,7 +5,7 @@ export interface BadgeListProps extends HTMLAttributes<HTMLUListElement> {
   children: ReactNode;
 }
 
-export const BadgeList = ({ children, ...props }: BadgeListProps) => {
+export const BadgeList = ({ children, className, ...props }: BadgeListProps) => {
   const badges = Children.map(children, (child) => {
     if (isValidElement(child)) {
       return (
@@ -19,7 +19,7 @@ export const BadgeList = ({ children, ...props }: BadgeListProps) => {
   });
 
   return (
-    <ul className={classNames('mt-3', props.className)} {...props}>
+    <ul className={classNames('mt-3 flex flex-wrap', className)} {...props}>
       {badges}
     </ul>
   );

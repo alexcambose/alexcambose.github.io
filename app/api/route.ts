@@ -23,6 +23,7 @@ const getQuery = () => `{
           id
           name
           homepageUrl
+          url
           description
           licenseInfo {
             id

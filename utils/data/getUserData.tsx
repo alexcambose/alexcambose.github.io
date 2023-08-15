@@ -24,6 +24,7 @@ const projectMetadataOverride = {
       'Geth',
       'Bcoin',
     ],
+    githubUrl: undefined,
   },
   motus: {
     title: 'MotusJS',
@@ -76,6 +77,7 @@ export const getUserData = async () => {
         ...e,
         thumbnailImageUrl: e.openGraphImageUrl,
         externalUrl: e.homepageUrl,
+        githubUrl: e.url,
         // @ts-ignore
         ...(projectMetadataOverride[e.name] || {}),
         // @ts-ignore

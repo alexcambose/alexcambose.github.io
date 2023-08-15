@@ -31,7 +31,7 @@ export const ProjectCard = ({ data, isReversed }: ProjectCardProps) => {
           <div className="bg-page-frame-color-dark p-6 rounded-md drop-shadow-sm hover:drop-shadow-lg transition">
             <p className={classNames('text-sm')}>{data.description}</p>
           </div>
-          <BadgeList className={classNames({ 'align-right': !isReversed })}>
+          <BadgeList className={classNames({ 'justify-end': !isReversed })}>
             {data.tags.map((e) => (
               <Badge size="small" key={e}>
                 {e}

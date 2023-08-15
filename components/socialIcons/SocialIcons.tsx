@@ -20,7 +20,7 @@ const socialIcons = {
   [SocialElementType.Twitter]: { component: TwitterLogo, color: '#1da1f2' },
   [SocialElementType.Github]: { component: GithubLogo, color: '#f5f5f5' },
   [SocialElementType.Linkedin]: { component: LinkedinLogo, color: ' #0a66c2' },
-  [SocialElementType.Medium]: { component: MediumLogo, color: ' #8b8b8b' },
+  [SocialElementType.Medium]: { component: MediumLogo, color: ' #fff' },
   [SocialElementType.Instagram]: { component: InstagramLogo, color: '#c32aa3' },
   [SocialElementType.Facebook]: { component: FacebookLogo, color: '#1877f2' },
 };
