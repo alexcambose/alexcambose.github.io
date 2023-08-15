@@ -61,7 +61,7 @@ const additionalProjects = {
   },
 };
 export const getUserData = async () => {
-  const res = await fetch(`${process.env.VERCEL_URL}/api`);
+  const res = await fetch(`https://${process.env.VERCEL_URL}/api`);
   const data = await res.json();
   const mainProjects = data.viewer.repositories.nodes.filter(
     (e: any) =>
