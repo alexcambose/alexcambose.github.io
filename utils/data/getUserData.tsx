@@ -120,6 +120,10 @@ const additionalProjects = {
     description: 'Webcam live streaming with WebSockets and Base64 encoded data.',
     tags: ['Javascript', 'Websockets', 'NodeJS'],
   },
+  'time-tracker': {
+    description: 'A VSCode extension to track working time.',
+    tags: ['typescript'],
+  },
 };
 export const getUserData = async () => {
   let data = {} as any;
@@ -132,7 +136,6 @@ export const getUserData = async () => {
       // @ts-ignore
       projectMetadataOverride[e.name] !== undefined || additionalProjects[e.name] !== undefined
   );
-  console.log(mainProjects);
   return {
     projects: mainProjects.map((e: any) => {
       // @ts-ignore
@@ -142,6 +145,7 @@ export const getUserData = async () => {
         thumbnailImageUrl: e.openGraphImageUrl,
         externalUrl: e.homepageUrl,
         githubUrl: e.url,
+        title: e.name,
         // @ts-ignore
         ...(projectMetadataOverride[e.name] || {}),
         // @ts-ignore

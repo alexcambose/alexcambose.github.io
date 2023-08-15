@@ -5,7 +5,8 @@ export interface ProjectItem {
   tags: string[];
   thumbnailImageUrl: string;
   isAdditionalOpenSourceProject: boolean;
-  stargazersCount: number;
+  stargazerCount: number;
+  forkCount: number;
   githubUrl?: string;
   externalUrl?: string;
 }

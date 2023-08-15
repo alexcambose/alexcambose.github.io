@@ -7,6 +7,7 @@ import {
   TwitterLogo,
 } from '@phosphor-icons/react';
 import classNames from 'classnames';
+import { IconContainer } from '../baseComponents/icon/IconContainer';
 
 export enum SocialElementType {
   Twitter = 'twitter',
@@ -35,17 +36,12 @@ export const SocialIcons = ({ data }: SocialIconsProps) => {
   return (
     <ul className={classNames('flex gap-1 text-3xl')} aria-label="Social media">
       {Object.entries(data).map(([key, value]) => {
-        const SocialIconComponent = socialIcons[key as SocialElementType].component;
+        const socialIconComponent = socialIcons[key as SocialElementType].component;
         const accentColor = socialIcons[key as SocialElementType].color;
         return (
           <li key={key}>
-            <a href={value.url} className="inline-block p-1 group" target="_blank">
-              <span className="group-hover:hidden opacity-80">
-                <SocialIconComponent />
-              </span>
-              <span className="hidden group-hover:inline opacity-0 group-hover:opacity-100">
-                <SocialIconComponent style={{ fill: accentColor }} weight="fill" />
-              </span>
+            <a href={value.url} className="inline-block p-1" target="_blank">
+              <IconContainer icon={socialIconComponent} hoverColor={accentColor} />
             </a>
           </li>
         );

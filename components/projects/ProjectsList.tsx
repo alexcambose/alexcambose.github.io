@@ -15,7 +15,7 @@ export const ProjectsList = ({ projects }: ProjectsListProps) => {
             <ProjectCard key={project.id} data={project} isReversed={index % 2 === 0} />
           ))}
       </ul>
-      <ul role="article list-none grid gap-4 grid-cols-3">
+      <ul className="grid grid-cols-2 gap-4 lg:mt-16 mt-10 group" role="article list-none">
         {projects
           .filter((e) => e.isAdditionalOpenSourceProject)
           .map((project, index) => (

@@ -1,3 +1,4 @@
+import { About } from '@/components/about/About';
 import { Blog } from '@/components/blog/Blog';
 import { Contact } from '@/components/contact/Contact';
 import { SectionContainer } from '@/components/layout/SectionContainer';
@@ -182,7 +183,7 @@ const Home = () => {
   return (
     <>
       <SectionContainer id="about" title="About Me">
-        zzzz
+        <About />
       </SectionContainer>
       <SectionContainer id="experience" title="Experience">
         <WorkTimeline data={workTimelineData} />
