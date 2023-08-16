@@ -48,8 +48,9 @@ export const Navbar = () => {
         return;
       }
       if (
-        Math.round(scrollContainer.scrollHeight - scrollContainer.scrollTop) ===
-        scrollContainer.clientHeight
+        Math.round(scrollContainer.scrollHeight - scrollContainer.scrollTop) -
+          scrollContainer.clientHeight <
+        50
       ) {
         // If user has scrolled to the very bottom, set the last section as active
         setCurrentPath(sections[sections.length - 1]);
@@ -59,7 +60,8 @@ export const Navbar = () => {
         const element = document.querySelector(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 0 && rect.bottom > 0) {
+          console.log(section, rect.top, rect.bottom);
+          if (Math.abs(rect.top) <= rect.bottom) {
             setCurrentPath(section);
             break;
           }

@@ -38,6 +38,9 @@ dependencies:
   nextjs-google-analytics:
     specifier: 2.3.3
     version: 2.3.3(next@13.4.14-canary.2)(react@18.2.0)
+  posthog-js:
+    specifier: 1.76.0
+    version: 1.76.0
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -4974,6 +4977,10 @@ packages:
     dependencies:
       reusify: 1.0.4
 
+  /fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
+    dev: false
+
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -6679,6 +6686,12 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
+
+  /posthog-js@1.76.0:
+    resolution: {integrity: sha512-C/+M+uVQ+CAEUz0ZAENMobw0fYcXGNomUXd8irelT7cQ9fsDSRgfyF5wwqaX0UXcIBD+iFXTOtK93T8NnFODyg==}
+    dependencies:
+      fflate: 0.4.8
+    dev: false
 
   /preact@10.15.1:
     resolution: {integrity: sha512-qs2ansoQEwzNiV5eAcRT1p1EC/dmEzaATVDJNiB3g2sRDWdA7b7MurXdJjB2+/WQktGWZwxvDrnuRFbWuIr64g==}
