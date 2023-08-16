@@ -34,7 +34,7 @@ interface SocialIconsProps {
 }
 export const SocialIcons = ({ data }: SocialIconsProps) => {
   return (
-    <ul className={classNames('flex gap-1 text-3xl')} aria-label="Social media">
+    <ul className={classNames('flex gap-1 text-3xl lg:mt-0 my-4')} aria-label="Social media">
       {Object.entries(data).map(([key, value]) => {
         const socialIconComponent = socialIcons[key as SocialElementType].component;
         const accentColor = socialIcons[key as SocialElementType].color;

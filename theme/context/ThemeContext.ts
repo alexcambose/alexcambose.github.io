@@ -6,5 +6,5 @@ export const ThemeContext = createContext<{
   theme: ThemeTypeEnum;
 }>({
   setTheme: () => {},
-  theme: ThemeTypeEnum.LIGHT,
+  theme: ThemeTypeEnum.DARK,
 });

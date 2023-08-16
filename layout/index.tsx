@@ -18,7 +18,7 @@ interface LayoutProps {
 const layoutTheme = {
   position: 'fixed',
   background: 'bg-background-light dark:bg-background-dark',
-  border: 'border-8 border-r-0 border-page-frame-color-light dark:border-page-frame-color-dark',
+  border: 'lg:border-8 border-r-0 border-page-frame-color-light dark:border-page-frame-color-dark',
   height: 'min-h-screen',
   font: 'font-sans dark:text-default-dark text-default-light leading-relaxed',
 };

@@ -18,7 +18,7 @@ export const ArticleItem = ({ article }: ArticleItemProps) => {
           alt="Project mage"
           width={500}
           height={500}
-          className="object-cover w-32 h-28"
+          className="object-cover w-[14vw] h-[10vw] lg:w-32 lg:h-28 self-start lg:self-center"
           src={article.thumbnail}
         />
         <div>

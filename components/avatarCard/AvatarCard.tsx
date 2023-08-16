@@ -21,7 +21,7 @@ export const AvatarCard = ({
   activeStatus = ActiveStatusEnum.ACTIVE,
 }: AvatarCardProps) => {
   return (
-    <header className="flex flex-col">
+    <header className="flex flex-col lg:mt-0 mt-8">
       <div className="relative mb-7 h-[16vh] w-[16vh] max-w-20  flex-none overflow-hidden">
         <Image
           alt="Profile image"
