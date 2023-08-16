@@ -16,8 +16,9 @@
     "start": "next start",
     "export": "next build && next export",
     "lint": "eslint --ignore-path .gitignore --fix",
-    "format": "prettier --ignore-path .gitignore \"pages/**/*.+(ts|js|tsx)\" --write",
-    "postinstall": "husky install"
+    "format": "prettier --ignore-path .gitignore \"./**/*.+(ts|js|tsx)\" --write",
+    "postinstall": "husky install",
+    "analyze": "ANALYZE=true next build"
   },
   "lint-staged": {
     "./**/*.{ts,js,jsx,tsx}": [
@@ -26,13 +27,26 @@
     ]
   },
   "dependencies": {
-    "next": "13.4.4",
+    "@headlessui/react": "1.7.15",
+    "@next/bundle-analyzer": "13.4.7",
+    "@octokit/core": "5.0.0",
+    "@phosphor-icons/react": "2.0.10",
+    "@tailwindcss/typography": "0.5.9",
+    "classnames": "2.3.2",
+    "dayjs": "1.11.9",
+    "jsdom": "22.1.0",
+    "next": "13.4.14-canary.2",
+    "next-pwa": "5.6.0",
+    "nextjs-google-analytics": "2.3.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "viem": "1.0.6",
+    "wagmi": "1.2.0"
   },
   "devDependencies": {
     "@emotion/react": "11.11.0",
     "@emotion/styled": "11.11.0",
+    "@types/jsdom": "21.1.1",
     "@types/node": "18.16.16",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",
@@ -45,7 +59,9 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.2",
     "postcss": "8.4.24",
+    "postcss-import": "15.1.0",
     "prettier": "2.8.8",
+    "prettier-plugin-tailwindcss": "0.3.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3"
   }

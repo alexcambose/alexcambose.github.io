@@ -1,4 +1,7 @@
 module.exports = {
+  parserOptions: {
+    project: './tsconfig.json',
+  },
   extends: ['alloy', 'alloy/react', 'alloy/typescript', 'next'],
   // use next/core-web-vitals to error on a number of rules
   // that are warnings by default if they affect Core Web Vitals
@@ -13,4 +16,4 @@ module.exports = {
   rules: {
     'import/no-anonymous-default-export': 'off',
   },
-}
+};
