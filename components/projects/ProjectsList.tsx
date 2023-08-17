@@ -8,14 +8,14 @@ export interface ProjectsListProps {
 export const ProjectsList = ({ projects }: ProjectsListProps) => {
   return (
     <>
-      <ul role="article list-none">
+      <ul role="article">
         {projects
           .filter((e) => !e.isAdditionalOpenSourceProject)
           .map((project, index) => (
             <ProjectCard key={project.id} data={project} isReversed={index % 2 === 0} />
           ))}
       </ul>
-      <ul className="grid grid-cols-2 gap-4 lg:mt-16 mt-10 group" role="article list-none">
+      <ul className="grid grid-cols-2 gap-4 lg:mt-16 mt-10 group" role="article">
         {projects
           .filter((e) => e.isAdditionalOpenSourceProject)
           .map((project, index) => (
