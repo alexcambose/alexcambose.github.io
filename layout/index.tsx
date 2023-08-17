@@ -93,7 +93,7 @@ export const Layout = ({ children }: LayoutProps) => {
               <main>{children}</main>
             </Container>
             <footer className="py-8 max-w-screen-xl mx-auto">
-              <p className="text-sm text-slate-500 tracking-wide">
+              <p className="text-sm dark:text-slate-400 tracking-wide">
                 Designed and coded by Alexandru Cambose. Built with{' '}
                 <Link href="https://nextjs.org/" target="_blank">
                   Next.js
