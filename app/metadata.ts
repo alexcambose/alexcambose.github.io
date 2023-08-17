@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 const description =
-  'Alexandru Cambose is a talented software engineer with expertise in software development. Discover his diverse range of projects, programming skills, and career achievements. With a passion for coding and a commitment to delivering high-quality solutions, Alexandru Cambose is dedicated to pushing the boundaries of software engineering. Visit now to witness the innovation and expertise firsthand.';
+  'Alexandru Cambose is a talented software engineer with expertise in full stack software development and web3. Discover his diverse range of projects, programming skills, and career achievements. With a passion for coding and a commitment to delivering high-quality solutions, Alexandru Cambose is dedicated to pushing the boundaries of software engineering. Visit now to witness the innovation and expertise firsthand.';
 
 export const metadata: Metadata = {
   title: {
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     description,
     siteName: 'Alexandru Cambose - Portfolio',
     locale: 'en_US',
+    images: ['/og.png'],
   },
   keywords: [
     'Alexandru Cambose',
