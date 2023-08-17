@@ -20,7 +20,7 @@ export const OpenSourceCard = ({ data }: OpenSourceCardProps) => {
             <StargazerCount>{stargazerCount}</StargazerCount>
           </div>
         </div>
-        <h3 className="text-lg font-semibold text-slate-200 mb-4 mt-2 group-hover/item:text-primary-dark transition">
+        <h3 className="md:text-lg font-semibold text-slate-200 mb-4 mt-2 group-hover/item:text-primary-dark transition">
           {title}
         </h3>
         <p className="text-sm grow group-hover/item:text-slate-300 transition">{description}</p>

@@ -55,7 +55,7 @@ export const Layout = ({ children }: LayoutProps) => {
           )}
         >
           {/* <WalletNav /> */}
-          <div className="px-6 md:px-12 lg:px-24">
+          <div className="px-4 md:px-12 lg:px-24">
             <Container
               leftSidebar={
                 <>
