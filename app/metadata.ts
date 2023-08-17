@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteId: '1467726470533754880',
     creator: '@alexcambose',
     creatorId: '1467726470533754880',
-    images: ['https://nextjs.org/og.png'],
+    images: ['/og.png'],
   },
   archives: ['https://alexcambose.com'],
   category: 'technology',
