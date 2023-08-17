@@ -9,40 +9,66 @@ export interface ProjectCardProps {
   data: ProjectItem;
   isReversed?: boolean;
 }
+
+const imageGridStyle = {
+  default: 'row-span-full',
+  xl: 'xl:group-odd:col-start-1 xl:group-odd:col-end-7 xl:group-even:col-start-6 xl:group-even:col-end-12',
+  lg: 'lg:group-odd:col-start-1 lg:group-odd:col-end-8 lg:group-even:col-start-4 lg:group-even:col-end-12',
+  md: 'md:group-odd:col-start-1 md:group-odd:col-end-8 md:group-even:col-start-4 md:group-even:col-end-12',
+  sm: 'col-span-full sm:group-odd:col-start-1 sm:group-odd:col-end-9 sm:group-even:col-start-3 sm:group-even:col-end-12',
+};
+const contentGridStyle = {
+  default: 'row-span-full',
+  xl: 'xl:group-odd:col-start-6 xl:group-odd:col-end-12 xl:group-even:col-start-1 xl:group-even:col-end-7',
+  lg: 'lg:group-odd:col-start-4 lg:group-odd:col-end-12 lg:group-even:col-start-1 lg:group-even:col-end-8',
+  md: 'md:group-odd:col-start-4 md:group-odd:col-end-12 md:group-even:col-start-1 md:group-even:col-end-8',
+  sm: 'col-span-full sm:group-odd:col-start-3 sm:group-odd:col-end-12 sm:group-even:col-start-1 sm:group-even:col-end-9',
+};
+
 export const ProjectCard = ({ data, isReversed }: ProjectCardProps) => {
   return (
-    <li className={classNames('mt-14 flex first:mt-0 group odd:flex-row-reverse')}>
-      <Image
-        alt="Project mage"
-        className="max-w-[50%] h-72 object-cover saturate opacity-90 grayscale  group-hover:opacity-100 group-hover:grayscale-0 group-hover:saturate transition"
-        width={500}
-        height={500}
-        src={data.thumbnailImageUrl}
+    <li className={classNames('mt-14 first:mt-0 group grid grid-cols-11')}>
+      <div
+        className={classNames(
+          imageGridStyle.default,
+          imageGridStyle.xl,
+          imageGridStyle.lg,
+          imageGridStyle.md,
+          imageGridStyle.sm,
+          'bg-cover bg-center saturate opacity-90 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:saturate transition'
+        )}
+        style={{ backgroundImage: `url(${data.thumbnailImageUrl})` }}
       />
-      <div className="flex flex-col justify-center group-odd:items-end">
-        <div className="group-odd:mr-[-20%] group-even:ml-[-20%] z-10">
-          <h3 className="mb-5 text-2xl text-slate-50 group-even:text-right">{data.title}</h3>
-          
 
-          <div className="bg-page-frame-color-dark p-6 rounded-md transition group-hover:shadow-md">
-            <p className="text-sm group-even:text-right group-hover:dark:text-slate-300 transition">
+      <div
+        className={classNames(
+          contentGridStyle.default,
+          contentGridStyle.xl,
+          contentGridStyle.lg,
+          contentGridStyle.md,
+          contentGridStyle.sm,
+          'flex flex-col justify-center z-10 p-8 sm:p-0 sm:bg-transparent bg-slate-900/80'
+        )}
+      >
+        <div className="flex flex-col items-start sm:group-even:items-start sm:group-odd:items-end">
+          <h3 className="mb-5 text-2xl text-slate-50 text-left sm:group-even:text-right">
+            {data.title}
+          </h3>
+
+          <div className="bg-transparent sm:bg-page-frame-color-dark sm:p-6 rounded-md transition group-hover:shadow-md">
+            <p className="text-default-dark-lighter sm:text-default-dark text-sm text-left sm:group-odd:text-right sm:group-hover:dark:text-slate-300 transition">
               {data.description}
             </p>
-
           </div>
-          <BadgeList className="group-even:justify-end">
+          <BadgeList className="justify-start sm:group-odd:justify-end ">
             {data.tags.map((e) => (
               <Badge size="small" key={e}>
                 {e}
               </Badge>
             ))}
           </BadgeList>
+          <ProjectCardFooter externalUrl={data.externalUrl} githubUrl={data.githubUrl} />
         </div>
-        <ProjectCardFooter
-          className="group-odd:self-start group-even:self-end"
-          externalUrl={data.externalUrl}
-          githubUrl={data.githubUrl}
-        />
       </div>
     </li>
   );

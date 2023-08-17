@@ -60,7 +60,6 @@ export const Navbar = () => {
         const element = document.querySelector(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          console.log(section, rect.top, rect.bottom);
           if (Math.abs(rect.top) <= rect.bottom) {
             setCurrentPath(section);
             break;

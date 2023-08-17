@@ -26,6 +26,7 @@ module.exports = {
       },
       textColor: {
         'default-dark': colors.slate[400],
+        'default-dark-lighter': colors.slate[300],
         'default-light': colors.gray[750],
         'highlighted-dark': colors.gray[100],
         // 'text-highlighted-dark': colors.gray[400],

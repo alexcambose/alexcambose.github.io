@@ -65,7 +65,7 @@ const projectMetadataOverride = {
   proofchain: {
     title: 'Proofchain',
     description:
-      'Proofchain leverages blockchain technology to facilitate efficient communication and data exchange between global supply chains, providing customers with proof of product provenance and ownership. This project also provides blockchain tools for customers/suppliers to integrate into their current systems.',
+      'Proofchain leverages blockchain technology to facilitate efficient communication and data exchange between global supply chains, providing customers with proof of product provenance and ownership. It also provides blockchain tools for customers/suppliers to integrate into their current systems.',
     tags: ['React', 'Redux', 'NextJS', 'Web3.js', 'Solidity', 'Truffle', 'Jest'],
   },
   mixdice: {

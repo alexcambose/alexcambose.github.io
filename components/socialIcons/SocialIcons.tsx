@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+import { IconContainer } from '../baseComponents/icon/IconContainer';
 import {
   FacebookLogo,
   GithubLogo,
@@ -5,9 +7,7 @@ import {
   LinkedinLogo,
   MediumLogo,
   TwitterLogo,
-} from '@phosphor-icons/react';
-import classNames from 'classnames';
-import { IconContainer } from '../baseComponents/icon/IconContainer';
+} from '@/utils/icons';
 
 export enum SocialElementType {
   Twitter = 'twitter',

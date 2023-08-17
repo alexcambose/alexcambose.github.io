@@ -22,7 +22,7 @@ export const ProjectCardFooter = ({
         </a>
       )}
       {githubUrl && (
-        <a href={externalUrl} target="_blank" className="p-2">
+        <a href={githubUrl} target="_blank" className="p-2">
           <IconContainer icon={GithubLogo} hoverColor="#fff" />
         </a>
       )}

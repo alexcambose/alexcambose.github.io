@@ -1,9 +1,7 @@
-'use client';
 import { AvatarCard } from '@/components/avatarCard/AvatarCard';
 import { Link } from '@/components/baseComponents/link/Link';
 import { Container } from '@/components/layout/Container';
 import { SocialElementType, SocialIcons } from '@/components/socialIcons/SocialIcons';
-import { useTheme } from '@/theme/hooks/useTheme';
 import classNames from 'classnames';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
@@ -24,7 +22,7 @@ const layoutTheme = {
 };
 
 export const Layout = ({ children }: LayoutProps) => {
-  const { isDark } = useTheme();
+  const isDark = true; // todo update this with the useTheme hook
   return (
     <html
       lang="en"
@@ -37,8 +35,6 @@ export const Layout = ({ children }: LayoutProps) => {
         {
           'selection:bg-cyan-800': isDark,
           'selection:text-white': isDark,
-          // 'selection:bg-slate-900': is Dark,
-          // 'selection:bg-red-950': isDark,
         }
       )}
     >

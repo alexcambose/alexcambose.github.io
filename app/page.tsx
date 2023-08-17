@@ -6,9 +6,8 @@ import { Projects } from '@/components/projects/Projects';
 import { WorkTimeline } from '@/components/workTimeline/WorkTimeline';
 import type { Metadata } from 'next';
 
-
 export const metadata: Metadata = {
-  title: 'Home - Alexandru Cambose',
+  title: 'Alexandru Cambose',
 };
 
 const workTimelineData = [
