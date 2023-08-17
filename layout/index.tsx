@@ -1,13 +1,12 @@
 import { AvatarCard } from '@/components/avatarCard/AvatarCard';
-import { Link } from '@/components/baseComponents/link/Link';
 import { Container } from '@/components/layout/Container';
 import { SocialElementType, SocialIcons } from '@/components/socialIcons/SocialIcons';
 import { useTheme } from '@/theme/hooks/useTheme';
 import classNames from 'classnames';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
+import { Footer } from './Footer';
 import { Navbar } from './navigation/Navbar';
-import { SwitchThemeButton } from '@/components/switchThemeButton/SwitchThemeButton';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 interface LayoutProps {
@@ -92,27 +91,7 @@ export const Layout = ({ children }: LayoutProps) => {
               {/* <SwitchThemeButton /> */}
               <main>{children}</main>
             </Container>
-            <footer className="pt-4 pb-14 lg:pb-8 max-w-screen-xl mx-auto">
-              <p className="text-sm dark:text-slate-400 tracking-wide">
-                Designed and coded by Alexandru Cambose. Built with{' '}
-                <Link href="https://nextjs.org/" target="_blank">
-                  Next.js
-                </Link>{' '}
-                and{' '}
-                <Link href="https://tailwindcss.com/" target="_blank">
-                  Tailwind CSS
-                </Link>
-                , deployed with{' '}
-                <Link href="https://vercel.com/" target="_blank">
-                  Vercel
-                </Link>
-                . All text is set in the Inter typeface. See{' '}
-                <Link href="https://github.com/alexcambose/alexcambose.github.io" target="_blank">
-                  Github repository
-                </Link>
-                .
-              </p>
-            </footer>
+            <Footer />
           </div>
         </div>
       </body>
