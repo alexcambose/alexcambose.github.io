@@ -16,7 +16,7 @@ export const WorkTimelineDate = ({ startDate, endDate }: WorkTimelineDateProps) 
     return dayjs(endDate).format('YYYY');
   })();
   return (
-    <span className={classNames(' mr-3 text-sm uppercase tracking-wide')}>
+    <span className={classNames('mr-3 text-sm uppercase tracking-wide')}>
       <span className="whitespace-pre">{startDateFormat}</span> -{' '}
       <span className="whitespace-pre">{endDateFormat}</span>
     </span>

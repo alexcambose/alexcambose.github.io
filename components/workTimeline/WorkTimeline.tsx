@@ -19,13 +19,13 @@ export const WorkTimeline = ({ data }: WorkTimelineProps) => {
       {sortedData.map((item) => {
         return (
           <li
-            className="mt-12 flex flex-col first:mt-0 lg:flex-row"
+            className="mt-8 flex flex-col lg:first:mt-0 lg:flex-row"
             key={item.title + item.companyName}
           >
-            <div className="max-w-fit text-center">
+            <div className="xl:w-2/12 lg:w-1/12 lg:mr-4 w-full">
               <WorkTimelineDate startDate={item.startDate} endDate={item.endDate} />
             </div>
-            <div className="lg:w-[76%]">
+            <div className="xl:w-10/12 lg:w-11/12 w-full">
               <WorkTimelineHeader
                 subtitle={item.subtitle}
                 title={item.title}
