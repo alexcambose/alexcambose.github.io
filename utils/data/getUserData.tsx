@@ -70,7 +70,7 @@ const projectMetadataOverride = {
   },
   mixdice: {
     title: 'MixDice',
-    thumbnailImageUrl: `${process.env.VERCEL_URL}/screenshots/mixdice1.png`,
+    thumbnailImageUrl: `/screenshots/mixdice1.png`,
     description:
       'A cryptocurrency-based gaming platform. It allows users to deposit crypto and use the funds inside the app. It uses a provably fair algorithm to for generating random numbers.',
     tags: [
