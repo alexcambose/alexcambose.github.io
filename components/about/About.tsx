@@ -11,7 +11,7 @@ export const About = () => {
         passion for <Bold>finance</Bold>, <Bold>web3</Bold> and <Bold>blockchain</Bold>. With over{' '}
         <Bold>6 years</Bold> of hands-on experience, I&apos;ve had the privilege of wearing diverse
         hats ranging from <Bold>frontend</Bold> and <Bold>backend</Bold> developer, to{' '}
-        <Bold>mentor</Bold>, <Bold>architect</Bold>, and <Bold>team</Bold> lead.
+        <Bold>mentor</Bold>, <Bold>architect</Bold>, and <Bold>team lead</Bold>.
       </p>
       <p className="mb-4">
         My journey began when I started programming at a young age and it has since flourished into
