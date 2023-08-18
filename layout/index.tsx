@@ -78,6 +78,10 @@ export const Layout = ({ children }: LayoutProps) => {
                         [SocialElementType.Medium]: {
                           url: 'https://medium.com/@alexcambose',
                         },
+                        [SocialElementType.Upwork]: {
+                          url: 'https://www.upwork.com/freelancers/~0162f4a25d266a8e6e',
+                        },
+
                         [SocialElementType.Instagram]: {
                           url: 'https://www.instagram.com/alexcambose/',
                         },

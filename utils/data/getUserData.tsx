@@ -18,7 +18,7 @@ const getQuery = () => `{
     followers {
       totalCount
     }
-    repositories(first: 100,isArchived:false,isFork:false, orderBy: {field:UPDATED_AT,direction:DESC}) {
+    repositories(first: 100,isArchived:false,isFork:false, orderBy: {field:UPDATED_AT,direction:DESC}, ownerAffiliations:[OWNER]) {
       nodes {
         ... on Repository {
           id
@@ -122,7 +122,21 @@ const additionalProjects = {
   },
   'time-tracker': {
     description: 'A VSCode extension to track working time.',
-    tags: ['typescript'],
+    tags: ['Typescript'],
+  },
+  'virtual-dom': {
+    description:
+      'A Virtual DOM algorithm implementation that improves front end performance by updating only changed nodes in the DOM.',
+    tags: ['Javascript'],
+  },
+  // 'JWT-auth-bolilerplate': {
+  //   description: 'Boilerplate for backend API user authentication with JWT',
+  //   tags: ['Javascript', 'JWT'],
+  // },
+  'ethereum-clone': {
+    description:
+      'A basic implementation of Ethereum and EVM. It implements a blockchain, EOA, and interpreter with a few opcodes like PUSH, STORE, LOAD, JUMP, and more.',
+    tags: ['Javascript'],
   },
 };
 export const getUserData = async () => {
@@ -130,28 +144,29 @@ export const getUserData = async () => {
   const octokit = new Octokit({ auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN });
 
   data = await octokit.graphql(getQuery());
-
   const mainProjects = data.viewer.repositories.nodes.filter(
     (e: any) =>
       // @ts-ignore
       projectMetadataOverride[e.name] !== undefined || additionalProjects[e.name] !== undefined
   );
   return {
-    projects: mainProjects.map((e: any) => {
-      // @ts-ignore
-      let isAdditionalOpenSourceProject = !!additionalProjects[e.name];
-      return {
-        ...e,
-        thumbnailImageUrl: e.openGraphImageUrl,
-        externalUrl: e.homepageUrl,
-        githubUrl: e.url,
-        title: e.name,
+    projects: mainProjects
+      .sort((a: any, b: any) => b.stargazerCount - a.stargazerCount)
+      .map((e: any) => {
         // @ts-ignore
-        ...(projectMetadataOverride[e.name] || {}),
-        // @ts-ignore
-        ...(additionalProjects[e.name] || {}),
-        isAdditionalOpenSourceProject,
-      };
-    }) as ProjectItem[],
+        let isAdditionalOpenSourceProject = !!additionalProjects[e.name];
+        return {
+          ...e,
+          thumbnailImageUrl: e.openGraphImageUrl,
+          externalUrl: e.homepageUrl,
+          githubUrl: e.url,
+          title: e.name,
+          // @ts-ignore
+          ...(projectMetadataOverride[e.name] || {}),
+          // @ts-ignore
+          ...(additionalProjects[e.name] || {}),
+          isAdditionalOpenSourceProject,
+        };
+      }) as ProjectItem[],
   };
 };

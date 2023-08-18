@@ -10,4 +10,5 @@ export {
   LinkedinLogo,
   MediumLogo,
   TwitterLogo,
+  SuitcaseSimple,
 } from '@phosphor-icons/react';
