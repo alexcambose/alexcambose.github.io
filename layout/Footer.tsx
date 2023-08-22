@@ -23,8 +23,7 @@ export const Footer = () => {
         .
       </p>
       <p className="mt-4">
-        Download a PDF version of my resume{' '}
-        <Link href="Alexandru_Cambose_Resume.pdf">here.</Link>
+        Download a PDF version of my resume <Link href="resume.pdf">here.</Link>
       </p>
     </footer>
   );
