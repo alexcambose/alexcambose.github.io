@@ -19,13 +19,13 @@ export const WorkTimeline = ({ data }: WorkTimelineProps) => {
       {sortedData.map((item) => {
         return (
           <li
-            className="mt-8 flex flex-col lg:first:mt-0 lg:flex-row"
+            className="mt-8 flex flex-col lg:flex-row lg:first:mt-0"
             key={item.title + item.companyName}
           >
-            <div className="xl:w-2/12 lg:w-1/12 lg:mr-4 w-full">
+            <div className="w-full lg:mr-4 lg:w-1/12 xl:w-2/12">
               <WorkTimelineDate startDate={item.startDate} endDate={item.endDate} />
             </div>
-            <div className="xl:w-10/12 lg:w-11/12 w-full">
+            <div className="w-full lg:w-11/12 xl:w-10/12">
               <WorkTimelineHeader
                 subtitle={item.subtitle}
                 title={item.title}
@@ -33,7 +33,8 @@ export const WorkTimeline = ({ data }: WorkTimelineProps) => {
                 companyImageUrls={item.companyImageUrls}
                 companyUrl={item.companyUrl}
               />
-              <WorkTimelineContent>{item.description}</WorkTimelineContent>
+              <p className="text-sm italic">{item.companyDescription}</p>
+              <WorkTimelineContent className="mt-2 text-sm">{item.description}</WorkTimelineContent>
               <BadgeList>
                 {item.techStack.map((techLabel) => (
                   <Badge key={techLabel}>{techLabel}</Badge>

@@ -2,7 +2,7 @@ import { Link } from '@/components/baseComponents/link/Link';
 
 export const Footer = () => {
   return (
-    <footer className="pt-4 pb-14 lg:pb-8 max-w-screen-xl mx-auto text-sm dark:text-slate-400 tracking-wide">
+    <footer className="mx-auto max-w-screen-xl pb-14 pt-4 text-sm tracking-wide dark:text-slate-400 lg:pb-8">
       <p>
         Designed and coded by Alexandru Cambose. Built with{' '}
         <Link href="https://nextjs.org/" target="_blank">
@@ -23,7 +23,10 @@ export const Footer = () => {
         .
       </p>
       <p className="mt-4">
-        Download a PDF version of my resume <Link href="resume.pdf">here.</Link>
+        Download a PDF version of my resume{' '}
+        <Link target="_blank" href="Alexandru_Cambose_Software_Engineer_Resume.pdf">
+          here.
+        </Link>
       </p>
     </footer>
   );

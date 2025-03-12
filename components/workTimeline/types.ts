@@ -25,6 +25,11 @@ export interface WorkTimelineItem {
   companyName: string;
 
   /**
+   * The description of the company or organization.
+   */
+  companyDescription: string;
+
+  /**
    * URL to the company's website.
    */
   companyUrl?: string;
@@ -37,7 +42,7 @@ export interface WorkTimelineItem {
   /**
    * A detailed description of the work or project, which can include React components.
    */
-  description: ReactNode;
+  description: string;
 
   /**
    * List of technologies or tools used during this work period.

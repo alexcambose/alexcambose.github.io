@@ -2,15 +2,14 @@ export const workTimelineData = [
   {
     title: 'Fullstack developer',
     companyName: 'Cult of Coders',
+    companyDescription: 'Web and mobile development company',
     companyUrl: 'https://www.cultofcoders.com/',
     startDate: new Date('01.09.2018'),
     endDate: new Date('01.10.2019'),
     description: `
-I've worked on different outsourcing projects and companies, including a US startup.
-- responsible for front-end and back-end web development
-- closely worked with clients in an agile environment to establish objectives and deliver incremental software updates
-- collaborate with the rest of the engineering team to design and launch new features
-- setup and manage development and production servers to ensure a good workflow and stability`,
+- Independently developed a jobs platform that streamlined talent sourcing and addressed critical business needs, driving
+operational efficiency.
+- Worked with outsourcing clients in an agile environment, establishing objectives and delivering incremental software updates.`,
     techStack: ['React', 'SCSS', 'NodeJs', 'Typescript', 'Meteor', 'GraphQL', 'AWS'],
     companyImageUrls: {
       smallSizeParams: {
@@ -22,32 +21,26 @@ I've worked on different outsourcing projects and companies, including a US star
         height: 38,
       },
       light: {
-        small:
-          'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
-        large:
-          'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
+        small: '/logo/cult_of_coders_logo.png',
+        large: '/logo/cult_of_coders_logo.png',
       },
       dark: {
-        small:
-          'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
-        large:
-          'https://media.licdn.com/dms/image/C4D0BAQEwZiXuhnVbSw/company-logo_200_200/0/1545419737837?e=1696464000&v=beta&t=9j7SquPyRAtFhWAE2Vam9DQzDOSyZfZHsgDGCiyYoLw',
+        small: '/logo/cult_of_coders_logo.png',
+        large: '/logo/cult_of_coders_logo.png',
       },
     },
   },
   {
     title: 'Senior Full-Stack Developer',
     companyName: 'MixDice',
+    companyDescription:
+      'Cryptocurrency based gaming platform based on a provably fair generation algorithm',
     companyUrl: 'https://twitter.com/MixDiceCasino',
-    description: `I've worked on a cryptocurrency-based gaming platform.
-Key Responsibilities:
-- led the development of the project
-- responsible for front-end and back-end web development
-- conducted code reviews for team members to ensure high code quality
-- setup the infrastructure and ci/cd pipelines for the app
-- implemented Bitcoin and Ethereum deposit/withdrawal/wallet systems for users and administrators by setting up BCoin nodes (https://bcoin.io/) and Geth nodes (https://geth.ethereum.org/)
-- implemented a provably fair random generation system (https://medium.com/@alexcambose/provably-fair-system-in-javascript-6457e028d2aa)
-- implemented real-time websocket-based communication for different parts of the app`,
+    description: `
+- **Led development** of a cryptocurrency gaming platform as a founding engineer.
+- Implemented **Bitcoin and Ethereum wallet systems**, with **deposit** and **withdrawal** features, and a **provably fair** random
+generation system.
+- Built **real-time websocket communication** for user actions and game mechanics.`,
     startDate: new Date('01.10.2019'),
     endDate: new Date('01.06.2020'),
     techStack: [
@@ -84,14 +77,12 @@ Key Responsibilities:
   {
     title: 'Senior Full-Stack Developer',
     companyName: 'Instantoption',
-    description: `I've worked on a decentralized binary options protocol.
-Key Responsibilities:
-- led the frontend and backend development
-- integrated the frontend with on-chain smart contracts
-- developed custom charting solutions for displaying user trades
-- implemented different authentication methods, both injected wallet and social login
-- setup the infrastructure and CI/CD pipelines
-- conducted code reviews to ensure high code standards`,
+    companyDescription: 'Non-custodial and fully decentralized protocol for binary options trading',
+    description: `
+- Established the application's foundation by integrating **on-chain smart contracts**, enabling secure and transparent trades,
+balances, and wallets.
+- Developed **custom charting solutions** for displaying user trades.
+- Implemented various **authentication methods**, including injected wallet and social logins with Magic`,
     startDate: new Date('01.11.2020'),
     endDate: new Date('01.02.2021'),
     techStack: [
@@ -127,22 +118,16 @@ Key Responsibilities:
     title: 'Senior Full-Stack Engineer',
     companyName: 'Rolla',
     companyUrl: 'https://rolla.fi',
+    companyDescription:
+      'Rolla unlocks small-cap tokens as collateral for crypto prediction markets, enabling short-term price predictions with high payout potential',
     startDate: new Date('01.09.2021'),
     endDate: new Date('01.09.2023'),
-    description: `I've worked on different projects over time, DeFi crypto options exchange, DeFi option-based yield generation app, ERC 4337 based DeFi price prediction app using spreads and digital options.
-Key Responsibilities:
-- lead frontend developer
-- worked on diverse roles, frontend, backend, and mobile
-- developed custom packages to share functionality across apps and platforms, such as state-management, authentication, smart contract interactions and more
-- developed custom backend core packages to abstract and reuse functionality across services
-- integrated different authentication methods, injected wallet, Walletconnect V2, private key, for both web and mobile platforms
-- implemented an option-based RFQ system to connect different entities with our product, achieved performant quoting via Redis, Kafka, and Websockets
-- integrated bridge aggregators to be able to bridge assets to our chain
-- developed custom charting solutions to display complex data such as option payouts and users trades
-- conducted code reviews to ensure high code quality
-- worked closely with the CEO to prioritize features and improvements
-- conducted interviews for new candidates
-- provided mentorship and guidance to developers`,
+    description: `
+- Led **frontend**, **backend**, and **mobile development**, creating reusable packages for state management, authentication, smart
+contract interactions and microservices.
+- **Increased user engagement by 30%** by implementing new trading features in collaboration with senior management.
+- Implemented **wallet auth** (WalletConnect V2, ECDSA) and option-based **RFQ systems** via Redis, Kafka, and Websockets.
+- Integrated **bridge aggregators** for cross-chain asset bridging and swapping, with developing **custom charts** for visualization.`,
     techStack: [
       'React',
       'Typescript',
@@ -169,6 +154,39 @@ Key Responsibilities:
       dark: {
         small: `/logo/rolla-small-light.svg`,
         large: `/logo/rolla-large-dark.svg`,
+      },
+    },
+  },
+  {
+    title: 'Senior Full-Stack Engineer',
+    companyName: 'Bonfire.xyz',
+    companyUrl: 'https://bonfire.xyz',
+    companyDescription:
+      "Bonfire brings creators and brands closer to their biggest fans by enabling them to create drops and experiences they won't find anywhere else",
+    startDate: new Date('10.22.2023'),
+    endDate: new Date('01.07.2025'),
+    description: `
+- **Drove $500k+ in transaction volume** by developing the core website builder functionality and new features.
+- Optimized web **application performance, integrated smart wallets, ERC 4337 account abstraction, and Farcaster frames**, and
+worked on **blockchain data processing**.
+- Implemented **smart contract interactions** with **Zora** and integrated authentication services including **Privy**.
+- dentified key features to drive **user adoption** through collaboration with senior management and clients.
+- Increased DX, code quality and productivity by improving coding standards, development practices, and code reviews.`,
+    techStack: ['React', 'Typescript', 'NextJS', 'NodeJS', 'Ethers', 'PostgreSQL'],
+    companyImageUrls: {
+      smallSizeParams: {
+        width: 50,
+      },
+      largeSizeParams: {
+        width: 80,
+      },
+      light: {
+        small: `/logo/bonfire-logo-small.svg`,
+        large: `/logo/bonfire-logo.png`,
+      },
+      dark: {
+        small: `/logo/bonfire-logo-small.svg`,
+        large: `/logo/bonfire-logo.png`,
       },
     },
   },

@@ -1,8 +1,16 @@
-import { ReactNode } from 'react';
+'use client';
+import classNames from 'classnames';
+import Markdown from 'react-markdown';
 
 interface WorkTimelineContentProps {
-  children: ReactNode;
+  children: string;
+  className: string;
 }
-export const WorkTimelineContent = ({ children }: WorkTimelineContentProps) => {
-  return <p className="mt-1 whitespace-pre-line text-sm">{children}</p>;
+
+export const WorkTimelineContent = ({ children, className }: WorkTimelineContentProps) => {
+  return (
+    <p className={classNames('markdown-content', className)}>
+      <Markdown>{children}</Markdown>
+    </p>
+  );
 };

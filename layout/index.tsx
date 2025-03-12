@@ -50,7 +50,7 @@ export const Layout = ({ children }: LayoutProps) => {
             layoutTheme.border,
             layoutTheme.height,
             layoutTheme.font,
-            'overflow-auto top-0 right-0 left-0 bottom-0'
+            'bottom-0 left-0 right-0 top-0 overflow-auto'
           )}
         >
           {/* <WalletNav /> */}
@@ -63,7 +63,8 @@ export const Layout = ({ children }: LayoutProps) => {
                       title="Alexandru Cambose"
                       description="Product-focused Software engineer"
                       imageUrl="https://avatars.githubusercontent.com/u/12383978?v=4"
-                      action="I thrive on tackling complex challenges that empowers financial systems. Can-do attitude. Always shipping."
+                      action="I ensure results through strong technical
+skills, alignment around goals, and delivery against objectives. Can-do attitude. Always shipping."
                     />
                     <Navbar />
                   </div>
