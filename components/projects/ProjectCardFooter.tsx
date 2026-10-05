@@ -17,12 +17,24 @@ export const ProjectCardFooter = ({
   return (
     <div className={classNames('flex text-2xl', className)} {...props}>
       {externalUrl && (
-        <a href={externalUrl} target="_blank" className="p-2">
+        <a
+          href={externalUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open project website"
+          className="p-2"
+        >
           <IconContainer icon={ArrowSquareOut} hoverColor="#fff" />
         </a>
       )}
       {githubUrl && (
-        <a href={githubUrl} target="_blank" className="p-2">
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View source on GitHub"
+          className="p-2"
+        >
           <IconContainer icon={GithubLogo} hoverColor="#fff" />
         </a>
       )}

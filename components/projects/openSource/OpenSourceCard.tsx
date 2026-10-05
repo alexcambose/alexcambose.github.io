@@ -11,21 +11,23 @@ export interface OpenSourceCardProps {
 export const OpenSourceCard = ({ data }: OpenSourceCardProps) => {
   const { title, description, tags, githubUrl, stargazerCount, forkCount } = data;
   return (
-    <a href={githubUrl} target="_blank">
-      <Panel className="group/item group-hover:opacity-90 hover:!opacity-100 hover:-translate-y-0.5 transition hover:shadow-lg flex flex-col pointer h-full">
-        <div className="flex justify-between">
-          <Folder className="group-hover/item:fill-primary-dark transition w-4 h-4 fill-slate-100" />
-          <div className="flex gap-2">
-            <ForkCount>{forkCount}</ForkCount>
-            <StargazerCount>{stargazerCount}</StargazerCount>
+    <li>
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+        <Panel className="group/item pointer flex h-full flex-col transition hover:-translate-y-0.5 hover:!opacity-100 hover:shadow-lg group-hover:opacity-90">
+          <div className="flex justify-between">
+            <Folder className="h-4 w-4 fill-slate-100 transition group-hover/item:fill-primary-dark" />
+            <div className="flex gap-2">
+              <ForkCount>{forkCount}</ForkCount>
+              <StargazerCount>{stargazerCount}</StargazerCount>
+            </div>
           </div>
-        </div>
-        <h3 className="md:text-lg font-semibold text-slate-200 mb-3 lg:mb-4 mt-2 group-hover/item:text-primary-dark transition">
-          {title}
-        </h3>
-        <p className="text-sm grow group-hover/item:text-slate-300 transition">{description}</p>
-        <TagList tags={tags} className="dark:text-slate-400 mt-3 lg:mt-4" />
-      </Panel>
-    </a>
+          <h3 className="mb-3 mt-2 font-semibold text-slate-200 transition group-hover/item:text-primary-dark md:text-lg lg:mb-4">
+            {title}
+          </h3>
+          <p className="grow text-sm transition group-hover/item:text-slate-300">{description}</p>
+          <TagList tags={tags} className="mt-3 dark:text-slate-400 lg:mt-4" />
+        </Panel>
+      </a>
+    </li>
   );
 };

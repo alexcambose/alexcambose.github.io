@@ -1,10 +1,11 @@
 import { AvatarCard } from '@/components/avatarCard/AvatarCard';
 import { Container } from '@/components/layout/Container';
 import { SocialElementType, SocialIcons } from '@/components/socialIcons/SocialIcons';
-import { useTheme } from '@/theme/hooks/useTheme';
 import classNames from 'classnames';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
+import { siteUrl } from '@/app/metadata';
+import { Providers } from '@/app/providers';
 import { Footer } from './Footer';
 import { Navbar } from './navigation/Navbar';
 
@@ -21,84 +22,89 @@ const layoutTheme = {
   font: 'font-sans dark:text-default-dark text-default-light leading-relaxed',
 };
 
+const socialLinks = {
+  [SocialElementType.Linkedin]: {
+    url: 'https://www.linkedin.com/in/alexcambose/',
+  },
+  [SocialElementType.Github]: { url: 'https://github.com/alexcambose' },
+  [SocialElementType.Twitter]: { url: 'https://twitter.com/alexcambose' },
+  [SocialElementType.Medium]: {
+    url: 'https://medium.com/@alexcambose',
+  },
+  [SocialElementType.Upwork]: {
+    url: 'https://www.upwork.com/freelancers/~0162f4a25d266a8e6e',
+  },
+
+  [SocialElementType.Instagram]: {
+    url: 'https://www.instagram.com/alexcambose/',
+  },
+  [SocialElementType.Facebook]: { url: 'https://facebook.com/alexcambose' },
+};
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Alexandru Cambose',
+  url: siteUrl,
+  image: 'https://avatars.githubusercontent.com/u/12383978?v=4',
+  jobTitle: 'Software Engineer',
+  email: 'mailto:alexcambose1@gmail.com',
+  sameAs: Object.values(socialLinks).map((e) => e.url),
+};
+
+// The site only ships a dark theme, so the theme classes are static.
 export const Layout = ({ children }: LayoutProps) => {
-  const { isDark } = useTheme();
   return (
     <html
       lang="en"
-      className={classNames(
-        { dark: isDark },
-        {
-          'background-light': !isDark,
-          'dark:background-dark': isDark,
-        },
-        {
-          'selection:bg-cyan-800': isDark,
-          'selection:text-white': isDark,
-          // 'selection:bg-slate-900': is Dark,
-          // 'selection:bg-red-950': isDark,
-        }
-      )}
+      className="dark:background-dark dark selection:bg-cyan-800 selection:text-white"
     >
       <body>
-        <div
-          id="scroll-container"
-          className={classNames(
-            inter.variable,
-            layoutTheme.position,
-            layoutTheme.background,
-            layoutTheme.border,
-            layoutTheme.height,
-            layoutTheme.font,
-            'bottom-0 left-0 right-0 top-0 overflow-auto'
-          )}
-        >
-          {/* <WalletNav /> */}
-          <div className="px-4 md:px-12 lg:px-24">
-            <Container
-              leftSidebar={
-                <>
-                  <div>
-                    <AvatarCard
-                      title="Alexandru Cambose"
-                      description="Product-focused Software engineer"
-                      imageUrl="https://avatars.githubusercontent.com/u/12383978?v=4"
-                      action="I ensure results through strong technical
-skills, alignment around goals, and delivery against objectives. Can-do attitude. Always shipping."
-                    />
-                    <Navbar />
-                  </div>
-                  <div>
-                    <SocialIcons
-                      data={{
-                        [SocialElementType.Linkedin]: {
-                          url: 'https://www.linkedin.com/in/alexcambose/',
-                        },
-                        [SocialElementType.Github]: { url: 'https://github.com/alexcambose' },
-                        [SocialElementType.Twitter]: { url: 'https://twitter.com/alexcambose' },
-                        [SocialElementType.Medium]: {
-                          url: 'https://medium.com/@alexcambose',
-                        },
-                        [SocialElementType.Upwork]: {
-                          url: 'https://www.upwork.com/freelancers/~0162f4a25d266a8e6e',
-                        },
-
-                        [SocialElementType.Instagram]: {
-                          url: 'https://www.instagram.com/alexcambose/',
-                        },
-                        [SocialElementType.Facebook]: { url: 'https://facebook.com/alexcambose' },
-                      }}
-                    />
-                  </div>
-                </>
-              }
-            >
-              {/* <SwitchThemeButton /> */}
-              <main>{children}</main>
-            </Container>
-            <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <Providers>
+          <div
+            id="scroll-container"
+            className={classNames(
+              inter.variable,
+              layoutTheme.position,
+              layoutTheme.background,
+              layoutTheme.border,
+              layoutTheme.height,
+              layoutTheme.font,
+              'bottom-0 left-0 right-0 top-0 overflow-auto'
+            )}
+          >
+            {/* <WalletNav /> */}
+            <div className="px-4 md:px-12 lg:px-24">
+              <Container
+                leftSidebar={
+                  <>
+                    <div>
+                      <AvatarCard
+                        title="Alexandru Cambose"
+                        description="Product-focused Software engineer"
+                        imageUrl="https://avatars.githubusercontent.com/u/12383978?v=4"
+                        action="I ensure results through strong technical
+  skills, alignment around goals, and delivery against objectives. Can-do attitude. Always shipping."
+                      />
+                      <Navbar />
+                    </div>
+                    <div>
+                      <SocialIcons data={socialLinks} />
+                    </div>
+                  </>
+                }
+              >
+                {/* <SwitchThemeButton /> */}
+                {children}
+              </Container>
+              <Footer />
+            </div>
           </div>
-        </div>
+        </Providers>
       </body>
     </html>
   );

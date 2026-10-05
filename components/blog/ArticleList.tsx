@@ -22,27 +22,29 @@ export const ArticleList = ({ articles }: ArticleListProps) => {
 
   return (
     <div>
-      <ul className="group" role="article list-none">
+      <ul className="group list-none">
         {articles.slice(0, visibleCount).map((e) => (
           <ArticleItem key={e.title} article={e} />
         ))}
       </ul>
 
       {visibleCount < articles.length && (
-        <span
+        <button
+          type="button"
           onClick={handleViewMore}
-          className="pt-4 block text-sm font-light text-center select-none italic cursor-pointer align-middle hover:underline"
+          className="block w-full cursor-pointer select-none pt-4 text-center align-middle text-sm font-light italic hover:underline"
         >
           View More
-        </span>
+        </button>
       )}
       {visibleCount >= articles.length && (
-        <span
+        <button
+          type="button"
           onClick={handleViewLess}
-          className="pt-4 block text-sm font-light text-center select-none italic cursor-pointer align-middle hover:underline"
+          className="block w-full cursor-pointer select-none pt-4 text-center align-middle text-sm font-light italic hover:underline"
         >
           View Less
-        </span>
+        </button>
       )}
     </div>
   );

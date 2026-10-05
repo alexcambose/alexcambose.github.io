@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import Image from 'next/image';
 import { Article } from './types';
 
@@ -10,22 +9,21 @@ export const ArticleItem = ({ article }: ArticleItemProps) => {
   return (
     <li className="group/item">
       <a
-        className="flex items-center gap-4 mt-2 rounded-md group-hover:opacity-50 hover:!bg-slate-800/50 hover:!opacity-100 p-3 transition"
+        className="mt-2 flex items-center gap-4 rounded-md p-3 transition hover:!bg-slate-800/50 hover:!opacity-100 group-hover:opacity-50"
         href={article.linkUrl}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <Image
-          alt="Project mage"
+          alt={article.title}
           width={500}
           height={500}
-          className="object-cover w-[14vw] h-[10vw] lg:w-32 lg:h-28 self-start lg:self-center"
+          className="h-[10vw] w-[14vw] self-start object-cover lg:h-28 lg:w-32 lg:self-center"
           src={article.thumbnail}
         />
         <div>
-          <h3 className="font-bold text-lg">{article.title}</h3>
-          <small className="text-xsm opacity-90">
-            Published on {dayjs(article.publishedDate).format('MMM DD YYYY')}
-          </small>
+          <h3 className="text-lg font-bold">{article.title}</h3>
+          <small className="text-xsm opacity-90">Published on {article.publishedDateLabel}</small>
           <p className="mt-1">{article.description}</p>
           <div className="mt-1">
             {article.categories.map((category, i) => (

@@ -37,14 +37,21 @@ interface SocialIconsProps {
 }
 export const SocialIcons = ({ data }: SocialIconsProps) => {
   return (
-    <ul className={classNames('flex gap-1 text-3xl lg:mt-0 my-4')} aria-label="Social media">
+    <ul className={classNames('my-4 flex gap-1 text-3xl lg:mt-0')} aria-label="Social media">
       {Object.entries(data).map(([key, value]) => {
         const socialIconComponent = socialIcons[key as SocialElementType].component;
         const accentColor = socialIcons[key as SocialElementType].color;
         const label = socialIcons[key as SocialElementType].label;
         return (
           <li key={key}>
-            <a href={value.url} title={label} className="inline-block p-1" target="_blank">
+            <a
+              href={value.url}
+              title={label}
+              aria-label={label}
+              className="inline-block p-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconContainer icon={socialIconComponent} hoverColor={accentColor} />
             </a>
           </li>
