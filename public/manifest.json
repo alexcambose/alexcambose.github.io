@@ -3,24 +3,14 @@
   "short_name": "Alex Portfolio",
   "icons": [
     {
-      "src": "/icons/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/favicon.png",
+      "sizes": "500x500",
       "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icons/android-chrome-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "purpose": "any"
     }
   ],
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "theme_color": "#0A1128",
+  "background_color": "#0A1128",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"

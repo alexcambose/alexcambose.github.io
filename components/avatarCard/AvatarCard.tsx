@@ -1,4 +1,3 @@
-'use client';
 import classNames from 'classnames';
 import Image from 'next/image';
 
@@ -21,13 +20,13 @@ export const AvatarCard = ({
   activeStatus = ActiveStatusEnum.ACTIVE,
 }: AvatarCardProps) => {
   return (
-    <header className="flex flex-col lg:mt-0 mt-8">
-      <div className="relative mb-7 h-[16vh] w-[16vh] max-w-20  flex-none overflow-hidden">
+    <div className="mt-8 flex flex-col lg:mt-0">
+      <div className="max-w-20 relative mb-7 h-[16vh] w-[16vh]  flex-none overflow-hidden">
         <Image
           alt="Profile image"
           src={imageUrl}
           fill
-          className="rounded-full object-cover select-none"
+          className="select-none rounded-full object-cover"
         />
         {activeStatus && (
           <span
@@ -45,6 +44,6 @@ export const AvatarCard = ({
         {description}
       </p>
       <p className="mt-4 leading-normal">{action}</p>
-    </header>
+    </div>
   );
 };

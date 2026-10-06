@@ -1,9 +1,15 @@
 import type { Metadata } from 'next';
 
+export const siteUrl = 'https://www.alexcambose.com';
+
 const description =
-  'Alexandru Cambose is a talented software engineer with expertise in full stack software development and web3. Discover his diverse range of projects, programming skills, and career achievements. With a passion for coding and a commitment to delivering high-quality solutions, Alexandru Cambose is dedicated to pushing the boundaries of software engineering. Visit now to witness the innovation and expertise firsthand.';
+  'Alexandru Cambose is a product-focused software engineer specialising in full-stack development and web3. Explore his experience, projects and writing.';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     template: '%s - Alexandru Cambose',
     default: 'Alexandru Cambose',
@@ -11,7 +17,7 @@ export const metadata: Metadata = {
   description,
   openGraph: {
     type: 'website',
-    url: 'https://alexcambose.com',
+    url: siteUrl,
     title: 'Alexandru Cambose - Portfolio',
     description,
     siteName: 'Alexandru Cambose - Portfolio',
@@ -41,14 +47,14 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'Alexandru Cambose',
-      url: 'https://alexcambose.com',
+      url: siteUrl,
     },
   ],
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#fff' },
     { media: '(prefers-color-scheme: dark)', color: '#000' },
   ],
-  colorScheme: 'light',
+  colorScheme: 'dark',
   twitter: {
     card: 'summary_large_image',
     title: 'Alexandru Cambose',
@@ -58,16 +64,13 @@ export const metadata: Metadata = {
     creatorId: '1467726470533754880',
     images: ['/og.png'],
   },
-  archives: ['https://alexcambose.com'],
   category: 'technology',
-  publisher: 'Vercel',
   other: {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'default',
     'apple-mobile-web-app-title': 'Alexandru Cambose - Portfolio',
     'format-detection': 'telephone=no',
     'mobile-web-app-capable': 'yes',
-    'msapplication-config': '/icons/browserconfig.xml',
     'msapplication-TileColor': '#2B5797',
     'msapplication-tap-highlight': 'no',
   },

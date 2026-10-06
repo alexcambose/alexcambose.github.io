@@ -1,4 +1,5 @@
 import { Article } from '@/components/blog/types';
+import dayjs from 'dayjs';
 import { JSDOM } from 'jsdom';
 
 const extractDescription = (description: string): string => {
@@ -24,6 +25,8 @@ export const getBlogArticles = async () => {
     categories: item.categories.map((e: string) => e.charAt(0).toUpperCase() + e.slice(1)),
     thumbnail: extractThumbnail(item.description),
     publishedDate: item.pubDate,
+    // Formatted on the server so the client renders the same string during hydration.
+    publishedDateLabel: dayjs(item.pubDate).format('MMM DD YYYY'),
     linkUrl: item.link,
   })) as Article[];
 };

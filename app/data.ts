@@ -4,8 +4,8 @@ export const workTimelineData = [
     companyName: 'Cult of Coders',
     companyDescription: 'Web and mobile development company',
     companyUrl: 'https://www.cultofcoders.com/',
-    startDate: new Date('01.09.2018'),
-    endDate: new Date('01.10.2019'),
+    startDate: new Date('2018-09-01'),
+    endDate: new Date('2019-10-01'),
     description: `
 - Independently developed a jobs platform that streamlined talent sourcing and addressed critical business needs, driving
 operational efficiency.
@@ -41,8 +41,8 @@ operational efficiency.
 - Implemented **Bitcoin and Ethereum wallet systems**, with **deposit** and **withdrawal** features, and a **provably fair** random
 generation system.
 - Built **real-time websocket communication** for user actions and game mechanics.`,
-    startDate: new Date('01.10.2019'),
-    endDate: new Date('01.06.2020'),
+    startDate: new Date('2019-10-01'),
+    endDate: new Date('2020-06-01'),
     techStack: [
       'React',
       'Typescript',
@@ -83,8 +83,8 @@ generation system.
 balances, and wallets.
 - Developed **custom charting solutions** for displaying user trades.
 - Implemented various **authentication methods**, including injected wallet and social logins with Magic`,
-    startDate: new Date('01.11.2020'),
-    endDate: new Date('01.02.2021'),
+    startDate: new Date('2020-11-01'),
+    endDate: new Date('2021-02-01'),
     techStack: [
       'React',
       'Typescript',
@@ -120,8 +120,8 @@ balances, and wallets.
     companyUrl: 'https://rolla.fi',
     companyDescription:
       'Rolla unlocks small-cap tokens as collateral for crypto prediction markets, enabling short-term price predictions with high payout potential',
-    startDate: new Date('01.09.2021'),
-    endDate: new Date('01.09.2023'),
+    startDate: new Date('2021-09-01'),
+    endDate: new Date('2023-09-01'),
     description: `
 - Led **frontend**, **backend**, and **mobile development**, creating reusable packages for state management, authentication, smart
 contract interactions and microservices.
@@ -163,8 +163,8 @@ contract interactions and microservices.
     companyUrl: 'https://bonfire.xyz',
     companyDescription:
       "Bonfire brings creators and brands closer to their biggest fans by enabling them to create drops and experiences they won't find anywhere else",
-    startDate: new Date('10.22.2023'),
-    endDate: new Date('01.07.2025'),
+    startDate: new Date('2023-10-22'),
+    endDate: new Date('2025-01-07'),
     description: `
 - **Drove $500k+ in transaction volume** by developing the core website builder functionality and new features.
 - Optimized web **application performance, integrated smart wallets, ERC 4337 account abstraction, and Farcaster frames**, and

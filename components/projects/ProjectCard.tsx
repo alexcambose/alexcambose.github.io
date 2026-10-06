@@ -27,18 +27,28 @@ const contentGridStyle = {
 
 export const ProjectCard = ({ data, isReversed }: ProjectCardProps) => {
   return (
-    <li className={classNames('mt-14 first:mt-0 group grid grid-cols-11')}>
+    <li className={classNames('group mt-14 grid grid-cols-11 first:mt-0')}>
       <div
         className={classNames(
+          'relative overflow-hidden',
           imageGridStyle.default,
           imageGridStyle.xl,
           imageGridStyle.lg,
           imageGridStyle.md,
           imageGridStyle.sm,
-          'bg-cover bg-center saturate opacity-90 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:saturate transition'
+          'saturate group-hover:saturate opacity-90 grayscale transition group-hover:opacity-100 group-hover:grayscale-0'
         )}
-        style={{ backgroundImage: `url(${data.thumbnailImageUrl})` }}
-      />
+      >
+        {data.thumbnailImageUrl && (
+          <Image
+            src={data.thumbnailImageUrl}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-cover object-center"
+          />
+        )}
+      </div>
 
       <div
         className={classNames(
@@ -47,16 +57,16 @@ export const ProjectCard = ({ data, isReversed }: ProjectCardProps) => {
           contentGridStyle.lg,
           contentGridStyle.md,
           contentGridStyle.sm,
-          'flex flex-col justify-center z-10 p-8 sm:p-0 sm:bg-transparent bg-slate-900/80'
+          'z-10 flex flex-col justify-center bg-slate-900/80 p-8 sm:bg-transparent sm:p-0'
         )}
       >
-        <div className="flex flex-col items-start sm:group-even:items-start sm:group-odd:items-end">
-          <h3 className="mb-5 text-2xl text-slate-50 text-left sm:group-even:text-right">
+        <div className="flex flex-col items-start sm:group-odd:items-end sm:group-even:items-start">
+          <h3 className="mb-5 text-left text-2xl text-slate-50 sm:group-even:text-right">
             {data.title}
           </h3>
 
-          <div className="bg-transparent sm:bg-page-frame-color-dark sm:p-6 rounded-md transition group-hover:shadow-md">
-            <p className="text-default-dark-lighter sm:text-default-dark text-sm text-left sm:group-odd:text-right sm:group-hover:dark:text-slate-300 transition">
+          <div className="rounded-md bg-transparent transition group-hover:shadow-md sm:bg-page-frame-color-dark sm:p-6">
+            <p className="text-left text-sm text-default-dark-lighter transition sm:text-default-dark sm:group-odd:text-right sm:group-hover:dark:text-slate-300">
               {data.description}
             </p>
           </div>
